@@ -1,5 +1,5 @@
 <a href="https://soumilbhandari.com">
-  <img src="assets/hero.svg" width="100%" alt="Soumil Bhandari: Computer Engineering at Purdue, AI Researcher at Perforated AI. The name decodes from masked tokens like a diffusion language model, and three dendritic neurons pass a spike along the bottom.">
+  <img src="assets/hero.svg" width="100%" alt="Soumil Bhandari: Computer Engineering at Purdue, AI Researcher at Perforated AI. The name decodes from masked tokens like a diffusion language model.">
 </a>
 
 <p align="center">

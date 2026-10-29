@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-label="Soumil Bhandari: Computer Engineering @ Purdue, AI Researcher @ Perforated AI">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="Soumil Bhandari: Computer Engineering @ Purdue, AI Researcher @ Perforated AI">
 <title>Soumil Bhandari: Computer Engineering @ Purdue, AI Researcher @ Perforated AI</title>
 <style>
 .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
@@ -148,116 +148,6 @@
 @keyframes caret4 { 0% { transform: translateX(0); animation-timing-function: steps(46, end); }
   9.00%, 100% { transform: translateX(524.4px); } }
 .k4 { animation: caret4 23.0s 22.06s infinite both; }
-
-.den { fill: none; stroke: #4d4537; stroke-linecap: round; stroke-linejoin: round; }
-.axon { fill: none; stroke: #4d4537; stroke-width: 2; stroke-linejoin: round; }
-.myelin { fill: none; stroke: #2e2a21; stroke-width: 8; stroke-linecap: round; stroke-dasharray: 38 9; }
-.pulse { fill: none; stroke: #cfb991; stroke-linecap: round; stroke-linejoin: round; opacity: 0; filter: url(#glow); }
-.soma { fill: #2a251c; stroke: #8d7f5f; stroke-width: 2; }
-.fire { fill: #cfb991; opacity: 0; filter: url(#glow); }
-.bulb { fill: #8d7f5f; }
-@keyframes p0 { 0%, 0.00% { stroke-dashoffset: 16; opacity: 1; } 8.72% { stroke-dashoffset: -79; opacity: 1; } 8.73%, 100% { stroke-dashoffset: -79; opacity: 0; } }
-.p0 { stroke-width: 2; stroke-dasharray: 16 95; animation: p0 8.6s linear 3.06s infinite; }
-@keyframes p1 { 0%, 0.47% { stroke-dashoffset: 16; opacity: 1; } 9.19% { stroke-dashoffset: -84; opacity: 1; } 9.20%, 100% { stroke-dashoffset: -84; opacity: 0; } }
-.p1 { stroke-width: 2; stroke-dasharray: 16 100; animation: p1 8.6s linear 3.06s infinite; }
-@keyframes p2 { 0%, 0.93% { stroke-dashoffset: 16; opacity: 1; } 9.65% { stroke-dashoffset: -90; opacity: 1; } 9.66%, 100% { stroke-dashoffset: -90; opacity: 0; } }
-.p2 { stroke-width: 2; stroke-dasharray: 16 106; animation: p2 8.6s linear 3.06s infinite; }
-@keyframes p3 { 0%, 1.40% { stroke-dashoffset: 16; opacity: 1; } 10.12% { stroke-dashoffset: -94; opacity: 1; } 10.13%, 100% { stroke-dashoffset: -94; opacity: 0; } }
-.p3 { stroke-width: 2; stroke-dasharray: 16 110; animation: p3 8.6s linear 3.06s infinite; }
-@keyframes p4 { 0%, 1.86% { stroke-dashoffset: 16; opacity: 1; } 10.58% { stroke-dashoffset: -96; opacity: 1; } 10.59%, 100% { stroke-dashoffset: -96; opacity: 0; } }
-.p4 { stroke-width: 2; stroke-dasharray: 16 112; animation: p4 8.6s linear 3.06s infinite; }
-@keyframes p5 { 0%, 2.33% { stroke-dashoffset: 16; opacity: 1; } 11.05% { stroke-dashoffset: -98; opacity: 1; } 11.06%, 100% { stroke-dashoffset: -98; opacity: 0; } }
-.p5 { stroke-width: 2; stroke-dasharray: 16 114; animation: p5 8.6s linear 3.06s infinite; }
-@keyframes p6 { 0%, 2.79% { stroke-dashoffset: 16; opacity: 1; } 11.51% { stroke-dashoffset: -93; opacity: 1; } 11.52%, 100% { stroke-dashoffset: -93; opacity: 0; } }
-.p6 { stroke-width: 2; stroke-dasharray: 16 109; animation: p6 8.6s linear 3.06s infinite; }
-@keyframes p7 { 0%, 3.26% { stroke-dashoffset: 16; opacity: 1; } 11.98% { stroke-dashoffset: -93; opacity: 1; } 11.99%, 100% { stroke-dashoffset: -93; opacity: 0; } }
-.p7 { stroke-width: 2; stroke-dasharray: 16 109; animation: p7 8.6s linear 3.06s infinite; }
-@keyframes p8 { 0%, 3.72% { stroke-dashoffset: 16; opacity: 1; } 12.44% { stroke-dashoffset: -100; opacity: 1; } 12.45%, 100% { stroke-dashoffset: -100; opacity: 0; } }
-.p8 { stroke-width: 2; stroke-dasharray: 16 116; animation: p8 8.6s linear 3.06s infinite; }
-@keyframes p9 { 0%, 4.19% { stroke-dashoffset: 16; opacity: 1; } 12.91% { stroke-dashoffset: -101; opacity: 1; } 12.92%, 100% { stroke-dashoffset: -101; opacity: 0; } }
-.p9 { stroke-width: 2; stroke-dasharray: 16 117; animation: p9 8.6s linear 3.06s infinite; }
-@keyframes p10 { 0%, 4.65% { stroke-dashoffset: 16; opacity: 1; } 13.37% { stroke-dashoffset: -99; opacity: 1; } 13.38%, 100% { stroke-dashoffset: -99; opacity: 0; } }
-.p10 { stroke-width: 2; stroke-dasharray: 16 115; animation: p10 8.6s linear 3.06s infinite; }
-@keyframes p11 { 0%, 5.12% { stroke-dashoffset: 16; opacity: 1; } 13.84% { stroke-dashoffset: -93; opacity: 1; } 13.85%, 100% { stroke-dashoffset: -93; opacity: 0; } }
-.p11 { stroke-width: 2; stroke-dasharray: 16 109; animation: p11 8.6s linear 3.06s infinite; }
-@keyframes p12 { 0%, 11.63% { stroke-dashoffset: 46; opacity: 1; } 21.51% { stroke-dashoffset: -207; opacity: 1; } 21.52%, 100% { stroke-dashoffset: -207; opacity: 0; } }
-.p12 { stroke-width: 3; stroke-dasharray: 46 253; animation: p12 8.6s linear 3.06s infinite; }
-@keyframes p13 { 0%, 21.51% { stroke-dashoffset: 14; opacity: 1; } 25.00% { stroke-dashoffset: -40; opacity: 1; } 25.01%, 100% { stroke-dashoffset: -40; opacity: 0; } }
-.p13 { stroke-width: 2; stroke-dasharray: 14 54; animation: p13 8.6s linear 3.06s infinite; }
-@keyframes p14 { 0%, 21.51% { stroke-dashoffset: 14; opacity: 1; } 25.00% { stroke-dashoffset: -34; opacity: 1; } 25.01%, 100% { stroke-dashoffset: -34; opacity: 0; } }
-.p14 { stroke-width: 2; stroke-dasharray: 14 48; animation: p14 8.6s linear 3.06s infinite; }
-@keyframes p15 { 0%, 21.51% { stroke-dashoffset: 14; opacity: 1; } 25.00% { stroke-dashoffset: -40; opacity: 1; } 25.01%, 100% { stroke-dashoffset: -40; opacity: 0; } }
-.p15 { stroke-width: 2; stroke-dasharray: 14 54; animation: p15 8.6s linear 3.06s infinite; }
-@keyframes fire0 { 0%, 8.72% { opacity: 0; } 11.05% { opacity: 0.95; } 18.60%, 100% { opacity: 0; } }
-.fire0 { animation: fire0 8.6s ease-out 3.06s infinite; }
-@keyframes p16 { 0%, 26.74% { stroke-dashoffset: 16; opacity: 1; } 35.47% { stroke-dashoffset: -88; opacity: 1; } 35.48%, 100% { stroke-dashoffset: -88; opacity: 0; } }
-.p16 { stroke-width: 2; stroke-dasharray: 16 104; animation: p16 8.6s linear 3.06s infinite; }
-@keyframes p17 { 0%, 27.21% { stroke-dashoffset: 16; opacity: 1; } 35.93% { stroke-dashoffset: -94; opacity: 1; } 35.94%, 100% { stroke-dashoffset: -94; opacity: 0; } }
-.p17 { stroke-width: 2; stroke-dasharray: 16 110; animation: p17 8.6s linear 3.06s infinite; }
-@keyframes p18 { 0%, 27.67% { stroke-dashoffset: 16; opacity: 1; } 36.40% { stroke-dashoffset: -93; opacity: 1; } 36.41%, 100% { stroke-dashoffset: -93; opacity: 0; } }
-.p18 { stroke-width: 2; stroke-dasharray: 16 109; animation: p18 8.6s linear 3.06s infinite; }
-@keyframes p19 { 0%, 28.14% { stroke-dashoffset: 16; opacity: 1; } 36.86% { stroke-dashoffset: -93; opacity: 1; } 36.87%, 100% { stroke-dashoffset: -93; opacity: 0; } }
-.p19 { stroke-width: 2; stroke-dasharray: 16 109; animation: p19 8.6s linear 3.06s infinite; }
-@keyframes p20 { 0%, 28.60% { stroke-dashoffset: 16; opacity: 1; } 37.33% { stroke-dashoffset: -111; opacity: 1; } 37.34%, 100% { stroke-dashoffset: -111; opacity: 0; } }
-.p20 { stroke-width: 2; stroke-dasharray: 16 127; animation: p20 8.6s linear 3.06s infinite; }
-@keyframes p21 { 0%, 29.07% { stroke-dashoffset: 16; opacity: 1; } 37.79% { stroke-dashoffset: -114; opacity: 1; } 37.80%, 100% { stroke-dashoffset: -114; opacity: 0; } }
-.p21 { stroke-width: 2; stroke-dasharray: 16 130; animation: p21 8.6s linear 3.06s infinite; }
-@keyframes p22 { 0%, 29.53% { stroke-dashoffset: 16; opacity: 1; } 38.26% { stroke-dashoffset: -113; opacity: 1; } 38.27%, 100% { stroke-dashoffset: -113; opacity: 0; } }
-.p22 { stroke-width: 2; stroke-dasharray: 16 129; animation: p22 8.6s linear 3.06s infinite; }
-@keyframes p23 { 0%, 30.00% { stroke-dashoffset: 16; opacity: 1; } 38.72% { stroke-dashoffset: -107; opacity: 1; } 38.73%, 100% { stroke-dashoffset: -107; opacity: 0; } }
-.p23 { stroke-width: 2; stroke-dasharray: 16 123; animation: p23 8.6s linear 3.06s infinite; }
-@keyframes p24 { 0%, 30.47% { stroke-dashoffset: 16; opacity: 1; } 39.19% { stroke-dashoffset: -107; opacity: 1; } 39.20%, 100% { stroke-dashoffset: -107; opacity: 0; } }
-.p24 { stroke-width: 2; stroke-dasharray: 16 123; animation: p24 8.6s linear 3.06s infinite; }
-@keyframes p25 { 0%, 30.93% { stroke-dashoffset: 16; opacity: 1; } 39.65% { stroke-dashoffset: -105; opacity: 1; } 39.66%, 100% { stroke-dashoffset: -105; opacity: 0; } }
-.p25 { stroke-width: 2; stroke-dasharray: 16 121; animation: p25 8.6s linear 3.06s infinite; }
-@keyframes p26 { 0%, 31.40% { stroke-dashoffset: 16; opacity: 1; } 40.12% { stroke-dashoffset: -93; opacity: 1; } 40.13%, 100% { stroke-dashoffset: -93; opacity: 0; } }
-.p26 { stroke-width: 2; stroke-dasharray: 16 109; animation: p26 8.6s linear 3.06s infinite; }
-@keyframes p27 { 0%, 31.86% { stroke-dashoffset: 16; opacity: 1; } 40.58% { stroke-dashoffset: -89; opacity: 1; } 40.59%, 100% { stroke-dashoffset: -89; opacity: 0; } }
-.p27 { stroke-width: 2; stroke-dasharray: 16 105; animation: p27 8.6s linear 3.06s infinite; }
-@keyframes p28 { 0%, 38.37% { stroke-dashoffset: 46; opacity: 1; } 48.26% { stroke-dashoffset: -207; opacity: 1; } 48.27%, 100% { stroke-dashoffset: -207; opacity: 0; } }
-.p28 { stroke-width: 3; stroke-dasharray: 46 253; animation: p28 8.6s linear 3.06s infinite; }
-@keyframes p29 { 0%, 48.26% { stroke-dashoffset: 14; opacity: 1; } 51.74% { stroke-dashoffset: -40; opacity: 1; } 51.75%, 100% { stroke-dashoffset: -40; opacity: 0; } }
-.p29 { stroke-width: 2; stroke-dasharray: 14 54; animation: p29 8.6s linear 3.06s infinite; }
-@keyframes p30 { 0%, 48.26% { stroke-dashoffset: 14; opacity: 1; } 51.74% { stroke-dashoffset: -34; opacity: 1; } 51.75%, 100% { stroke-dashoffset: -34; opacity: 0; } }
-.p30 { stroke-width: 2; stroke-dasharray: 14 48; animation: p30 8.6s linear 3.06s infinite; }
-@keyframes p31 { 0%, 48.26% { stroke-dashoffset: 14; opacity: 1; } 51.74% { stroke-dashoffset: -40; opacity: 1; } 51.75%, 100% { stroke-dashoffset: -40; opacity: 0; } }
-.p31 { stroke-width: 2; stroke-dasharray: 14 54; animation: p31 8.6s linear 3.06s infinite; }
-@keyframes fire1 { 0%, 35.47% { opacity: 0; } 37.79% { opacity: 0.95; } 45.35%, 100% { opacity: 0; } }
-.fire1 { animation: fire1 8.6s ease-out 3.06s infinite; }
-@keyframes p32 { 0%, 53.49% { stroke-dashoffset: 16; opacity: 1; } 62.21% { stroke-dashoffset: -101; opacity: 1; } 62.22%, 100% { stroke-dashoffset: -101; opacity: 0; } }
-.p32 { stroke-width: 2; stroke-dasharray: 16 117; animation: p32 8.6s linear 3.06s infinite; }
-@keyframes p33 { 0%, 53.95% { stroke-dashoffset: 16; opacity: 1; } 62.67% { stroke-dashoffset: -106; opacity: 1; } 62.68%, 100% { stroke-dashoffset: -106; opacity: 0; } }
-.p33 { stroke-width: 2; stroke-dasharray: 16 122; animation: p33 8.6s linear 3.06s infinite; }
-@keyframes p34 { 0%, 54.42% { stroke-dashoffset: 16; opacity: 1; } 63.14% { stroke-dashoffset: -110; opacity: 1; } 63.15%, 100% { stroke-dashoffset: -110; opacity: 0; } }
-.p34 { stroke-width: 2; stroke-dasharray: 16 126; animation: p34 8.6s linear 3.06s infinite; }
-@keyframes p35 { 0%, 54.88% { stroke-dashoffset: 16; opacity: 1; } 63.60% { stroke-dashoffset: -107; opacity: 1; } 63.61%, 100% { stroke-dashoffset: -107; opacity: 0; } }
-.p35 { stroke-width: 2; stroke-dasharray: 16 123; animation: p35 8.6s linear 3.06s infinite; }
-@keyframes p36 { 0%, 55.35% { stroke-dashoffset: 16; opacity: 1; } 64.07% { stroke-dashoffset: -92; opacity: 1; } 64.08%, 100% { stroke-dashoffset: -92; opacity: 0; } }
-.p36 { stroke-width: 2; stroke-dasharray: 16 108; animation: p36 8.6s linear 3.06s infinite; }
-@keyframes p37 { 0%, 55.81% { stroke-dashoffset: 16; opacity: 1; } 64.53% { stroke-dashoffset: -96; opacity: 1; } 64.54%, 100% { stroke-dashoffset: -96; opacity: 0; } }
-.p37 { stroke-width: 2; stroke-dasharray: 16 112; animation: p37 8.6s linear 3.06s infinite; }
-@keyframes p38 { 0%, 56.28% { stroke-dashoffset: 16; opacity: 1; } 65.00% { stroke-dashoffset: -99; opacity: 1; } 65.01%, 100% { stroke-dashoffset: -99; opacity: 0; } }
-.p38 { stroke-width: 2; stroke-dasharray: 16 115; animation: p38 8.6s linear 3.06s infinite; }
-@keyframes p39 { 0%, 56.74% { stroke-dashoffset: 16; opacity: 1; } 65.47% { stroke-dashoffset: -96; opacity: 1; } 65.48%, 100% { stroke-dashoffset: -96; opacity: 0; } }
-.p39 { stroke-width: 2; stroke-dasharray: 16 112; animation: p39 8.6s linear 3.06s infinite; }
-@keyframes p40 { 0%, 57.21% { stroke-dashoffset: 16; opacity: 1; } 65.93% { stroke-dashoffset: -95; opacity: 1; } 65.94%, 100% { stroke-dashoffset: -95; opacity: 0; } }
-.p40 { stroke-width: 2; stroke-dasharray: 16 111; animation: p40 8.6s linear 3.06s infinite; }
-@keyframes p41 { 0%, 57.67% { stroke-dashoffset: 16; opacity: 1; } 66.40% { stroke-dashoffset: -93; opacity: 1; } 66.41%, 100% { stroke-dashoffset: -93; opacity: 0; } }
-.p41 { stroke-width: 2; stroke-dasharray: 16 109; animation: p41 8.6s linear 3.06s infinite; }
-@keyframes p42 { 0%, 58.14% { stroke-dashoffset: 16; opacity: 1; } 66.86% { stroke-dashoffset: -86; opacity: 1; } 66.87%, 100% { stroke-dashoffset: -86; opacity: 0; } }
-.p42 { stroke-width: 2; stroke-dasharray: 16 102; animation: p42 8.6s linear 3.06s infinite; }
-@keyframes p43 { 0%, 58.60% { stroke-dashoffset: 16; opacity: 1; } 67.33% { stroke-dashoffset: -83; opacity: 1; } 67.34%, 100% { stroke-dashoffset: -83; opacity: 0; } }
-.p43 { stroke-width: 2; stroke-dasharray: 16 99; animation: p43 8.6s linear 3.06s infinite; }
-@keyframes p44 { 0%, 65.12% { stroke-dashoffset: 46; opacity: 1; } 75.00% { stroke-dashoffset: -207; opacity: 1; } 75.01%, 100% { stroke-dashoffset: -207; opacity: 0; } }
-.p44 { stroke-width: 3; stroke-dasharray: 46 253; animation: p44 8.6s linear 3.06s infinite; }
-@keyframes p45 { 0%, 75.00% { stroke-dashoffset: 14; opacity: 1; } 78.49% { stroke-dashoffset: -40; opacity: 1; } 78.50%, 100% { stroke-dashoffset: -40; opacity: 0; } }
-.p45 { stroke-width: 2; stroke-dasharray: 14 54; animation: p45 8.6s linear 3.06s infinite; }
-@keyframes p46 { 0%, 75.00% { stroke-dashoffset: 14; opacity: 1; } 78.49% { stroke-dashoffset: -34; opacity: 1; } 78.50%, 100% { stroke-dashoffset: -34; opacity: 0; } }
-.p46 { stroke-width: 2; stroke-dasharray: 14 48; animation: p46 8.6s linear 3.06s infinite; }
-@keyframes p47 { 0%, 75.00% { stroke-dashoffset: 14; opacity: 1; } 78.49% { stroke-dashoffset: -40; opacity: 1; } 78.50%, 100% { stroke-dashoffset: -40; opacity: 0; } }
-.p47 { stroke-width: 2; stroke-dasharray: 14 54; animation: p47 8.6s linear 3.06s infinite; }
-@keyframes fire2 { 0%, 62.21% { opacity: 0; } 64.53% { opacity: 0.95; } 72.09%, 100% { opacity: 0; } }
-.fire2 { animation: fire2 8.6s ease-out 3.06s infinite; }
 </style>
 <defs>
 <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
@@ -265,14 +155,14 @@
 <radialGradient id="wash" cx="50%" cy="0%" r="75%">
   <stop offset="0%" stop-color="#cfb991" stop-opacity="0.16"/>
   <stop offset="100%" stop-color="#cfb991" stop-opacity="0"/></radialGradient>
-<clipPath id="frame"><rect width="1200" height="480" rx="18"/></clipPath>
+<clipPath id="frame"><rect width="1200" height="400" rx="18"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
-<rect width="1200" height="480" fill="#0b0b0d"/>
-<rect width="1200" height="480" fill="url(#dots)" opacity="0.7"/>
-<rect width="1200" height="480" fill="url(#wash)"/>
+<rect width="1200" height="400" fill="#0b0b0d"/>
+<rect width="1200" height="400" fill="url(#dots)" opacity="0.7"/>
+<rect width="1200" height="400" fill="url(#wash)"/>
 </g>
-<rect x="0.5" y="0.5" width="1199" height="479" rx="18" fill="none" stroke="#26262b"/>
+<rect x="0.5" y="0.5" width="1199" height="399" rx="18" fill="none" stroke="#26262b"/>
 <text class="mono prompt" x="48" y="56">$ python sample.py --prompt "[MASK] × 14" --steps 16</text>
 <text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.66s linear 0.00s">step 00/16</text>
 <text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 0.66s">step 01/16</text>
@@ -326,133 +216,5 @@
 <g class="g2"><text class="mono typed tc c0" x="343.5" y="322">r</text><text class="mono typed tc c1" x="354.9" y="322">o</text><text class="mono typed tc c2" x="366.3" y="322">u</text><text class="mono typed tc c3" x="377.7" y="322">t</text><text class="mono typed tc c4" x="389.1" y="322">i</text><text class="mono typed tc c5" x="400.5" y="322">n</text><text class="mono typed tc c6" x="411.9" y="322">g</text><text class="mono typed tc c8" x="434.7" y="322">t</text><text class="mono typed tc c9" x="446.1" y="322">e</text><text class="mono typed tc c10" x="457.5" y="322">l</text><text class="mono typed tc c11" x="468.9" y="322">e</text><text class="mono typed tc c12" x="480.3" y="322">m</text><text class="mono typed tc c13" x="491.7" y="322">e</text><text class="mono typed tc c14" x="503.1" y="322">t</text><text class="mono typed tc c15" x="514.5" y="322">r</text><text class="mono typed tc c16" x="525.9" y="322">y</text><text class="mono typed tc c18" x="548.7" y="322">b</text><text class="mono typed tc c19" x="560.1" y="322">o</text><text class="mono typed tc c20" x="571.5" y="322">a</text><text class="mono typed tc c21" x="582.9" y="322">r</text><text class="mono typed tc c22" x="594.3" y="322">d</text><text class="mono typed tc c23" x="605.7" y="322">s</text><text class="mono typed tc c25" x="628.5" y="322">f</text><text class="mono typed tc c26" x="639.9" y="322">o</text><text class="mono typed tc c27" x="651.3" y="322">r</text><text class="mono typed tc c29" x="674.1" y="322">P</text><text class="mono typed tc c30" x="685.5" y="322">u</text><text class="mono typed tc c31" x="696.9" y="322">r</text><text class="mono typed tc c32" x="708.3" y="322">d</text><text class="mono typed tc c33" x="719.7" y="322">u</text><text class="mono typed tc c34" x="731.1" y="322">e</text><text class="mono typed tc c36" x="753.9" y="322">F</text><text class="mono typed tc c37" x="765.3" y="322">o</text><text class="mono typed tc c38" x="776.7" y="322">r</text><text class="mono typed tc c39" x="788.1" y="322">m</text><text class="mono typed tc c40" x="799.5" y="322">u</text><text class="mono typed tc c41" x="810.9" y="322">l</text><text class="mono typed tc c42" x="822.3" y="322">a</text><text class="mono typed tc c44" x="845.1" y="322">S</text><text class="mono typed tc c45" x="856.5" y="322">A</text><text class="mono typed tc c46" x="867.9" y="322">E</text><rect class="caret k2" x="344.5" y="305" width="10" height="21" rx="1.5"/></g>
 <g class="g3"><text class="mono typed tc c0" x="343.5" y="322">b</text><text class="mono typed tc c1" x="354.9" y="322">u</text><text class="mono typed tc c2" x="366.3" y="322">i</text><text class="mono typed tc c3" x="377.7" y="322">l</text><text class="mono typed tc c4" x="389.1" y="322">d</text><text class="mono typed tc c5" x="400.5" y="322">i</text><text class="mono typed tc c6" x="411.9" y="322">n</text><text class="mono typed tc c7" x="423.3" y="322">g</text><text class="mono typed tc c9" x="446.1" y="322">E</text><text class="mono typed tc c10" x="457.5" y="322">E</text><text class="mono typed tc c11" x="468.9" y="322">G</text><text class="mono typed tc c13" x="491.7" y="322">c</text><text class="mono typed tc c14" x="503.1" y="322">a</text><text class="mono typed tc c15" x="514.5" y="322">p</text><text class="mono typed tc c16" x="525.9" y="322">s</text><text class="mono typed tc c18" x="548.7" y="322">f</text><text class="mono typed tc c19" x="560.1" y="322">o</text><text class="mono typed tc c20" x="571.5" y="322">r</text><text class="mono typed tc c22" x="594.3" y="322">s</text><text class="mono typed tc c23" x="605.7" y="322">p</text><text class="mono typed tc c24" x="617.1" y="322">a</text><text class="mono typed tc c25" x="628.5" y="322">c</text><text class="mono typed tc c26" x="639.9" y="322">e</text><text class="mono typed tc c27" x="651.3" y="322">f</text><text class="mono typed tc c28" x="662.7" y="322">l</text><text class="mono typed tc c29" x="674.1" y="322">i</text><text class="mono typed tc c30" x="685.5" y="322">g</text><text class="mono typed tc c31" x="696.9" y="322">h</text><text class="mono typed tc c32" x="708.3" y="322">t</text><rect class="caret k3" x="344.5" y="305" width="10" height="21" rx="1.5"/></g>
 <g class="g4"><text class="mono typed tc c0" x="343.5" y="322">m</text><text class="mono typed tc c1" x="354.9" y="322">e</text><text class="mono typed tc c2" x="366.3" y="322">a</text><text class="mono typed tc c3" x="377.7" y="322">s</text><text class="mono typed tc c4" x="389.1" y="322">u</text><text class="mono typed tc c5" x="400.5" y="322">r</text><text class="mono typed tc c6" x="411.9" y="322">i</text><text class="mono typed tc c7" x="423.3" y="322">n</text><text class="mono typed tc c8" x="434.7" y="322">g</text><text class="mono typed tc c9" x="446.1" y="322">,</text><text class="mono typed tc c11" x="468.9" y="322">h</text><text class="mono typed tc c12" x="480.3" y="322">o</text><text class="mono typed tc c13" x="491.7" y="322">n</text><text class="mono typed tc c14" x="503.1" y="322">e</text><text class="mono typed tc c15" x="514.5" y="322">s</text><text class="mono typed tc c16" x="525.9" y="322">t</text><text class="mono typed tc c17" x="537.3" y="322">l</text><text class="mono typed tc c18" x="548.7" y="322">y</text><text class="mono typed tc c19" x="560.1" y="322">,</text><text class="mono typed tc c21" x="582.9" y="322">w</text><text class="mono typed tc c22" x="594.3" y="322">h</text><text class="mono typed tc c23" x="605.7" y="322">e</text><text class="mono typed tc c24" x="617.1" y="322">t</text><text class="mono typed tc c25" x="628.5" y="322">h</text><text class="mono typed tc c26" x="639.9" y="322">e</text><text class="mono typed tc c27" x="651.3" y="322">r</text><text class="mono typed tc c29" x="674.1" y="322">i</text><text class="mono typed tc c30" x="685.5" y="322">t</text><text class="mono typed tc c32" x="708.3" y="322">a</text><text class="mono typed tc c33" x="719.7" y="322">c</text><text class="mono typed tc c34" x="731.1" y="322">t</text><text class="mono typed tc c35" x="742.5" y="322">u</text><text class="mono typed tc c36" x="753.9" y="322">a</text><text class="mono typed tc c37" x="765.3" y="322">l</text><text class="mono typed tc c38" x="776.7" y="322">l</text><text class="mono typed tc c39" x="788.1" y="322">y</text><text class="mono typed tc c41" x="810.9" y="322">w</text><text class="mono typed tc c42" x="822.3" y="322">o</text><text class="mono typed tc c43" x="833.7" y="322">r</text><text class="mono typed tc c44" x="845.1" y="322">k</text><text class="mono typed tc c45" x="856.5" y="322">s</text><rect class="caret k4" x="344.5" y="305" width="10" height="21" rx="1.5"/></g>
-<defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<line class="den" x1="175.0" y1="392.0" x2="137.7" y2="404.8" stroke-width="2.6"/>
-<line class="den" x1="137.7" y1="404.8" x2="118.8" y2="419.8" stroke-width="1.8"/>
-<line class="den" x1="118.8" y1="419.8" x2="111.6" y2="433.6" stroke-width="1.2"/>
-<line class="den" x1="118.8" y1="419.8" x2="100.6" y2="427.8" stroke-width="1.2"/>
-<line class="den" x1="137.7" y1="404.8" x2="107.4" y2="408.4" stroke-width="1.8"/>
-<line class="den" x1="107.4" y1="408.4" x2="88.4" y2="415.1" stroke-width="1.2"/>
-<line class="den" x1="107.4" y1="408.4" x2="83.4" y2="405.3" stroke-width="1.2"/>
-<line class="den" x1="175.0" y1="392.0" x2="132.9" y2="394.3" stroke-width="2.6"/>
-<line class="den" x1="132.9" y1="394.3" x2="102.3" y2="405.2" stroke-width="1.8"/>
-<line class="den" x1="102.3" y1="405.2" x2="85.6" y2="418.4" stroke-width="1.2"/>
-<line class="den" x1="102.3" y1="405.2" x2="78.7" y2="405.5" stroke-width="1.2"/>
-<line class="den" x1="132.9" y1="394.3" x2="104.3" y2="387.0" stroke-width="1.8"/>
-<line class="den" x1="104.3" y1="387.0" x2="83.1" y2="386.3" stroke-width="1.2"/>
-<line class="den" x1="104.3" y1="387.0" x2="85.6" y2="376.3" stroke-width="1.2"/>
-<line class="den" x1="175.0" y1="392.0" x2="132.0" y2="380.9" stroke-width="2.6"/>
-<line class="den" x1="132.0" y1="380.9" x2="98.5" y2="381.9" stroke-width="1.8"/>
-<line class="den" x1="98.5" y1="381.9" x2="77.3" y2="388.4" stroke-width="1.2"/>
-<line class="den" x1="98.5" y1="381.9" x2="75.4" y2="377.7" stroke-width="1.2"/>
-<line class="den" x1="132.0" y1="380.9" x2="107.2" y2="364.8" stroke-width="1.8"/>
-<line class="den" x1="107.2" y1="364.8" x2="83.6" y2="357.5" stroke-width="1.2"/>
-<line class="den" x1="107.2" y1="364.8" x2="96.3" y2="349.4" stroke-width="1.2"/>
-<path class="axon" d="M175.0 392.0 L235.0 387.0 L295.0 397.0 L350.0 389.0 L380.0 394.4"/><path class="myelin" d="M175.0 392.0 L235.0 387.0 L295.0 397.0 L350.0 389.0 L380.0 394.4" stroke-dashoffset="-20"/>
-<line class="den" x1="380.0" y1="394.4" x2="414.0" y2="372.4" stroke-width="1.4"/><circle class="bulb" cx="414.0" cy="372.4" r="3.5"/>
-<line class="den" x1="380.0" y1="394.4" x2="414.0" y2="394.4" stroke-width="1.4"/><circle class="bulb" cx="414.0" cy="394.4" r="3.5"/>
-<line class="den" x1="380.0" y1="394.4" x2="414.0" y2="416.4" stroke-width="1.4"/><circle class="bulb" cx="414.0" cy="416.4" r="3.5"/>
-<line class="den" x1="525.0" y1="397.0" x2="485.5" y2="407.9" stroke-width="2.6"/>
-<line class="den" x1="485.5" y1="407.9" x2="462.3" y2="423.3" stroke-width="1.8"/>
-<line class="den" x1="462.3" y1="423.3" x2="453.0" y2="439.6" stroke-width="1.2"/>
-<line class="den" x1="462.3" y1="423.3" x2="438.5" y2="430.9" stroke-width="1.2"/>
-<line class="den" x1="485.5" y1="407.9" x2="454.3" y2="409.6" stroke-width="1.8"/>
-<line class="den" x1="454.3" y1="409.6" x2="434.9" y2="416.9" stroke-width="1.2"/>
-<line class="den" x1="454.3" y1="409.6" x2="433.7" y2="405.4" stroke-width="1.2"/>
-<line class="den" x1="525.0" y1="397.0" x2="477.4" y2="395.8" stroke-width="2.6"/>
-<line class="den" x1="477.4" y1="395.8" x2="441.4" y2="404.9" stroke-width="1.8"/>
-<line class="den" x1="441.4" y1="404.9" x2="418.2" y2="417.9" stroke-width="1.2"/>
-<line class="den" x1="441.4" y1="404.9" x2="412.3" y2="404.1" stroke-width="1.2"/>
-<line class="den" x1="477.4" y1="395.8" x2="442.3" y2="385.6" stroke-width="1.8"/>
-<line class="den" x1="442.3" y1="385.6" x2="414.0" y2="386.6" stroke-width="1.2"/>
-<line class="den" x1="442.3" y1="385.6" x2="423.9" y2="372.6" stroke-width="1.2"/>
-<line class="den" x1="525.0" y1="397.0" x2="483.4" y2="382.5" stroke-width="2.6"/>
-<line class="den" x1="483.4" y1="382.5" x2="446.4" y2="382.3" stroke-width="1.8"/>
-<line class="den" x1="446.4" y1="382.3" x2="420.7" y2="388.3" stroke-width="1.2"/>
-<line class="den" x1="446.4" y1="382.3" x2="423.2" y2="375.4" stroke-width="1.2"/>
-<line class="den" x1="483.4" y1="382.5" x2="461.1" y2="365.8" stroke-width="1.8"/>
-<line class="den" x1="461.1" y1="365.8" x2="441.6" y2="357.9" stroke-width="1.2"/>
-<line class="den" x1="461.1" y1="365.8" x2="453.6" y2="350.7" stroke-width="1.2"/>
-<path class="axon" d="M525.0 397.0 L585.0 392.0 L645.0 402.0 L700.0 394.0 L730.0 395.0"/><path class="myelin" d="M525.0 397.0 L585.0 392.0 L645.0 402.0 L700.0 394.0 L730.0 395.0" stroke-dashoffset="-20"/>
-<line class="den" x1="730.0" y1="395.0" x2="764.0" y2="373.0" stroke-width="1.4"/><circle class="bulb" cx="764.0" cy="373.0" r="3.5"/>
-<line class="den" x1="730.0" y1="395.0" x2="764.0" y2="395.0" stroke-width="1.4"/><circle class="bulb" cx="764.0" cy="395.0" r="3.5"/>
-<line class="den" x1="730.0" y1="395.0" x2="764.0" y2="417.0" stroke-width="1.4"/><circle class="bulb" cx="764.0" cy="417.0" r="3.5"/>
-<line class="den" x1="875.0" y1="389.0" x2="831.0" y2="403.6" stroke-width="2.6"/>
-<line class="den" x1="831.0" y1="403.6" x2="804.1" y2="420.6" stroke-width="1.8"/>
-<line class="den" x1="804.1" y1="420.6" x2="791.2" y2="438.8" stroke-width="1.2"/>
-<line class="den" x1="804.1" y1="420.6" x2="776.5" y2="426.8" stroke-width="1.2"/>
-<line class="den" x1="831.0" y1="403.6" x2="795.2" y2="406.4" stroke-width="1.8"/>
-<line class="den" x1="795.2" y1="406.4" x2="769.3" y2="415.3" stroke-width="1.2"/>
-<line class="den" x1="795.2" y1="406.4" x2="771.4" y2="400.7" stroke-width="1.2"/>
-<line class="den" x1="875.0" y1="389.0" x2="832.8" y2="391.0" stroke-width="2.6"/>
-<line class="den" x1="832.8" y1="391.0" x2="803.5" y2="399.4" stroke-width="1.8"/>
-<line class="den" x1="803.5" y1="399.4" x2="787.2" y2="410.4" stroke-width="1.2"/>
-<line class="den" x1="803.5" y1="399.4" x2="780.2" y2="401.1" stroke-width="1.2"/>
-<line class="den" x1="832.8" y1="391.0" x2="801.9" y2="384.9" stroke-width="1.8"/>
-<line class="den" x1="801.9" y1="384.9" x2="777.3" y2="387.8" stroke-width="1.2"/>
-<line class="den" x1="801.9" y1="384.9" x2="782.2" y2="374.5" stroke-width="1.2"/>
-<line class="den" x1="875.0" y1="389.0" x2="838.6" y2="376.5" stroke-width="2.6"/>
-<line class="den" x1="838.6" y1="376.5" x2="806.6" y2="376.1" stroke-width="1.8"/>
-<line class="den" x1="806.6" y1="376.1" x2="783.4" y2="383.2" stroke-width="1.2"/>
-<line class="den" x1="806.6" y1="376.1" x2="784.6" y2="370.2" stroke-width="1.2"/>
-<line class="den" x1="838.6" y1="376.5" x2="815.9" y2="361.6" stroke-width="1.8"/>
-<line class="den" x1="815.9" y1="361.6" x2="796.6" y2="354.9" stroke-width="1.2"/>
-<line class="den" x1="815.9" y1="361.6" x2="805.3" y2="348.1" stroke-width="1.2"/>
-<path class="axon" d="M875.0 389.0 L935.0 384.0 L995.0 394.0 L1050.0 386.0 L1080.0 387.7"/><path class="myelin" d="M875.0 389.0 L935.0 384.0 L995.0 394.0 L1050.0 386.0 L1080.0 387.7" stroke-dashoffset="-20"/>
-<line class="den" x1="1080.0" y1="387.7" x2="1114.0" y2="365.7" stroke-width="1.4"/><circle class="bulb" cx="1114.0" cy="365.7" r="3.5"/>
-<line class="den" x1="1080.0" y1="387.7" x2="1114.0" y2="387.7" stroke-width="1.4"/><circle class="bulb" cx="1114.0" cy="387.7" r="3.5"/>
-<line class="den" x1="1080.0" y1="387.7" x2="1114.0" y2="409.7" stroke-width="1.4"/><circle class="bulb" cx="1114.0" cy="409.7" r="3.5"/>
-<path class="pulse p0" d="M111.6 433.6 L118.8 419.8 L137.7 404.8 L175.0 392.0"/>
-<path class="pulse p1" d="M100.6 427.8 L118.8 419.8 L137.7 404.8 L175.0 392.0"/>
-<path class="pulse p2" d="M88.4 415.1 L107.4 408.4 L137.7 404.8 L175.0 392.0"/>
-<path class="pulse p3" d="M83.4 405.3 L107.4 408.4 L137.7 404.8 L175.0 392.0"/>
-<path class="pulse p4" d="M85.6 418.4 L102.3 405.2 L132.9 394.3 L175.0 392.0"/>
-<path class="pulse p5" d="M78.7 405.5 L102.3 405.2 L132.9 394.3 L175.0 392.0"/>
-<path class="pulse p6" d="M83.1 386.3 L104.3 387.0 L132.9 394.3 L175.0 392.0"/>
-<path class="pulse p7" d="M85.6 376.3 L104.3 387.0 L132.9 394.3 L175.0 392.0"/>
-<path class="pulse p8" d="M77.3 388.4 L98.5 381.9 L132.0 380.9 L175.0 392.0"/>
-<path class="pulse p9" d="M75.4 377.7 L98.5 381.9 L132.0 380.9 L175.0 392.0"/>
-<path class="pulse p10" d="M83.6 357.5 L107.2 364.8 L132.0 380.9 L175.0 392.0"/>
-<path class="pulse p11" d="M96.3 349.4 L107.2 364.8 L132.0 380.9 L175.0 392.0"/>
-<path class="pulse p12" d="M175.0 392.0 L235.0 387.0 L295.0 397.0 L350.0 389.0 L380.0 394.4"/>
-<path class="pulse p13" d="M380.0 394.4 L414.0 372.4"/>
-<path class="pulse p14" d="M380.0 394.4 L414.0 394.4"/>
-<path class="pulse p15" d="M380.0 394.4 L414.0 416.4"/>
-<circle class="soma" cx="175" cy="392" r="13"/><circle class="fire fire0" cx="175" cy="392" r="9"/>
-<path class="pulse p16" d="M453.0 439.6 L462.3 423.3 L485.5 407.9 L525.0 397.0"/>
-<path class="pulse p17" d="M438.5 430.9 L462.3 423.3 L485.5 407.9 L525.0 397.0"/>
-<path class="pulse p18" d="M434.9 416.9 L454.3 409.6 L485.5 407.9 L525.0 397.0"/>
-<path class="pulse p19" d="M433.7 405.4 L454.3 409.6 L485.5 407.9 L525.0 397.0"/>
-<path class="pulse p20" d="M418.2 417.9 L441.4 404.9 L477.4 395.8 L525.0 397.0"/>
-<path class="pulse p21" d="M412.3 404.1 L441.4 404.9 L477.4 395.8 L525.0 397.0"/>
-<path class="pulse p22" d="M414.0 386.6 L442.3 385.6 L477.4 395.8 L525.0 397.0"/>
-<path class="pulse p23" d="M423.9 372.6 L442.3 385.6 L477.4 395.8 L525.0 397.0"/>
-<path class="pulse p24" d="M420.7 388.3 L446.4 382.3 L483.4 382.5 L525.0 397.0"/>
-<path class="pulse p25" d="M423.2 375.4 L446.4 382.3 L483.4 382.5 L525.0 397.0"/>
-<path class="pulse p26" d="M441.6 357.9 L461.1 365.8 L483.4 382.5 L525.0 397.0"/>
-<path class="pulse p27" d="M453.6 350.7 L461.1 365.8 L483.4 382.5 L525.0 397.0"/>
-<path class="pulse p28" d="M525.0 397.0 L585.0 392.0 L645.0 402.0 L700.0 394.0 L730.0 395.0"/>
-<path class="pulse p29" d="M730.0 395.0 L764.0 373.0"/>
-<path class="pulse p30" d="M730.0 395.0 L764.0 395.0"/>
-<path class="pulse p31" d="M730.0 395.0 L764.0 417.0"/>
-<circle class="soma" cx="525" cy="397" r="13"/><circle class="fire fire1" cx="525" cy="397" r="9"/>
-<path class="pulse p32" d="M791.2 438.8 L804.1 420.6 L831.0 403.6 L875.0 389.0"/>
-<path class="pulse p33" d="M776.5 426.8 L804.1 420.6 L831.0 403.6 L875.0 389.0"/>
-<path class="pulse p34" d="M769.3 415.3 L795.2 406.4 L831.0 403.6 L875.0 389.0"/>
-<path class="pulse p35" d="M771.4 400.7 L795.2 406.4 L831.0 403.6 L875.0 389.0"/>
-<path class="pulse p36" d="M787.2 410.4 L803.5 399.4 L832.8 391.0 L875.0 389.0"/>
-<path class="pulse p37" d="M780.2 401.1 L803.5 399.4 L832.8 391.0 L875.0 389.0"/>
-<path class="pulse p38" d="M777.3 387.8 L801.9 384.9 L832.8 391.0 L875.0 389.0"/>
-<path class="pulse p39" d="M782.2 374.5 L801.9 384.9 L832.8 391.0 L875.0 389.0"/>
-<path class="pulse p40" d="M783.4 383.2 L806.6 376.1 L838.6 376.5 L875.0 389.0"/>
-<path class="pulse p41" d="M784.6 370.2 L806.6 376.1 L838.6 376.5 L875.0 389.0"/>
-<path class="pulse p42" d="M796.6 354.9 L815.9 361.6 L838.6 376.5 L875.0 389.0"/>
-<path class="pulse p43" d="M805.3 348.1 L815.9 361.6 L838.6 376.5 L875.0 389.0"/>
-<path class="pulse p44" d="M875.0 389.0 L935.0 384.0 L995.0 394.0 L1050.0 386.0 L1080.0 387.7"/>
-<path class="pulse p45" d="M1080.0 387.7 L1114.0 365.7"/>
-<path class="pulse p46" d="M1080.0 387.7 L1114.0 387.7"/>
-<path class="pulse p47" d="M1080.0 387.7 L1114.0 409.7"/>
-<circle class="soma" cx="875" cy="389" r="13"/><circle class="fire fire2" cx="875" cy="389" r="9"/>
-<text class="mono foot" x="48" y="462">name · masked diffusion, 16 denoising steps</text>
-<text class="mono foot" x="1152" y="462" text-anchor="end">neurons · dendrites in, spike out</text>
+<text class="mono foot" x="600.0" y="370" text-anchor="middle">name · masked diffusion, 16 denoising steps</text>
 </svg>

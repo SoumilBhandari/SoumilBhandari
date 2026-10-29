@@ -5,7 +5,6 @@
 Edit the data below and re-run; stats.py handles the live GitHub cards.
 """
 
-import math
 import random
 from pathlib import Path
 
@@ -78,97 +77,6 @@ TIMELINE = [
 ]
 
 
-def dist(a, b):
-    return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
-
-
-def polyline(points):
-    d = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in points)
-    return d, sum(dist(a, b) for a, b in zip(points, points[1:]))
-
-
-def dendrite_tree(soma, rng, squash=0.7):
-    """Branches fanning left from the soma, three levels deep. Returns
-    (edges as (depth, a, b), paths from each tip back to the soma)."""
-    edges, paths = [], []
-
-    def grow(node, angle, length, depth, trail):
-        rad = math.radians(angle)
-        tip = (node[0] + length * math.cos(rad), node[1] + squash * length * math.sin(rad))
-        edges.append((depth, node, tip))
-        if depth == 2:
-            paths.append([tip] + trail[::-1])
-            return
-        for spread in (-1, 1):
-            grow(tip, angle + spread * rng.uniform(16, 26), length * rng.uniform(0.68, 0.82),
-                 depth + 1, trail + [tip])
-
-    for angle in (156, 180, 204):
-        grow(soma, angle + rng.uniform(-6, 6), rng.uniform(40, 50), 0, [soma])
-    return edges, paths
-
-
-def neurons(delay=0.0):
-    """Three dendritic neurons in a chain. A spike runs in along each cell's
-    dendrites, the soma lights up, and it fires down the myelinated axon into
-    the next cell's dendrites."""
-    rng = random.Random(7)
-    somas = [(175, 392), (525, 397), (875, 389)]
-    step, cycle = 2.3, 8.6
-    width = {0: 2.6, 1: 1.8, 2: 1.2}
-    css = [f"""
-.den {{ fill: none; stroke: #4d4537; stroke-linecap: round; stroke-linejoin: round; }}
-.axon {{ fill: none; stroke: #4d4537; stroke-width: 2; stroke-linejoin: round; }}
-.myelin {{ fill: none; stroke: #2e2a21; stroke-width: 8; stroke-linecap: round; stroke-dasharray: 38 9; }}
-.pulse {{ fill: none; stroke: {GOLD}; stroke-linecap: round; stroke-linejoin: round; opacity: 0; filter: url(#glow); }}
-.soma {{ fill: #2a251c; stroke: {GOLD_DIM}; stroke-width: 2; }}
-.fire {{ fill: {GOLD}; opacity: 0; filter: url(#glow); }}
-.bulb {{ fill: {GOLD_DIM}; }}
-"""]
-    base = ['<defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%">'
-            '<feGaussianBlur stdDeviation="2.5" result="b"/>'
-            '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>']
-    top, n = [], 0
-
-    def pulse(points, start, dur, seg, w):
-        nonlocal n
-        d, L = polyline(points)
-        a, b = 100 * start / cycle, 100 * (start + dur) / cycle
-        css.append(f"@keyframes p{n} {{ 0%, {a:.2f}% {{ stroke-dashoffset: {seg}; opacity: 1; }} "
-                   f"{b:.2f}% {{ stroke-dashoffset: {-L:.0f}; opacity: 1; }} "
-                   f"{b + 0.01:.2f}%, 100% {{ stroke-dashoffset: {-L:.0f}; opacity: 0; }} }}\n"
-                   f".p{n} {{ stroke-width: {w}; stroke-dasharray: {seg} {L + seg:.0f}; "
-                   f"animation: p{n} {cycle}s linear {delay:.2f}s infinite; }}\n")
-        top.append(f'<path class="pulse p{n}" d="{d}"/>')
-        n += 1
-
-    for k, (sx, sy) in enumerate(somas):
-        t = k * step
-        edges, paths = dendrite_tree((sx, sy), rng)
-        for depth, a, b in edges:
-            base.append(f'<line class="den" x1="{a[0]:.1f}" y1="{a[1]:.1f}" x2="{b[0]:.1f}" '
-                        f'y2="{b[1]:.1f}" stroke-width="{width[depth]}"/>')
-        for m, path in enumerate(paths):
-            pulse(path, t + 0.04 * m, 0.75, 16, 2)
-        end = (sx + 205, sy + rng.uniform(-4, 4))
-        axon = [(sx, sy), (sx + 60, sy - 5), (sx + 120, sy + 5), (sx + 175, sy - 3), end]
-        d, _ = polyline(axon)
-        base.append(f'<path class="axon" d="{d}"/><path class="myelin" d="{d}" stroke-dashoffset="-20"/>')
-        pulse(axon, t + 1.0, 0.85, 46, 3)
-        for dy in (-22, 0, 22):
-            tip = (end[0] + 34, end[1] + dy)
-            base.append(f'<line class="den" x1="{end[0]:.1f}" y1="{end[1]:.1f}" x2="{tip[0]:.1f}" '
-                        f'y2="{tip[1]:.1f}" stroke-width="1.4"/><circle class="bulb" cx="{tip[0]:.1f}" cy="{tip[1]:.1f}" r="3.5"/>')
-            pulse([end, tip], t + 1.85, 0.3, 14, 2)
-        f0, f1, f2 = (100 * (t + v) / cycle for v in (0.75, 0.95, 1.6))
-        css.append(f"@keyframes fire{k} {{ 0%, {f0:.2f}% {{ opacity: 0; }} {f1:.2f}% {{ opacity: 0.95; }} "
-                   f"{f2:.2f}%, 100% {{ opacity: 0; }} }}\n"
-                   f".fire{k} {{ animation: fire{k} {cycle}s ease-out {delay:.2f}s infinite; }}\n")
-        top.append(f'<circle class="soma" cx="{sx}" cy="{sy}" r="13"/>'
-                   f'<circle class="fire fire{k}" cx="{sx}" cy="{sy}" r="9"/>')
-    return "".join(css), "\n".join(base + top)
-
-
 def backdrop(W, H):
     return f"""<defs>
 <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
@@ -188,9 +96,8 @@ def backdrop(W, H):
 
 def hero():
     """The name decodes from [MASK] tokens over 16 steps, the way a masked-diffusion
-    LM samples, then a terminal line cycles through what I work on. Three dendritic
-    neurons pass a spike along the bottom."""
-    W, H = 1200, 480
+    LM samples, then a terminal line cycles through what I work on."""
+    W, H = 1200, 400
     T0, DT, STEPS = 0.5, 0.16, 16
     t = lambda s: 0 if s == 0 else T0 + s * DT
     done = t(STEPS)
@@ -279,11 +186,8 @@ def hero():
         body.append(f'<g class="g{i}">{chars}<rect class="caret k{i}" x="{tx + 1:.1f}" y="{ty - 17}" '
                     f'width="10" height="21" rx="1.5"/></g>')
 
-    ncss, nbody = neurons(delay=done)
-    css += ncss
-    body.append(nbody)
-    body.append(f'<text class="mono foot" x="48" y="462">name \u00b7 masked diffusion, 16 denoising steps</text>')
-    body.append(f'<text class="mono foot" x="{W - 48}" y="462" text-anchor="end">neurons \u00b7 dendrites in, spike out</text>')
+    body.append(f'<text class="mono foot" x="{W / 2}" y="{H - 30}" text-anchor="middle">'
+                f'name \u00b7 masked diffusion, 16 denoising steps</text>')
     return svg(W, H, "\n".join(body), css, f"{NAME}: {SUBTITLE[0]}, {SUBTITLE[1]}")
 
 
