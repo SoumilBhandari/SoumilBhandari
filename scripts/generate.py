@@ -210,7 +210,7 @@ def hero():
 .sub {{ font-size: 24px; fill: {TEXT}; text-anchor: middle; animation: up 0.8s ease-out {done + 0.15:.2f}s both; }}
 .foot {{ font-size: 14px; fill: {GOLD_DIM}; animation: fade 1s ease-out {done + 0.4:.2f}s both; }}
 .typed {{ font-size: 19px; fill: {TEXT}; }}
-.caret {{ fill: {GOLD}; opacity: 0; }}
+.caret {{ fill: {GOLD}; }}
 .chev {{ font-size: 19px; fill: {GOLD}; animation: fade 0.6s ease-out {done + 0.4:.2f}s both; }}
 @keyframes show {{ from, to {{ opacity: 1; }} }}
 @keyframes hide {{ from, to {{ opacity: 0; }} }}
@@ -246,42 +246,38 @@ def hero():
     body.append(f'<text class="sans sub" x="{W / 2}" y="264">{esc(a)}'
                 f'<tspan fill="{GOLD}" dx="14">·</tspan><tspan dx="14">{esc(b)}</tspan></text>')
 
-    # Typing line. textLength pins every glyph to a fixed advance, so the clip
-    # and caret line up on any monospace font.
-    adv, ty = 11.4, 322
+    # Typing line. Each character is its own <text> on a fixed monospace grid and
+    # fades in on schedule; Safari ignores animations inside <clipPath>, so this
+    # sticks to plain opacity and transforms.
+    adv, ty, dt = 11.4, 322, 0.045
     slot, start = 4.6, done + 0.6
     cycle = slot * len(PHRASES)
     longest = max(len(p) for p in PHRASES)
     xs = (W - (longest + 2) * adv) / 2
     tx = xs + 2 * adv
-    body.append(f'<text class="mono chev" x="{xs:.1f}" y="{ty}">›</text>')
-    defs, kf = [], []
+    shown = 100 * (slot - 0.35) / cycle
+    css += f"""
+.tc {{ animation-duration: {cycle:.1f}s; animation-iteration-count: infinite;
+  animation-fill-mode: both; animation-timing-function: linear; }}
+@keyframes slot {{ 0% {{ opacity: 0; }} 0.01%, {shown:.2f}% {{ opacity: 1; }} {shown + 0.01:.2f}%, 100% {{ opacity: 0; }} }}
+""" + "".join(f"@keyframes ch{k} {{ 0%, {100 * (k + 1) * dt / cycle:.3f}% {{ opacity: 0; }} "
+              f"{100 * (k + 1) * dt / cycle + 0.01:.3f}%, 100% {{ opacity: 1; }} }}\n.c{k} {{ animation-name: ch{k}; }}\n"
+              for k in range(longest))
+    body.append(f'<text class="mono chev" x="{xs:.1f}" y="{ty}">\u203a</text>')
     for i, p in enumerate(PHRASES):
-        n, w = len(p), len(p) * adv
-        typing, erase = n * 0.045, 0.5
-        hold = slot - typing - erase - 0.3
-        p1, p2, p3 = (100 * v / cycle for v in (typing, typing + hold, typing + hold + erase))
-        kf.append(f"""
-@keyframes type{i} {{ 0% {{ transform: scaleX(0); animation-timing-function: steps({n}, end); }}
-  {p1:.2f}% {{ transform: scaleX(1); animation-timing-function: linear; }}
-  {p2:.2f}% {{ transform: scaleX(1); animation-timing-function: steps({n}, end); }}
-  {p3:.2f}%, 100% {{ transform: scaleX(0); }} }}
-@keyframes caret{i} {{ 0% {{ opacity: 0; transform: translateX(0); animation-timing-function: step-end; }}
-  0.05% {{ opacity: 1; transform: translateX(0); animation-timing-function: steps({n}, end); }}
-  {p1:.2f}% {{ opacity: 1; transform: translateX({w:.1f}px); animation-timing-function: linear; }}
-  {p2:.2f}% {{ opacity: 1; transform: translateX({w:.1f}px); animation-timing-function: steps({n}, end); }}
-  {p3:.2f}% {{ opacity: 1; transform: translateX(0); }}
-  {p3 + 0.01:.2f}%, 100% {{ opacity: 0; transform: translateX(0); }} }}
-.r{i} {{ transform-origin: {tx:.1f}px 0; {"" if i == 0 else "transform: scaleX(0);"}
-  animation: type{i} {cycle:.1f}s {start + i * slot:.2f}s infinite both; }}
-.k{i} {{ animation: caret{i} {cycle:.1f}s {start + i * slot:.2f}s infinite both; }}
-""")
-        defs.append(f'<clipPath id="c{i}"><rect class="r{i}" x="{tx:.1f}" y="{ty - 20}" width="{w + 1:.1f}" height="28"/></clipPath>')
-        body.append(f'<text class="mono typed" x="{tx:.1f}" y="{ty}" textLength="{w:.1f}" lengthAdjust="spacing" '
-                    f'clip-path="url(#c{i})">{esc(p)}</text>')
-        body.append(f'<rect class="caret k{i}" x="{tx + 1:.1f}" y="{ty - 17}" width="10" height="21" rx="1.5"/>')
-    css += "".join(kf)
-    body.insert(1, f"<defs>{''.join(defs)}</defs>")
+        n, delay = len(p), start + i * slot
+        p1 = 100 * n * dt / cycle
+        css += f"""
+.g{i} {{ {"" if i == 0 else "opacity: 0;"} animation: slot {cycle:.1f}s linear {delay:.2f}s infinite both; }}
+.g{i} .tc {{ animation-delay: {delay:.2f}s; }}
+@keyframes caret{i} {{ 0% {{ transform: translateX(0); animation-timing-function: steps({n}, end); }}
+  {p1:.2f}%, 100% {{ transform: translateX({n * adv:.1f}px); }} }}
+.k{i} {{ animation: caret{i} {cycle:.1f}s {delay:.2f}s infinite both; }}
+"""
+        chars = "".join(f'<text class="mono typed tc c{k}" x="{tx + k * adv:.1f}" y="{ty}">{esc(ch)}</text>'
+                        for k, ch in enumerate(p) if ch != " ")
+        body.append(f'<g class="g{i}">{chars}<rect class="caret k{i}" x="{tx + 1:.1f}" y="{ty - 17}" '
+                    f'width="10" height="21" rx="1.5"/></g>')
 
     ncss, nbody = neurons(delay=done)
     css += ncss
@@ -330,22 +326,19 @@ def terminal():
 .nm {{ font-size: 19px; font-weight: 700; fill: {GOLD}; }}
 .ds {{ font-size: 19px; fill: {MUTED}; }}
 .tg {{ font-size: 15px; fill: {GOLD_DIM}; text-anchor: end; }}
-.cmd {{ transform-origin: {cx:.1f}px 0; animation: type {type_t:.2f}s steps({len(cmd)}, end) {t0}s both; }}
 .ln {{ animation: on 0.2s ease-out both; }}
 .cur {{ fill: {GOLD}; animation: on 0.2s {listed + len(BUILDS) * 0.09:.2f}s both, blink 1.1s steps(1) {listed + len(BUILDS) * 0.09:.2f}s infinite; }}
-@keyframes type {{ from {{ transform: scaleX(0); }} }}
 @keyframes on {{ from {{ opacity: 0; }} }}
 @keyframes blink {{ 50% {{ opacity: 0; }} }}
 """
-    w = len(cmd) * adv
     body = [card_bg(W, H),
             f'<line x1="0" y1="48" x2="{W}" y2="48" stroke="{BORDER}"/>',
             f'<circle cx="30" cy="24" r="6" fill="{GOLD_DIM}"/>',
             f'<circle cx="52" cy="24" r="6" fill="#3a3630"/><circle cx="74" cy="24" r="6" fill="#3a3630"/>',
             f'<text class="mono bar" x="{W / 2}" y="29">soumil@purdue: ~/builds</text>',
-            f'<defs><clipPath id="cc"><rect class="cmd" x="{cx:.1f}" y="{top - 22}" width="{w + 1:.1f}" height="30"/></clipPath></defs>',
-            f'<text class="mono p" x="40" y="{top}">$</text>',
-            f'<text class="mono t" x="{cx:.1f}" y="{top}" textLength="{w:.1f}" lengthAdjust="spacing" clip-path="url(#cc)">{esc(cmd)}</text>']
+            f'<text class="mono p" x="40" y="{top}">$</text>']
+    body += [f'<text class="mono t" x="{cx + k * adv:.1f}" y="{top}" style="animation: on 0.01s step-end '
+             f'{t0 + (k + 1) * 0.05:.2f}s both">{esc(ch)}</text>' for k, ch in enumerate(cmd) if ch != " "]
     for k, (name, desc, tag) in enumerate(BUILDS):
         y = top + pitch * (k + 1) + 8
         body.append(f'<g class="ln" style="animation-delay: {listed + k * 0.09:.2f}s">'

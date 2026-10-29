@@ -12,7 +12,7 @@
 .sub { font-size: 24px; fill: #f3f1ed; text-anchor: middle; animation: up 0.8s ease-out 3.21s both; }
 .foot { font-size: 14px; fill: #8d7f5f; animation: fade 1s ease-out 3.46s both; }
 .typed { font-size: 19px; fill: #f3f1ed; }
-.caret { fill: #cfb991; opacity: 0; }
+.caret { fill: #cfb991; }
 .chev { font-size: 19px; fill: #cfb991; animation: fade 0.6s ease-out 3.46s both; }
 @keyframes show { from, to { opacity: 1; } }
 @keyframes hide { from, to { opacity: 0; } }
@@ -21,74 +21,132 @@
 @keyframes up { from { opacity: 0; transform: translateY(10px); } }
 @keyframes fade { from { opacity: 0; } }
 
-@keyframes type0 { 0% { transform: scaleX(0); animation-timing-function: steps(47, end); }
-  9.20% { transform: scaleX(1); animation-timing-function: linear; }
-  16.52% { transform: scaleX(1); animation-timing-function: steps(47, end); }
-  18.70%, 100% { transform: scaleX(0); } }
-@keyframes caret0 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
-  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(47, end); }
-  9.20% { opacity: 1; transform: translateX(535.8px); animation-timing-function: linear; }
-  16.52% { opacity: 1; transform: translateX(535.8px); animation-timing-function: steps(47, end); }
-  18.70% { opacity: 1; transform: translateX(0); }
-  18.71%, 100% { opacity: 0; transform: translateX(0); } }
-.r0 { transform-origin: 343.5px 0; 
-  animation: type0 23.0s 3.66s infinite both; }
+.tc { animation-duration: 23.0s; animation-iteration-count: infinite;
+  animation-fill-mode: both; animation-timing-function: linear; }
+@keyframes slot { 0% { opacity: 0; } 0.01%, 18.48% { opacity: 1; } 18.49%, 100% { opacity: 0; } }
+@keyframes ch0 { 0%, 0.196% { opacity: 0; } 0.206%, 100% { opacity: 1; } }
+.c0 { animation-name: ch0; }
+@keyframes ch1 { 0%, 0.391% { opacity: 0; } 0.401%, 100% { opacity: 1; } }
+.c1 { animation-name: ch1; }
+@keyframes ch2 { 0%, 0.587% { opacity: 0; } 0.597%, 100% { opacity: 1; } }
+.c2 { animation-name: ch2; }
+@keyframes ch3 { 0%, 0.783% { opacity: 0; } 0.793%, 100% { opacity: 1; } }
+.c3 { animation-name: ch3; }
+@keyframes ch4 { 0%, 0.978% { opacity: 0; } 0.988%, 100% { opacity: 1; } }
+.c4 { animation-name: ch4; }
+@keyframes ch5 { 0%, 1.174% { opacity: 0; } 1.184%, 100% { opacity: 1; } }
+.c5 { animation-name: ch5; }
+@keyframes ch6 { 0%, 1.370% { opacity: 0; } 1.380%, 100% { opacity: 1; } }
+.c6 { animation-name: ch6; }
+@keyframes ch7 { 0%, 1.565% { opacity: 0; } 1.575%, 100% { opacity: 1; } }
+.c7 { animation-name: ch7; }
+@keyframes ch8 { 0%, 1.761% { opacity: 0; } 1.771%, 100% { opacity: 1; } }
+.c8 { animation-name: ch8; }
+@keyframes ch9 { 0%, 1.957% { opacity: 0; } 1.967%, 100% { opacity: 1; } }
+.c9 { animation-name: ch9; }
+@keyframes ch10 { 0%, 2.152% { opacity: 0; } 2.162%, 100% { opacity: 1; } }
+.c10 { animation-name: ch10; }
+@keyframes ch11 { 0%, 2.348% { opacity: 0; } 2.358%, 100% { opacity: 1; } }
+.c11 { animation-name: ch11; }
+@keyframes ch12 { 0%, 2.543% { opacity: 0; } 2.553%, 100% { opacity: 1; } }
+.c12 { animation-name: ch12; }
+@keyframes ch13 { 0%, 2.739% { opacity: 0; } 2.749%, 100% { opacity: 1; } }
+.c13 { animation-name: ch13; }
+@keyframes ch14 { 0%, 2.935% { opacity: 0; } 2.945%, 100% { opacity: 1; } }
+.c14 { animation-name: ch14; }
+@keyframes ch15 { 0%, 3.130% { opacity: 0; } 3.140%, 100% { opacity: 1; } }
+.c15 { animation-name: ch15; }
+@keyframes ch16 { 0%, 3.326% { opacity: 0; } 3.336%, 100% { opacity: 1; } }
+.c16 { animation-name: ch16; }
+@keyframes ch17 { 0%, 3.522% { opacity: 0; } 3.532%, 100% { opacity: 1; } }
+.c17 { animation-name: ch17; }
+@keyframes ch18 { 0%, 3.717% { opacity: 0; } 3.727%, 100% { opacity: 1; } }
+.c18 { animation-name: ch18; }
+@keyframes ch19 { 0%, 3.913% { opacity: 0; } 3.923%, 100% { opacity: 1; } }
+.c19 { animation-name: ch19; }
+@keyframes ch20 { 0%, 4.109% { opacity: 0; } 4.119%, 100% { opacity: 1; } }
+.c20 { animation-name: ch20; }
+@keyframes ch21 { 0%, 4.304% { opacity: 0; } 4.314%, 100% { opacity: 1; } }
+.c21 { animation-name: ch21; }
+@keyframes ch22 { 0%, 4.500% { opacity: 0; } 4.510%, 100% { opacity: 1; } }
+.c22 { animation-name: ch22; }
+@keyframes ch23 { 0%, 4.696% { opacity: 0; } 4.706%, 100% { opacity: 1; } }
+.c23 { animation-name: ch23; }
+@keyframes ch24 { 0%, 4.891% { opacity: 0; } 4.901%, 100% { opacity: 1; } }
+.c24 { animation-name: ch24; }
+@keyframes ch25 { 0%, 5.087% { opacity: 0; } 5.097%, 100% { opacity: 1; } }
+.c25 { animation-name: ch25; }
+@keyframes ch26 { 0%, 5.283% { opacity: 0; } 5.293%, 100% { opacity: 1; } }
+.c26 { animation-name: ch26; }
+@keyframes ch27 { 0%, 5.478% { opacity: 0; } 5.488%, 100% { opacity: 1; } }
+.c27 { animation-name: ch27; }
+@keyframes ch28 { 0%, 5.674% { opacity: 0; } 5.684%, 100% { opacity: 1; } }
+.c28 { animation-name: ch28; }
+@keyframes ch29 { 0%, 5.870% { opacity: 0; } 5.880%, 100% { opacity: 1; } }
+.c29 { animation-name: ch29; }
+@keyframes ch30 { 0%, 6.065% { opacity: 0; } 6.075%, 100% { opacity: 1; } }
+.c30 { animation-name: ch30; }
+@keyframes ch31 { 0%, 6.261% { opacity: 0; } 6.271%, 100% { opacity: 1; } }
+.c31 { animation-name: ch31; }
+@keyframes ch32 { 0%, 6.457% { opacity: 0; } 6.467%, 100% { opacity: 1; } }
+.c32 { animation-name: ch32; }
+@keyframes ch33 { 0%, 6.652% { opacity: 0; } 6.662%, 100% { opacity: 1; } }
+.c33 { animation-name: ch33; }
+@keyframes ch34 { 0%, 6.848% { opacity: 0; } 6.858%, 100% { opacity: 1; } }
+.c34 { animation-name: ch34; }
+@keyframes ch35 { 0%, 7.043% { opacity: 0; } 7.053%, 100% { opacity: 1; } }
+.c35 { animation-name: ch35; }
+@keyframes ch36 { 0%, 7.239% { opacity: 0; } 7.249%, 100% { opacity: 1; } }
+.c36 { animation-name: ch36; }
+@keyframes ch37 { 0%, 7.435% { opacity: 0; } 7.445%, 100% { opacity: 1; } }
+.c37 { animation-name: ch37; }
+@keyframes ch38 { 0%, 7.630% { opacity: 0; } 7.640%, 100% { opacity: 1; } }
+.c38 { animation-name: ch38; }
+@keyframes ch39 { 0%, 7.826% { opacity: 0; } 7.836%, 100% { opacity: 1; } }
+.c39 { animation-name: ch39; }
+@keyframes ch40 { 0%, 8.022% { opacity: 0; } 8.032%, 100% { opacity: 1; } }
+.c40 { animation-name: ch40; }
+@keyframes ch41 { 0%, 8.217% { opacity: 0; } 8.227%, 100% { opacity: 1; } }
+.c41 { animation-name: ch41; }
+@keyframes ch42 { 0%, 8.413% { opacity: 0; } 8.423%, 100% { opacity: 1; } }
+.c42 { animation-name: ch42; }
+@keyframes ch43 { 0%, 8.609% { opacity: 0; } 8.619%, 100% { opacity: 1; } }
+.c43 { animation-name: ch43; }
+@keyframes ch44 { 0%, 8.804% { opacity: 0; } 8.814%, 100% { opacity: 1; } }
+.c44 { animation-name: ch44; }
+@keyframes ch45 { 0%, 9.000% { opacity: 0; } 9.010%, 100% { opacity: 1; } }
+.c45 { animation-name: ch45; }
+@keyframes ch46 { 0%, 9.196% { opacity: 0; } 9.206%, 100% { opacity: 1; } }
+.c46 { animation-name: ch46; }
+
+.g0 {  animation: slot 23.0s linear 3.66s infinite both; }
+.g0 .tc { animation-delay: 3.66s; }
+@keyframes caret0 { 0% { transform: translateX(0); animation-timing-function: steps(47, end); }
+  9.20%, 100% { transform: translateX(535.8px); } }
 .k0 { animation: caret0 23.0s 3.66s infinite both; }
 
-@keyframes type1 { 0% { transform: scaleX(0); animation-timing-function: steps(44, end); }
-  8.61% { transform: scaleX(1); animation-timing-function: linear; }
-  16.52% { transform: scaleX(1); animation-timing-function: steps(44, end); }
-  18.70%, 100% { transform: scaleX(0); } }
-@keyframes caret1 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
-  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(44, end); }
-  8.61% { opacity: 1; transform: translateX(501.6px); animation-timing-function: linear; }
-  16.52% { opacity: 1; transform: translateX(501.6px); animation-timing-function: steps(44, end); }
-  18.70% { opacity: 1; transform: translateX(0); }
-  18.71%, 100% { opacity: 0; transform: translateX(0); } }
-.r1 { transform-origin: 343.5px 0; transform: scaleX(0);
-  animation: type1 23.0s 8.26s infinite both; }
+.g1 { opacity: 0; animation: slot 23.0s linear 8.26s infinite both; }
+.g1 .tc { animation-delay: 8.26s; }
+@keyframes caret1 { 0% { transform: translateX(0); animation-timing-function: steps(44, end); }
+  8.61%, 100% { transform: translateX(501.6px); } }
 .k1 { animation: caret1 23.0s 8.26s infinite both; }
 
-@keyframes type2 { 0% { transform: scaleX(0); animation-timing-function: steps(47, end); }
-  9.20% { transform: scaleX(1); animation-timing-function: linear; }
-  16.52% { transform: scaleX(1); animation-timing-function: steps(47, end); }
-  18.70%, 100% { transform: scaleX(0); } }
-@keyframes caret2 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
-  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(47, end); }
-  9.20% { opacity: 1; transform: translateX(535.8px); animation-timing-function: linear; }
-  16.52% { opacity: 1; transform: translateX(535.8px); animation-timing-function: steps(47, end); }
-  18.70% { opacity: 1; transform: translateX(0); }
-  18.71%, 100% { opacity: 0; transform: translateX(0); } }
-.r2 { transform-origin: 343.5px 0; transform: scaleX(0);
-  animation: type2 23.0s 12.86s infinite both; }
+.g2 { opacity: 0; animation: slot 23.0s linear 12.86s infinite both; }
+.g2 .tc { animation-delay: 12.86s; }
+@keyframes caret2 { 0% { transform: translateX(0); animation-timing-function: steps(47, end); }
+  9.20%, 100% { transform: translateX(535.8px); } }
 .k2 { animation: caret2 23.0s 12.86s infinite both; }
 
-@keyframes type3 { 0% { transform: scaleX(0); animation-timing-function: steps(33, end); }
-  6.46% { transform: scaleX(1); animation-timing-function: linear; }
-  16.52% { transform: scaleX(1); animation-timing-function: steps(33, end); }
-  18.70%, 100% { transform: scaleX(0); } }
-@keyframes caret3 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
-  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(33, end); }
-  6.46% { opacity: 1; transform: translateX(376.2px); animation-timing-function: linear; }
-  16.52% { opacity: 1; transform: translateX(376.2px); animation-timing-function: steps(33, end); }
-  18.70% { opacity: 1; transform: translateX(0); }
-  18.71%, 100% { opacity: 0; transform: translateX(0); } }
-.r3 { transform-origin: 343.5px 0; transform: scaleX(0);
-  animation: type3 23.0s 17.46s infinite both; }
+.g3 { opacity: 0; animation: slot 23.0s linear 17.46s infinite both; }
+.g3 .tc { animation-delay: 17.46s; }
+@keyframes caret3 { 0% { transform: translateX(0); animation-timing-function: steps(33, end); }
+  6.46%, 100% { transform: translateX(376.2px); } }
 .k3 { animation: caret3 23.0s 17.46s infinite both; }
 
-@keyframes type4 { 0% { transform: scaleX(0); animation-timing-function: steps(46, end); }
-  9.00% { transform: scaleX(1); animation-timing-function: linear; }
-  16.52% { transform: scaleX(1); animation-timing-function: steps(46, end); }
-  18.70%, 100% { transform: scaleX(0); } }
-@keyframes caret4 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
-  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(46, end); }
-  9.00% { opacity: 1; transform: translateX(524.4px); animation-timing-function: linear; }
-  16.52% { opacity: 1; transform: translateX(524.4px); animation-timing-function: steps(46, end); }
-  18.70% { opacity: 1; transform: translateX(0); }
-  18.71%, 100% { opacity: 0; transform: translateX(0); } }
-.r4 { transform-origin: 343.5px 0; transform: scaleX(0);
-  animation: type4 23.0s 22.06s infinite both; }
+.g4 { opacity: 0; animation: slot 23.0s linear 22.06s infinite both; }
+.g4 .tc { animation-delay: 22.06s; }
+@keyframes caret4 { 0% { transform: translateX(0); animation-timing-function: steps(46, end); }
+  9.00%, 100% { transform: translateX(524.4px); } }
 .k4 { animation: caret4 23.0s 22.06s infinite both; }
 
 .den { fill: none; stroke: #4d4537; stroke-linecap: round; stroke-linejoin: round; }
@@ -215,7 +273,6 @@
 <rect width="1200" height="480" fill="url(#wash)"/>
 </g>
 <rect x="0.5" y="0.5" width="1199" height="479" rx="18" fill="none" stroke="#26262b"/>
-<defs><clipPath id="c0"><rect class="r0" x="343.5" y="302" width="536.8" height="28"/></clipPath><clipPath id="c1"><rect class="r1" x="343.5" y="302" width="502.6" height="28"/></clipPath><clipPath id="c2"><rect class="r2" x="343.5" y="302" width="536.8" height="28"/></clipPath><clipPath id="c3"><rect class="r3" x="343.5" y="302" width="377.2" height="28"/></clipPath><clipPath id="c4"><rect class="r4" x="343.5" y="302" width="525.4" height="28"/></clipPath></defs>
 <text class="mono prompt" x="48" y="56">$ python sample.py --prompt "[MASK] × 14" --steps 16</text>
 <text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.66s linear 0.00s">step 00/16</text>
 <text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 0.66s">step 01/16</text>
@@ -264,16 +321,11 @@
 <text class="mono ch" x="922.0" y="200" style="animation: commit 0.7s ease-out 0.66s both">i</text>
 <text class="sans sub" x="600.0" y="264">Computer Engineering @ Purdue<tspan fill="#cfb991" dx="14">·</tspan><tspan dx="14">AI Researcher @ Perforated AI</tspan></text>
 <text class="mono chev" x="320.7" y="322">›</text>
-<text class="mono typed" x="343.5" y="322" textLength="535.8" lengthAdjust="spacing" clip-path="url(#c0)">training diffusion language models from scratch</text>
-<rect class="caret k0" x="344.5" y="305" width="10" height="21" rx="1.5"/>
-<text class="mono typed" x="343.5" y="322" textLength="501.6" lengthAdjust="spacing" clip-path="url(#c1)">catching backdoors hidden in neural networks</text>
-<rect class="caret k1" x="344.5" y="305" width="10" height="21" rx="1.5"/>
-<text class="mono typed" x="343.5" y="322" textLength="535.8" lengthAdjust="spacing" clip-path="url(#c2)">routing telemetry boards for Purdue Formula SAE</text>
-<rect class="caret k2" x="344.5" y="305" width="10" height="21" rx="1.5"/>
-<text class="mono typed" x="343.5" y="322" textLength="376.2" lengthAdjust="spacing" clip-path="url(#c3)">building EEG caps for spaceflight</text>
-<rect class="caret k3" x="344.5" y="305" width="10" height="21" rx="1.5"/>
-<text class="mono typed" x="343.5" y="322" textLength="524.4" lengthAdjust="spacing" clip-path="url(#c4)">measuring, honestly, whether it actually works</text>
-<rect class="caret k4" x="344.5" y="305" width="10" height="21" rx="1.5"/>
+<g class="g0"><text class="mono typed tc c0" x="343.5" y="322">t</text><text class="mono typed tc c1" x="354.9" y="322">r</text><text class="mono typed tc c2" x="366.3" y="322">a</text><text class="mono typed tc c3" x="377.7" y="322">i</text><text class="mono typed tc c4" x="389.1" y="322">n</text><text class="mono typed tc c5" x="400.5" y="322">i</text><text class="mono typed tc c6" x="411.9" y="322">n</text><text class="mono typed tc c7" x="423.3" y="322">g</text><text class="mono typed tc c9" x="446.1" y="322">d</text><text class="mono typed tc c10" x="457.5" y="322">i</text><text class="mono typed tc c11" x="468.9" y="322">f</text><text class="mono typed tc c12" x="480.3" y="322">f</text><text class="mono typed tc c13" x="491.7" y="322">u</text><text class="mono typed tc c14" x="503.1" y="322">s</text><text class="mono typed tc c15" x="514.5" y="322">i</text><text class="mono typed tc c16" x="525.9" y="322">o</text><text class="mono typed tc c17" x="537.3" y="322">n</text><text class="mono typed tc c19" x="560.1" y="322">l</text><text class="mono typed tc c20" x="571.5" y="322">a</text><text class="mono typed tc c21" x="582.9" y="322">n</text><text class="mono typed tc c22" x="594.3" y="322">g</text><text class="mono typed tc c23" x="605.7" y="322">u</text><text class="mono typed tc c24" x="617.1" y="322">a</text><text class="mono typed tc c25" x="628.5" y="322">g</text><text class="mono typed tc c26" x="639.9" y="322">e</text><text class="mono typed tc c28" x="662.7" y="322">m</text><text class="mono typed tc c29" x="674.1" y="322">o</text><text class="mono typed tc c30" x="685.5" y="322">d</text><text class="mono typed tc c31" x="696.9" y="322">e</text><text class="mono typed tc c32" x="708.3" y="322">l</text><text class="mono typed tc c33" x="719.7" y="322">s</text><text class="mono typed tc c35" x="742.5" y="322">f</text><text class="mono typed tc c36" x="753.9" y="322">r</text><text class="mono typed tc c37" x="765.3" y="322">o</text><text class="mono typed tc c38" x="776.7" y="322">m</text><text class="mono typed tc c40" x="799.5" y="322">s</text><text class="mono typed tc c41" x="810.9" y="322">c</text><text class="mono typed tc c42" x="822.3" y="322">r</text><text class="mono typed tc c43" x="833.7" y="322">a</text><text class="mono typed tc c44" x="845.1" y="322">t</text><text class="mono typed tc c45" x="856.5" y="322">c</text><text class="mono typed tc c46" x="867.9" y="322">h</text><rect class="caret k0" x="344.5" y="305" width="10" height="21" rx="1.5"/></g>
+<g class="g1"><text class="mono typed tc c0" x="343.5" y="322">c</text><text class="mono typed tc c1" x="354.9" y="322">a</text><text class="mono typed tc c2" x="366.3" y="322">t</text><text class="mono typed tc c3" x="377.7" y="322">c</text><text class="mono typed tc c4" x="389.1" y="322">h</text><text class="mono typed tc c5" x="400.5" y="322">i</text><text class="mono typed tc c6" x="411.9" y="322">n</text><text class="mono typed tc c7" x="423.3" y="322">g</text><text class="mono typed tc c9" x="446.1" y="322">b</text><text class="mono typed tc c10" x="457.5" y="322">a</text><text class="mono typed tc c11" x="468.9" y="322">c</text><text class="mono typed tc c12" x="480.3" y="322">k</text><text class="mono typed tc c13" x="491.7" y="322">d</text><text class="mono typed tc c14" x="503.1" y="322">o</text><text class="mono typed tc c15" x="514.5" y="322">o</text><text class="mono typed tc c16" x="525.9" y="322">r</text><text class="mono typed tc c17" x="537.3" y="322">s</text><text class="mono typed tc c19" x="560.1" y="322">h</text><text class="mono typed tc c20" x="571.5" y="322">i</text><text class="mono typed tc c21" x="582.9" y="322">d</text><text class="mono typed tc c22" x="594.3" y="322">d</text><text class="mono typed tc c23" x="605.7" y="322">e</text><text class="mono typed tc c24" x="617.1" y="322">n</text><text class="mono typed tc c26" x="639.9" y="322">i</text><text class="mono typed tc c27" x="651.3" y="322">n</text><text class="mono typed tc c29" x="674.1" y="322">n</text><text class="mono typed tc c30" x="685.5" y="322">e</text><text class="mono typed tc c31" x="696.9" y="322">u</text><text class="mono typed tc c32" x="708.3" y="322">r</text><text class="mono typed tc c33" x="719.7" y="322">a</text><text class="mono typed tc c34" x="731.1" y="322">l</text><text class="mono typed tc c36" x="753.9" y="322">n</text><text class="mono typed tc c37" x="765.3" y="322">e</text><text class="mono typed tc c38" x="776.7" y="322">t</text><text class="mono typed tc c39" x="788.1" y="322">w</text><text class="mono typed tc c40" x="799.5" y="322">o</text><text class="mono typed tc c41" x="810.9" y="322">r</text><text class="mono typed tc c42" x="822.3" y="322">k</text><text class="mono typed tc c43" x="833.7" y="322">s</text><rect class="caret k1" x="344.5" y="305" width="10" height="21" rx="1.5"/></g>
+<g class="g2"><text class="mono typed tc c0" x="343.5" y="322">r</text><text class="mono typed tc c1" x="354.9" y="322">o</text><text class="mono typed tc c2" x="366.3" y="322">u</text><text class="mono typed tc c3" x="377.7" y="322">t</text><text class="mono typed tc c4" x="389.1" y="322">i</text><text class="mono typed tc c5" x="400.5" y="322">n</text><text class="mono typed tc c6" x="411.9" y="322">g</text><text class="mono typed tc c8" x="434.7" y="322">t</text><text class="mono typed tc c9" x="446.1" y="322">e</text><text class="mono typed tc c10" x="457.5" y="322">l</text><text class="mono typed tc c11" x="468.9" y="322">e</text><text class="mono typed tc c12" x="480.3" y="322">m</text><text class="mono typed tc c13" x="491.7" y="322">e</text><text class="mono typed tc c14" x="503.1" y="322">t</text><text class="mono typed tc c15" x="514.5" y="322">r</text><text class="mono typed tc c16" x="525.9" y="322">y</text><text class="mono typed tc c18" x="548.7" y="322">b</text><text class="mono typed tc c19" x="560.1" y="322">o</text><text class="mono typed tc c20" x="571.5" y="322">a</text><text class="mono typed tc c21" x="582.9" y="322">r</text><text class="mono typed tc c22" x="594.3" y="322">d</text><text class="mono typed tc c23" x="605.7" y="322">s</text><text class="mono typed tc c25" x="628.5" y="322">f</text><text class="mono typed tc c26" x="639.9" y="322">o</text><text class="mono typed tc c27" x="651.3" y="322">r</text><text class="mono typed tc c29" x="674.1" y="322">P</text><text class="mono typed tc c30" x="685.5" y="322">u</text><text class="mono typed tc c31" x="696.9" y="322">r</text><text class="mono typed tc c32" x="708.3" y="322">d</text><text class="mono typed tc c33" x="719.7" y="322">u</text><text class="mono typed tc c34" x="731.1" y="322">e</text><text class="mono typed tc c36" x="753.9" y="322">F</text><text class="mono typed tc c37" x="765.3" y="322">o</text><text class="mono typed tc c38" x="776.7" y="322">r</text><text class="mono typed tc c39" x="788.1" y="322">m</text><text class="mono typed tc c40" x="799.5" y="322">u</text><text class="mono typed tc c41" x="810.9" y="322">l</text><text class="mono typed tc c42" x="822.3" y="322">a</text><text class="mono typed tc c44" x="845.1" y="322">S</text><text class="mono typed tc c45" x="856.5" y="322">A</text><text class="mono typed tc c46" x="867.9" y="322">E</text><rect class="caret k2" x="344.5" y="305" width="10" height="21" rx="1.5"/></g>
+<g class="g3"><text class="mono typed tc c0" x="343.5" y="322">b</text><text class="mono typed tc c1" x="354.9" y="322">u</text><text class="mono typed tc c2" x="366.3" y="322">i</text><text class="mono typed tc c3" x="377.7" y="322">l</text><text class="mono typed tc c4" x="389.1" y="322">d</text><text class="mono typed tc c5" x="400.5" y="322">i</text><text class="mono typed tc c6" x="411.9" y="322">n</text><text class="mono typed tc c7" x="423.3" y="322">g</text><text class="mono typed tc c9" x="446.1" y="322">E</text><text class="mono typed tc c10" x="457.5" y="322">E</text><text class="mono typed tc c11" x="468.9" y="322">G</text><text class="mono typed tc c13" x="491.7" y="322">c</text><text class="mono typed tc c14" x="503.1" y="322">a</text><text class="mono typed tc c15" x="514.5" y="322">p</text><text class="mono typed tc c16" x="525.9" y="322">s</text><text class="mono typed tc c18" x="548.7" y="322">f</text><text class="mono typed tc c19" x="560.1" y="322">o</text><text class="mono typed tc c20" x="571.5" y="322">r</text><text class="mono typed tc c22" x="594.3" y="322">s</text><text class="mono typed tc c23" x="605.7" y="322">p</text><text class="mono typed tc c24" x="617.1" y="322">a</text><text class="mono typed tc c25" x="628.5" y="322">c</text><text class="mono typed tc c26" x="639.9" y="322">e</text><text class="mono typed tc c27" x="651.3" y="322">f</text><text class="mono typed tc c28" x="662.7" y="322">l</text><text class="mono typed tc c29" x="674.1" y="322">i</text><text class="mono typed tc c30" x="685.5" y="322">g</text><text class="mono typed tc c31" x="696.9" y="322">h</text><text class="mono typed tc c32" x="708.3" y="322">t</text><rect class="caret k3" x="344.5" y="305" width="10" height="21" rx="1.5"/></g>
+<g class="g4"><text class="mono typed tc c0" x="343.5" y="322">m</text><text class="mono typed tc c1" x="354.9" y="322">e</text><text class="mono typed tc c2" x="366.3" y="322">a</text><text class="mono typed tc c3" x="377.7" y="322">s</text><text class="mono typed tc c4" x="389.1" y="322">u</text><text class="mono typed tc c5" x="400.5" y="322">r</text><text class="mono typed tc c6" x="411.9" y="322">i</text><text class="mono typed tc c7" x="423.3" y="322">n</text><text class="mono typed tc c8" x="434.7" y="322">g</text><text class="mono typed tc c9" x="446.1" y="322">,</text><text class="mono typed tc c11" x="468.9" y="322">h</text><text class="mono typed tc c12" x="480.3" y="322">o</text><text class="mono typed tc c13" x="491.7" y="322">n</text><text class="mono typed tc c14" x="503.1" y="322">e</text><text class="mono typed tc c15" x="514.5" y="322">s</text><text class="mono typed tc c16" x="525.9" y="322">t</text><text class="mono typed tc c17" x="537.3" y="322">l</text><text class="mono typed tc c18" x="548.7" y="322">y</text><text class="mono typed tc c19" x="560.1" y="322">,</text><text class="mono typed tc c21" x="582.9" y="322">w</text><text class="mono typed tc c22" x="594.3" y="322">h</text><text class="mono typed tc c23" x="605.7" y="322">e</text><text class="mono typed tc c24" x="617.1" y="322">t</text><text class="mono typed tc c25" x="628.5" y="322">h</text><text class="mono typed tc c26" x="639.9" y="322">e</text><text class="mono typed tc c27" x="651.3" y="322">r</text><text class="mono typed tc c29" x="674.1" y="322">i</text><text class="mono typed tc c30" x="685.5" y="322">t</text><text class="mono typed tc c32" x="708.3" y="322">a</text><text class="mono typed tc c33" x="719.7" y="322">c</text><text class="mono typed tc c34" x="731.1" y="322">t</text><text class="mono typed tc c35" x="742.5" y="322">u</text><text class="mono typed tc c36" x="753.9" y="322">a</text><text class="mono typed tc c37" x="765.3" y="322">l</text><text class="mono typed tc c38" x="776.7" y="322">l</text><text class="mono typed tc c39" x="788.1" y="322">y</text><text class="mono typed tc c41" x="810.9" y="322">w</text><text class="mono typed tc c42" x="822.3" y="322">o</text><text class="mono typed tc c43" x="833.7" y="322">r</text><text class="mono typed tc c44" x="845.1" y="322">k</text><text class="mono typed tc c45" x="856.5" y="322">s</text><rect class="caret k4" x="344.5" y="305" width="10" height="21" rx="1.5"/></g>
 <defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
 <line class="den" x1="175.0" y1="392.0" x2="137.7" y2="404.8" stroke-width="2.6"/>
 <line class="den" x1="137.7" y1="404.8" x2="118.8" y2="419.8" stroke-width="1.8"/>
