@@ -39,7 +39,7 @@ class Soumil:
 
 ## `03` things i found out
 
-<img src="assets/findings.svg" width="100%" alt="0.254: An LLM is surest of its fluent fakes, so its own confidence catches hallucinations worse than a coin flip; a hidden-state probe gets 0.988 (HalluScope). 6 of 6: every published backdoor detector I tested scores below chance against WaNet (deadbolt). About 2x: the diffusion LM I forked had a loss that descended toward twice the true entropy because of one wrong denominator (nanoDLM). 0.4 ms: the cost of a full policy gateway in front of every agent tool call (Bastion).">
+<img src="assets/findings.svg" width="100%" alt="Results I didn't expect. Chatbots are most confident when they're making things up, so their confidence is worse than guessing at spotting lies (HalluScope). None of the 6 published backdoor detectors I tested caught the WaNet attack (deadbolt). The model I forked was quietly training toward a target 2x too high because of one wrong line (nanoDLM). Bastion adds guardrails to every AI agent tool call for about 0.4 ms.">
 
 ## `04` stack
 

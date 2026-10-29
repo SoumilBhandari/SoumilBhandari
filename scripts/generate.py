@@ -9,7 +9,7 @@ import random
 from pathlib import Path
 
 from theme import (BG, BORDER, GOLD, GOLD_DIM, MUTED, TEXT, card_bg,
-                   esc, svg, wrap)
+                   esc, svg)
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
@@ -43,18 +43,19 @@ BUILDS = [
 ]
 
 FINDINGS = [
-    ("0.254", "An LLM is surest of its fluent fakes, so its own confidence catches "
-     "hallucinations worse than a coin flip. A hidden-state probe: 0.988.",
-     "halluscope \u00b7 AUROC on HaluEval, n = 4,000"),
-    ("6 / 6", "Every published backdoor detector I tested scores below chance against WaNet. "
-     "Following any of them is worse than guessing.",
-     "deadbolt \u00b7 102-model zoo, 540 blind scans"),
-    ("~2\u00d7", "The diffusion LM I forked had a loss that still went down, just toward twice "
-     "the true entropy. One wrong denominator.",
-     "nanoDLM \u00b7 mask.sum() \u2192 B\u00b7T"),
-    ("0.4 ms", "The cost of putting spend caps, rate limits, argument guards, and a hash-chained "
-     "audit log in front of every agent tool call.",
-     "Bastion \u00b7 vs. a ~2.5 ms stdio round trip"),
+    # (big number, what it measures, headline, plain explanation, source)
+    ("0.254", "0.5 = guessing", "Chatbots are most confident when they\u2019re making things up.",
+     "So confidence is worse than guessing at spotting lies. Reading its internals: 0.988.",
+     "halluscope \u00b7 AUROC on HaluEval, 4,000 answers"),
+    ("0 / 6", "detectors that worked", "None of the 6 published backdoor detectors I tested caught WaNet.",
+     "A hidden-trigger attack that made every one of them do worse than a coin flip.",
+     "deadbolt \u00b7 102 models, 540 blind scans"),
+    ("2\u00d7", "too high, silently", "The model I forked was quietly training toward the wrong target.",
+     "Its loss still went down, so nobody noticed. One wrong line made it aim 2\u00d7 too high.",
+     "nanoDLM \u00b7 divided by mask.sum() instead of B\u00b7T"),
+    ("0.4 ms", "added per tool call", "Guardrails for AI agents don\u2019t have to be slow.",
+     "Bastion adds spend limits, permissions, and a tamper-proof log to every tool call.",
+     "Bastion \u00b7 measured against a ~2.5 ms round trip"),
 ]
 
 TIMELINE = [
@@ -301,28 +302,32 @@ def terminal():
 
 
 def findings():
-    W, top, pitch = 1200, 76, 124
+    W, top, pitch = 1200, 76, 132
     H = top + pitch * len(FINDINGS) + 4
     css = f"""
 .hd {{ font-size: 13px; letter-spacing: 2px; fill: {GOLD}; }}
 .big {{ font-size: 46px; font-weight: 700; fill: {GOLD}; }}
-.cl {{ font-size: 21px; fill: {TEXT}; }}
-.src {{ font-size: 14px; fill: {GOLD_DIM}; }}
+.cap {{ font-size: 13px; fill: {MUTED}; }}
+.hl {{ font-size: 22px; font-weight: 700; fill: {TEXT}; }}
+.ex {{ font-size: 18px; fill: {MUTED}; }}
+.src {{ font-size: 13px; fill: {GOLD_DIM}; }}
 .row {{ animation: up 0.6s ease-out both; }}
 @keyframes up {{ from {{ opacity: 0; transform: translateY(8px); }} }}
 """
     body = [card_bg(W, H, 18),
             f'<text class="mono hd" x="40" y="50">LAB NOTEBOOK \u00b7 RESULTS I DIDN\u2019T EXPECT</text>']
-    for i, (num, claim, src) in enumerate(FINDINGS):
+    for i, (num, cap, headline, explain, src) in enumerate(FINDINGS):
         r = top + i * pitch
         if i:
             body.append(f'<line x1="40" y1="{r}" x2="{W - 40}" y2="{r}" stroke="{BORDER}"/>')
-        lines = wrap(claim, 76)[:2]
-        parts = [f'<text class="mono big" x="40" y="{r + 72}">{esc(num)}</text>']
-        parts += [f'<text class="sans cl" x="270" y="{r + 42 + k * 29}">{esc(l)}</text>' for k, l in enumerate(lines)]
-        parts.append(f'<text class="mono src" x="270" y="{r + 102}">{esc(src)}</text>')
-        body.append(f'<g class="row" style="animation-delay: {0.15 + i * 0.12:.2f}s">{"".join(parts)}</g>')
-    alt = " ".join(f"{n}: {c} ({s})." for n, c, s in FINDINGS)
+        body.append(
+            f'<g class="row" style="animation-delay: {0.15 + i * 0.12:.2f}s">'
+            f'<text class="mono big" x="40" y="{r + 70}">{esc(num)}</text>'
+            f'<text class="mono cap" x="42" y="{r + 98}">{esc(cap)}</text>'
+            f'<text class="sans hl" x="270" y="{r + 46}">{esc(headline)}</text>'
+            f'<text class="sans ex" x="270" y="{r + 76}">{esc(explain)}</text>'
+            f'<text class="mono src" x="270" y="{r + 106}">{esc(src)}</text></g>')
+    alt = " ".join(f"{h} {e} ({n}, {c}; {s})." for n, c, h, e, s in FINDINGS)
     return svg(W, H, "\n".join(body), css, alt)
 
 
