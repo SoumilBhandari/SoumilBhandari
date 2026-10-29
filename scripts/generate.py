@@ -1,10 +1,11 @@
-"""Builds the static SVGs in assets/: hero, numbers, terminal, findings, timeline, footer.
+"""Builds the static SVGs in assets/: hero, numbers, terminal, findings, timeline.
 
     python scripts/generate.py
 
 Edit the data below and re-run; stats.py handles the live GitHub cards.
 """
 
+import math
 import random
 from pathlib import Path
 
@@ -18,28 +19,29 @@ SUBTITLE = ("Computer Engineering @ Purdue", "AI Researcher @ Perforated AI")
 PHRASES = [
     "training diffusion language models from scratch",
     "catching backdoors hidden in neural networks",
-    "building wearables for neurodegenerative disease",
-    "putting guardrails on AI agents",
+    "routing telemetry boards for Purdue Formula SAE",
+    "building EEG caps for spaceflight",
     "measuring, honestly, whether it actually works",
 ]
 
 NUMBERS = [
-    ("3", "provisional US patents", "neurodegenerative modeling"),
-    ("1M+", "clinical records through", "my pipelines at McKesson"),
-    ("Top 4%", "YC Startup School", "of 35,000+ applicants"),
-    ("1st", "Best Overall Hack", "HopHacks 2026"),
-    ("1,000+", "students on Notes360.ai", "across five schools"),
+    ("3", "provisional US patents", "filed Dec 2025"),
+    ("1st", "of 280+ teams", "HopHacks 2026"),
+    ("Top 4%", "YC AI Startup School", "2,500 of 35,000+"),
+    ("98%", "MEP classification", "Harvard Medical School"),
+    ("$50K+", "personally realized", "from my deal engine"),
 ]
 
 BUILDS = [
     ("nanoDLM", "masked-diffusion LM from scratch in ~1.1k lines of PyTorch", "ml"),
     ("deadbolt", "6 backdoor detectors vs a 102-model zoo, run blind", "security"),
     ("Bastion", "spend caps, rate limits + audit log for MCP tool calls", "agents"),
-    ("HalluScope", "three hallucination detectors, one honest scoreboard", "evals"),
-    ("SecuriVax", "is this vial still good? Best Overall @ HopHacks", "health"),
-    ("NeuraBand", "10 neuro biomarkers over BLE from a pill-sized wearable", "neuro"),
+    ("SecuriVax", "vaccine cold-chain engine \u00b7 1st of 280+ @ HopHacks", "health"),
+    ("Neurafy", "Alzheimer\u2019s progression model, AUC 0.95\u20130.97", "startup"),
+    ("SpaceCap", "EEG + PPG cap that flags hypoxia in spaceflight", "space"),
     ("ATLAS", "closed-loop TMS thresholding @ Harvard Medical School", "neuro"),
-    ("You2", "a desk assistant that remembers and never phones home", "hardware"),
+    ("You2", "a voice assistant that remembers, fully on-device", "hardware"),
+    ("Flipper", "real-estate deal engine \u00b7 $50K+ personally realized", "money"),
 ]
 
 FINDINGS = [
@@ -53,62 +55,118 @@ FINDINGS = [
     ("2\u00d7", "too high, silently", "The model I forked was quietly training toward the wrong target.",
      "Its loss still went down, so nobody noticed. One wrong line made it aim 2\u00d7 too high.",
      "nanoDLM \u00b7 divided by mask.sum() instead of B\u00b7T"),
-    ("0.4 ms", "added per tool call", "Guardrails for AI agents don\u2019t have to be slow.",
-     "Bastion adds spend limits, permissions, and a tamper-proof log to every tool call.",
-     "Bastion \u00b7 measured against a ~2.5 ms round trip"),
+    ("1.00", "retrieval precision", "Memory that consolidates gets sharper with age, not noisier.",
+     "Over a simulated year, You2 went from 0.50 to 1.00 and stale facts never resurfaced.",
+     "you2 \u00b7 nightly summarize, version, and decay"),
 ]
 
 TIMELINE = [
-    ("2026 – now", "Perforated AI", "AI Researcher",
+    ("2026 \u2013 now", "Perforated AI", "AI Researcher",
      "Researching dendritic model compression", True),
-    ("2026 – now", "Purdue University", "B.S. Computer Engineering",
-     "VIP / AAMED: Neural Space Cap, an EEG cap for astronaut EVA helmets", False),
-    ("2026", "Harvard Medical School", "Research Intern, TMS Lab",
-     "Closed-loop motor-threshold estimation (ATLAS) with Dr. Aapo Nummenmaa", False),
-    ("2025", "Neurafy", "Founder",
-     "Alzheimer’s progression modeling · three provisional US patents", False),
+    ("2026 \u2013 now", "Purdue Formula SAE", "Electronics, 2nd in the world",
+     "Routed the telemetry receiver PCB and wrote its firmware; brake-bias motor selection", True),
+    ("2026", "Harvard Medical School", "Research Intern",
+     "Automated TMS motor thresholding; real-time MEP classification at 98% accuracy", False),
+    ("2025 \u2013 26", "Neurafy", "Founder",
+     "Alzheimer\u2019s progression model, AUC 0.95\u20130.97 \u00b7 3 patents \u00b7 clinical pilot \u00b7 failed", False),
+    ("2025 \u2013 26", "IIT Roorkee", "Research Intern",
+     "Classifier gating a clinical RAG system at 92%+; LoRA fine-tuned LLaMA-2 and Flan-T5", False),
     ("2025", "McKesson", "Software Engineering Intern",
-     "GPT pipelines over 1M+ clinical records", False),
-    ("2025", "IIT Roorkee", "Research Intern",
-     "XGBoost at 92%+ accuracy; LLaMA-2 and Flan-T5 fine-tuned with LoRA", False),
-    ("2023", "Tekizma", "Software Engineering Intern",
-     "spaCy + Hugging Face NLP · Distinguished Intern Award, multiple years", False),
+     "1M+ clinical records through GPT extraction for iKnowMed; 35% faster analytics", False),
+    ("\u2192 2028", "Purdue University", "B.S. Computer Engineering",
+     "Neural Space Cap (Purdue VIP): EEG + PPG monitoring for commercial spaceflight", False),
 ]
 
 
-def ecg_path(x0, x1, base, beats):
-    """A heartbeat trace. Returns (path d, approximate length)."""
-    shape = [(0, 0), (10, -6), (20, 0), (28, 0), (32, 6), (38, -46), (44, 14),
-             (50, 0), (64, 0), (76, -10), (90, 0)]
-    pts = [(x0, base)]
-    for bx in beats:
-        pts += [(bx + dx, base + dy) for dx, dy in shape]
-    pts.append((x1, base))
-    d = "M" + " L".join(f"{x:.0f} {y:.0f}" for x, y in pts)
-    length = sum(((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2) ** 0.5 for a, b in zip(pts, pts[1:]))
-    return d, int(length) + 1
+def dist(a, b):
+    return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
 
 
-def trace(x0, x1, base, beats, draw_delay=0.3, pulse_delay=2.8):
-    d, L = ecg_path(x0, x1, base, beats)
-    css = f"""
-.trace {{ fill: none; stroke: #3a3630; stroke-width: 2; stroke-linejoin: round;
-  stroke-dasharray: {L}; animation: draw 2.4s ease-out {draw_delay}s both; }}
-.pulse {{ fill: none; stroke: {GOLD}; stroke-width: 2.5; stroke-linejoin: round; opacity: 0;
-  stroke-dasharray: 140 {L}; filter: url(#glow);
-  animation: travel 4.5s linear {pulse_delay}s infinite; }}
-@keyframes draw {{ from {{ stroke-dashoffset: {L}; }} to {{ stroke-dashoffset: 0; }} }}
-@keyframes travel {{ 0% {{ stroke-dashoffset: 140; opacity: 1; }}
-  100% {{ stroke-dashoffset: {-L}; opacity: 1; }} }}
-"""
-    body = (
-        '<defs><filter id="glow" x="-10%" y="-50%" width="120%" height="200%">'
-        '<feGaussianBlur stdDeviation="3" result="b"/>'
-        '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
-        "</filter></defs>"
-        f'<path class="trace" d="{d}"/><path class="pulse" d="{d}"/>'
-    )
-    return css, body
+def polyline(points):
+    d = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in points)
+    return d, sum(dist(a, b) for a, b in zip(points, points[1:]))
+
+
+def dendrite_tree(soma, rng, squash=0.7):
+    """Branches fanning left from the soma, three levels deep. Returns
+    (edges as (depth, a, b), paths from each tip back to the soma)."""
+    edges, paths = [], []
+
+    def grow(node, angle, length, depth, trail):
+        rad = math.radians(angle)
+        tip = (node[0] + length * math.cos(rad), node[1] + squash * length * math.sin(rad))
+        edges.append((depth, node, tip))
+        if depth == 2:
+            paths.append([tip] + trail[::-1])
+            return
+        for spread in (-1, 1):
+            grow(tip, angle + spread * rng.uniform(16, 26), length * rng.uniform(0.68, 0.82),
+                 depth + 1, trail + [tip])
+
+    for angle in (156, 180, 204):
+        grow(soma, angle + rng.uniform(-6, 6), rng.uniform(40, 50), 0, [soma])
+    return edges, paths
+
+
+def neurons(delay=0.0):
+    """Three dendritic neurons in a chain. A spike runs in along each cell's
+    dendrites, the soma lights up, and it fires down the myelinated axon into
+    the next cell's dendrites."""
+    rng = random.Random(7)
+    somas = [(175, 392), (525, 397), (875, 389)]
+    step, cycle = 2.3, 8.6
+    width = {0: 2.6, 1: 1.8, 2: 1.2}
+    css = [f"""
+.den {{ fill: none; stroke: #4d4537; stroke-linecap: round; stroke-linejoin: round; }}
+.axon {{ fill: none; stroke: #4d4537; stroke-width: 2; stroke-linejoin: round; }}
+.myelin {{ fill: none; stroke: #2e2a21; stroke-width: 8; stroke-linecap: round; stroke-dasharray: 38 9; }}
+.pulse {{ fill: none; stroke: {GOLD}; stroke-linecap: round; stroke-linejoin: round; opacity: 0; filter: url(#glow); }}
+.soma {{ fill: #2a251c; stroke: {GOLD_DIM}; stroke-width: 2; }}
+.fire {{ fill: {GOLD}; opacity: 0; filter: url(#glow); }}
+.bulb {{ fill: {GOLD_DIM}; }}
+"""]
+    base = ['<defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%">'
+            '<feGaussianBlur stdDeviation="2.5" result="b"/>'
+            '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>']
+    top, n = [], 0
+
+    def pulse(points, start, dur, seg, w):
+        nonlocal n
+        d, L = polyline(points)
+        a, b = 100 * start / cycle, 100 * (start + dur) / cycle
+        css.append(f"@keyframes p{n} {{ 0%, {a:.2f}% {{ stroke-dashoffset: {seg}; opacity: 1; }} "
+                   f"{b:.2f}% {{ stroke-dashoffset: {-L:.0f}; opacity: 1; }} "
+                   f"{b + 0.01:.2f}%, 100% {{ stroke-dashoffset: {-L:.0f}; opacity: 0; }} }}\n"
+                   f".p{n} {{ stroke-width: {w}; stroke-dasharray: {seg} {L + seg:.0f}; "
+                   f"animation: p{n} {cycle}s linear {delay:.2f}s infinite; }}\n")
+        top.append(f'<path class="pulse p{n}" d="{d}"/>')
+        n += 1
+
+    for k, (sx, sy) in enumerate(somas):
+        t = k * step
+        edges, paths = dendrite_tree((sx, sy), rng)
+        for depth, a, b in edges:
+            base.append(f'<line class="den" x1="{a[0]:.1f}" y1="{a[1]:.1f}" x2="{b[0]:.1f}" '
+                        f'y2="{b[1]:.1f}" stroke-width="{width[depth]}"/>')
+        for m, path in enumerate(paths):
+            pulse(path, t + 0.04 * m, 0.75, 16, 2)
+        end = (sx + 205, sy + rng.uniform(-4, 4))
+        axon = [(sx, sy), (sx + 60, sy - 5), (sx + 120, sy + 5), (sx + 175, sy - 3), end]
+        d, _ = polyline(axon)
+        base.append(f'<path class="axon" d="{d}"/><path class="myelin" d="{d}" stroke-dashoffset="-20"/>')
+        pulse(axon, t + 1.0, 0.85, 46, 3)
+        for dy in (-22, 0, 22):
+            tip = (end[0] + 34, end[1] + dy)
+            base.append(f'<line class="den" x1="{end[0]:.1f}" y1="{end[1]:.1f}" x2="{tip[0]:.1f}" '
+                        f'y2="{tip[1]:.1f}" stroke-width="1.4"/><circle class="bulb" cx="{tip[0]:.1f}" cy="{tip[1]:.1f}" r="3.5"/>')
+            pulse([end, tip], t + 1.85, 0.3, 14, 2)
+        f0, f1, f2 = (100 * (t + v) / cycle for v in (0.75, 0.95, 1.6))
+        css.append(f"@keyframes fire{k} {{ 0%, {f0:.2f}% {{ opacity: 0; }} {f1:.2f}% {{ opacity: 0.95; }} "
+                   f"{f2:.2f}%, 100% {{ opacity: 0; }} }}\n"
+                   f".fire{k} {{ animation: fire{k} {cycle}s ease-out {delay:.2f}s infinite; }}\n")
+        top.append(f'<circle class="soma" cx="{sx}" cy="{sy}" r="13"/>'
+                   f'<circle class="fire fire{k}" cx="{sx}" cy="{sy}" r="9"/>')
+    return "".join(css), "\n".join(base + top)
 
 
 def backdrop(W, H):
@@ -130,8 +188,9 @@ def backdrop(W, H):
 
 def hero():
     """The name decodes from [MASK] tokens over 16 steps, the way a masked-diffusion
-    LM samples, then a terminal line cycles through what I work on."""
-    W, H = 1200, 450
+    LM samples, then a terminal line cycles through what I work on. Three dendritic
+    neurons pass a spike along the bottom."""
+    W, H = 1200, 480
     T0, DT, STEPS = 0.5, 0.16, 16
     t = lambda s: 0 if s == 0 else T0 + s * DT
     done = t(STEPS)
@@ -224,11 +283,11 @@ def hero():
     css += "".join(kf)
     body.insert(1, f"<defs>{''.join(defs)}</defs>")
 
-    tcss, tbody = trace(40, W - 40, 398, [130, 410, 690, 970], pulse_delay=done)
-    css += tcss
-    body.append(tbody)
-    body.append(f'<text class="mono foot" x="48" y="432">masked diffusion · 16 denoising steps</text>')
-    body.append(f'<text class="mono foot" x="{W - 48}" y="432" text-anchor="end">soumilbhandari.com</text>')
+    ncss, nbody = neurons(delay=done)
+    css += ncss
+    body.append(nbody)
+    body.append(f'<text class="mono foot" x="48" y="462">name \u00b7 masked diffusion, 16 denoising steps</text>')
+    body.append(f'<text class="mono foot" x="{W - 48}" y="462" text-anchor="end">neurons \u00b7 dendrites in, spike out</text>')
     return svg(W, H, "\n".join(body), css, f"{NAME}: {SUBTITLE[0]}, {SUBTITLE[1]}")
 
 
@@ -291,7 +350,7 @@ def terminal():
         y = top + pitch * (k + 1) + 8
         body.append(f'<g class="ln" style="animation-delay: {listed + k * 0.09:.2f}s">'
                     f'<text class="mono nm" x="40" y="{y}">{esc(name)}</text>'
-                    f'<text class="mono ds" x="210" y="{y}">{esc(desc)}</text>'
+                    f'<text class="mono ds" x="190" y="{y}">{esc(desc)}</text>'
                     f'<text class="mono tg" x="{W - 40}" y="{y}">{esc(tag)}</text></g>')
     y = top + pitch * (len(BUILDS) + 1) + 16
     body.append(f'<g class="ln" style="animation-delay: {listed + len(BUILDS) * 0.09:.2f}s">'
@@ -362,18 +421,10 @@ def timeline():
     return svg(W, H, "\n".join(body), css, alt)
 
 
-def footer():
-    W, H = 1200, 120
-    css = f".bye {{ font-size: 15px; fill: {MUTED}; text-anchor: middle; }}"
-    tcss, tbody = trace(40, W - 40, 92, [250, 560, 870], pulse_delay=1.5)
-    body = [tbody, f'<text class="mono bye" x="{W / 2}" y="34">thanks for scrolling · still building</text>']
-    return svg(W, H, "\n".join(body), css + tcss, "Thanks for scrolling")
-
-
 def main():
     ASSETS.mkdir(exist_ok=True)
     out = {"hero.svg": hero(), "numbers.svg": numbers(), "terminal.svg": terminal(),
-           "findings.svg": findings(), "timeline.svg": timeline(), "footer.svg": footer()}
+           "findings.svg": findings(), "timeline.svg": timeline()}
     for name, text in out.items():
         (ASSETS / name).write_text(text, encoding="utf-8")
         print(f"wrote assets/{name}")

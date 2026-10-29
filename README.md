@@ -1,5 +1,5 @@
 <a href="https://soumilbhandari.com">
-  <img src="assets/hero.svg" width="100%" alt="Soumil Bhandari: Computer Engineering at Purdue, AI Researcher at Perforated AI. I like building at the frontier of science and engineering.">
+  <img src="assets/hero.svg" width="100%" alt="Soumil Bhandari: Computer Engineering at Purdue, AI Researcher at Perforated AI. The name decodes from masked tokens like a diffusion language model, and three dendritic neurons pass a spike along the bottom.">
 </a>
 
 <p align="center">
@@ -12,18 +12,20 @@
 
 ## `01` whoami
 
-I build ML models and hardware for medicine, then find out honestly whether they work. Purdue CompE, AI research at **Perforated AI**, previously **Harvard Medical School**, **McKesson**, and **IIT Roorkee**.
+I build ML models and hardware for medicine, then find out honestly whether they work. Purdue CompE ’28, AI research at **Perforated AI**, electronics on **Purdue Formula SAE**. Previously **Harvard Medical School**, **McKesson**, and **IIT Roorkee**.
 
 ```python
 class Soumil:
     def __init__(self):
-        self.studying   = "B.S. Computer Engineering @ Purdue"
-        self.working_on = "dendritic model compression @ Perforated AI"
-        self.previously = ["Harvard Medical School", "McKesson", "IIT Roorkee", "Tekizma"]
+        self.studying   = "B.S. Computer Engineering @ Purdue, class of 2028"
+        self.working_on = ["dendritic model compression @ Perforated AI",
+                           "telemetry electronics @ Purdue Formula SAE"]
+        self.previously = ["Harvard Medical School", "McKesson", "IIT Roorkee"]
         self.obsessions = ["diffusion LMs", "AI security", "neurotech", "medical hardware"]
         self.patents    = 3            # provisional, multimodal neurodegenerative modeling
+        self.startups   = {"Neurafy": "failed. learned the most from this one"}
         self.off_screen = ["basketball", "working out", "ice cream sundaes"]
-        self.website    = "soumilbhandari.com"   # nine things in the room do something. start with the lamp.
+        self.website    = "soumilbhandari.com"   # start with the lamp
 
     def ask_me_about(self):
         return ["why masked diffusion LMs are underrated",
@@ -31,15 +33,15 @@ class Soumil:
                 "building hardware that fits on a head"]
 ```
 
-<img src="assets/numbers.svg" width="100%" alt="3 provisional US patents. 1M+ clinical records through my pipelines at McKesson. Top 4% at YC Startup School. Best Overall Hack at HopHacks 2026. 1,000+ students on Notes360.ai.">
+<img src="assets/numbers.svg" width="100%" alt="3 provisional US patents, filed Dec 2025. 1st of 280+ teams at HopHacks 2026. Top 4% at YC AI Startup School. 98% MEP classification accuracy at Harvard Medical School. $50K+ personally realized from my deal engine.">
 
 ## `02` builds
 
-<a href="https://github.com/SoumilBhandari?tab=repositories"><img src="assets/terminal.svg" width="100%" alt="ls ~/builds: nanoDLM, a masked-diffusion LM from scratch. deadbolt, 6 backdoor detectors vs a 102-model zoo. Bastion, spend caps and audit logs for MCP tool calls. HalluScope, three hallucination detectors. SecuriVax, Best Overall at HopHacks. NeuraBand, a neuro biomarker wearable. ATLAS, closed-loop TMS at Harvard. You2, a desk assistant that remembers."></a>
+<a href="https://github.com/SoumilBhandari?tab=repositories"><img src="assets/terminal.svg" width="100%" alt="ls ~/builds: nanoDLM, a masked-diffusion LM from scratch. deadbolt, 6 backdoor detectors vs a 102-model zoo. Bastion, spend caps and audit logs for MCP tool calls. SecuriVax, a vaccine cold-chain engine, 1st of 280+ at HopHacks. Neurafy, an Alzheimer's progression model. Neural Space Cap, an EEG and PPG cap for spaceflight. ATLAS, closed-loop TMS at Harvard. You2, an on-device voice assistant that remembers. Flipper, a real-estate deal engine."></a>
 
 ## `03` things i found out
 
-<img src="assets/findings.svg" width="100%" alt="Results I didn't expect. Chatbots are most confident when they're making things up, so their confidence is worse than guessing at spotting lies (HalluScope). None of the 6 published backdoor detectors I tested caught the WaNet attack (deadbolt). The model I forked was quietly training toward a target 2x too high because of one wrong line (nanoDLM). Bastion adds guardrails to every AI agent tool call for about 0.4 ms.">
+<img src="assets/findings.svg" width="100%" alt="Results I didn't expect. Chatbots are most confident when they're making things up, so their confidence is worse than guessing at spotting lies (HalluScope). None of the 6 published backdoor detectors I tested caught the WaNet attack (deadbolt). The model I forked was quietly training toward a target 2x too high because of one wrong line (nanoDLM). Memory that consolidates gets sharper with age: over a simulated year, You2's retrieval precision went from 0.50 to 1.00.">
 
 ## `04` stack
 
@@ -51,11 +53,17 @@ class Soumil:
   <img src="https://img.shields.io/badge/spaCy-0b0b0d?style=flat-square&logo=spacy&logoColor=cfb991" alt="spaCy">
   <img src="https://img.shields.io/badge/LangChain-0b0b0d?style=flat-square&logo=langchain&logoColor=cfb991" alt="LangChain">
   <img src="https://img.shields.io/badge/MCP-0b0b0d?style=flat-square&logo=anthropic&logoColor=cfb991" alt="Model Context Protocol">
+  <img src="https://img.shields.io/badge/XGBoost-0b0b0d?style=flat-square" alt="XGBoost">
+  <img src="https://img.shields.io/badge/NumPy-0b0b0d?style=flat-square&logo=numpy&logoColor=cfb991" alt="NumPy">
+  <img src="https://img.shields.io/badge/pandas-0b0b0d?style=flat-square&logo=pandas&logoColor=cfb991" alt="pandas">
 </p>
 
 <p align="center">
   <b>Systems & hardware</b><br><br>
-  <img src="https://skillicons.dev/icons?i=cpp,java,arduino,raspberrypi,linux,bash,docker,git&theme=dark" alt="C++, Java, Arduino, Raspberry Pi, Linux, Bash, Docker, Git">
+  <img src="https://skillicons.dev/icons?i=cpp,java,arduino,raspberrypi,linux,bash,docker,git&theme=dark" alt="C++, Java, Arduino, Raspberry Pi, Linux, Bash, Docker, Git"><br>
+  <img src="https://img.shields.io/badge/PCB_layout-0b0b0d?style=flat-square" alt="PCB design">
+  <img src="https://img.shields.io/badge/ESP32-0b0b0d?style=flat-square&logo=espressif&logoColor=cfb991" alt="ESP32">
+  <img src="https://img.shields.io/badge/OpenSCAD-0b0b0d?style=flat-square&logo=openscad&logoColor=cfb991" alt="OpenSCAD">
 </p>
 
 <p align="center">
@@ -73,8 +81,16 @@ class Soumil:
 
 **Recognition**
 
-Best Overall Hack, HopHacks 2026 · YC Startup School, top 4% of 35,000+ · Virginia State Science Fair, recognized by Leidos, Yale, and the Office of Naval Research · Distinguished Intern Award, Tekizma · Columbia Invitational debate champion, 11–1, gold bid to the TOC
+- **1st Overall of 280+**, HopHacks 2026, for [SecuriVax](https://github.com/SoumilBhandari/SecuriVax)
+- **Y Combinator AI Startup School**, 2,500 selected of 35,000+ applicants (top 4%)
+- **Virginia State Science & Engineering Fair**: Office of Naval Research, Yale Science & Engineering Association, and Leidos awards, from a ~200-exhibit state field
+- **Columbia Invitational debate champion**, 11–1, gold bid to the TOC
+
+**Patents** · named inventor, filed Dec 2025
+
+- *Modality-Balanced Multi-Omic Modeling with Drift-Resilient Harmonization* (63/949,237)
+- *Tri-Modal Network-Based Identification of Neurobiological Resilience Signatures* (63/949,231)
+- *Quantifying and Predicting Cognitive Resilience Under Neurodegenerative and Stress-Induced Pathologies* (63/949,240)
 
 </details>
 
-<img src="assets/footer.svg" width="100%" alt="">
