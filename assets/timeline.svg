@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="718" viewBox="0 0 1200 718" role="img" aria-label="2026 – now: Perforated AI, AI Researcher. Researching dendritic model compression; 2026 – now: Purdue University, B.S. Computer Engineering. VIP / AAMED: Neural Space Cap, an EEG cap for astronaut EVA helmets; 2026: Harvard Medical School, Research Intern, TMS Lab. Closed-loop motor-threshold estimation (ATLAS) with Dr. Aapo Nummenmaa; 2025: Neurafy, Founder. Alzheimer’s progression modeling · three provisional US patents; 2025: McKesson, Software Engineering Intern. GPT pipelines over 1M+ clinical records; 2025: IIT Roorkee, Research Intern. XGBoost at 92%+ accuracy; LLaMA-2 and Flan-T5 fine-tuned with LoRA; 2023: Tekizma, Software Engineering Intern. spaCy + Hugging Face NLP · Distinguished Intern Award, multiple years">
+<title>2026 – now: Perforated AI, AI Researcher. Researching dendritic model compression; 2026 – now: Purdue University, B.S. Computer Engineering. VIP / AAMED: Neural Space Cap, an EEG cap for astronaut EVA helmets; 2026: Harvard Medical School, Research Intern, TMS Lab. Closed-loop motor-threshold estimation (ATLAS) with Dr. Aapo Nummenmaa; 2025: Neurafy, Founder. Alzheimer’s progression modeling · three provisional US patents; 2025: McKesson, Software Engineering Intern. GPT pipelines over 1M+ clinical records; 2025: IIT Roorkee, Research Intern. XGBoost at 92%+ accuracy; LLaMA-2 and Flan-T5 fine-tuned with LoRA; 2023: Tekizma, Software Engineering Intern. spaCy + Hugging Face NLP · Distinguished Intern Award, multiple years</title>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+
+.yr { font-size: 17px; fill: #cfb991; text-anchor: end; }
+.org { font-size: 25px; font-weight: 700; fill: #f3f1ed; }
+.role { font-size: 21px; font-weight: 400; fill: #9d9993; }
+.det { font-size: 19px; fill: #9d9993; }
+.ring { fill: none; stroke: #cfb991; stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center;
+  animation: ping 2.2s ease-out 0.8s infinite; }
+.row { animation: in 0.6s ease-out both; }
+@keyframes ping { 0% { opacity: 0.8; transform: scale(1); } 100% { opacity: 0; transform: scale(2.6); } }
+@keyframes in { from { opacity: 0; transform: translateX(-8px); } }
+</style>
+<rect x="0.5" y="0.5" width="1199" height="717" rx="18" fill="#141417" stroke="#26262b"/>
+<line x1="196" y1="50" x2="196" y2="672" stroke="#26262b" stroke-width="2"/>
+<g class="row" style="animation-delay: 0.1s"><text class="mono yr" x="164" y="56">2026 – now</text><circle cx="196" cy="48" r="7" fill="#cfb991"/><circle class="ring" cx="196" cy="48" r="7"/><text class="sans org" x="228" y="56">Perforated AI<tspan class="role" dx="14">AI Researcher</tspan></text><text class="sans det" x="228" y="87">Researching dendritic model compression</text></g>
+<g class="row" style="animation-delay: 0.2s"><text class="mono yr" x="164" y="152">2026 – now</text><circle cx="196" cy="144" r="6" fill="#0b0b0d" stroke="#8d7f5f" stroke-width="2"/><text class="sans org" x="228" y="152">Purdue University<tspan class="role" dx="14">B.S. Computer Engineering</tspan></text><text class="sans det" x="228" y="183">VIP / AAMED: Neural Space Cap, an EEG cap for astronaut EVA helmets</text></g>
+<g class="row" style="animation-delay: 0.3s"><text class="mono yr" x="164" y="248">2026</text><circle cx="196" cy="240" r="6" fill="#0b0b0d" stroke="#8d7f5f" stroke-width="2"/><text class="sans org" x="228" y="248">Harvard Medical School<tspan class="role" dx="14">Research Intern, TMS Lab</tspan></text><text class="sans det" x="228" y="279">Closed-loop motor-threshold estimation (ATLAS) with Dr. Aapo Nummenmaa</text></g>
+<g class="row" style="animation-delay: 0.4s"><text class="mono yr" x="164" y="344">2025</text><circle cx="196" cy="336" r="6" fill="#0b0b0d" stroke="#8d7f5f" stroke-width="2"/><text class="sans org" x="228" y="344">Neurafy<tspan class="role" dx="14">Founder</tspan></text><text class="sans det" x="228" y="375">Alzheimer’s progression modeling · three provisional US patents</text></g>
+<g class="row" style="animation-delay: 0.5s"><text class="mono yr" x="164" y="440">2025</text><circle cx="196" cy="432" r="6" fill="#0b0b0d" stroke="#8d7f5f" stroke-width="2"/><text class="sans org" x="228" y="440">McKesson<tspan class="role" dx="14">Software Engineering Intern</tspan></text><text class="sans det" x="228" y="471">GPT pipelines over 1M+ clinical records</text></g>
+<g class="row" style="animation-delay: 0.6s"><text class="mono yr" x="164" y="536">2025</text><circle cx="196" cy="528" r="6" fill="#0b0b0d" stroke="#8d7f5f" stroke-width="2"/><text class="sans org" x="228" y="536">IIT Roorkee<tspan class="role" dx="14">Research Intern</tspan></text><text class="sans det" x="228" y="567">XGBoost at 92%+ accuracy; LLaMA-2 and Flan-T5 fine-tuned with LoRA</text></g>
+<g class="row" style="animation-delay: 0.7s"><text class="mono yr" x="164" y="632">2023</text><circle cx="196" cy="624" r="6" fill="#0b0b0d" stroke="#8d7f5f" stroke-width="2"/><text class="sans org" x="228" y="632">Tekizma<tspan class="role" dx="14">Software Engineering Intern</tspan></text><text class="sans det" x="228" y="663">spaCy + Hugging Face NLP · Distinguished Intern Award, multiple years</text></g>
+</svg>

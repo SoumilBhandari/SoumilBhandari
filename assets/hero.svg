@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-label="Soumil Bhandari: Computer Engineering @ Purdue, AI Researcher @ Perforated AI">
+<title>Soumil Bhandari: Computer Engineering @ Purdue, AI Researcher @ Perforated AI</title>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+
+.prompt { font-size: 15px; fill: #9d9993; }
+.step { font-size: 15px; fill: #cfb991; }
+.mask { fill: #cfb991; fill-opacity: 0.07; stroke: #8d7f5f; stroke-width: 1.5; opacity: 0; }
+.ch { font-size: 64px; font-weight: 600; fill: #f3f1ed; text-anchor: middle; }
+.sub { font-size: 24px; fill: #f3f1ed; text-anchor: middle; animation: up 0.8s ease-out 3.21s both; }
+.foot { font-size: 14px; fill: #8d7f5f; animation: fade 1s ease-out 3.46s both; }
+.typed { font-size: 19px; fill: #f3f1ed; }
+.caret { fill: #cfb991; opacity: 0; }
+.chev { font-size: 19px; fill: #cfb991; animation: fade 0.6s ease-out 3.46s both; }
+@keyframes show { from, to { opacity: 1; } }
+@keyframes hide { from, to { opacity: 0; } }
+@keyframes commit { 0% { opacity: 0; fill: #cfb991; } 25% { opacity: 1; fill: #cfb991; }
+  100% { opacity: 1; fill: #f3f1ed; } }
+@keyframes up { from { opacity: 0; transform: translateY(10px); } }
+@keyframes fade { from { opacity: 0; } }
+
+@keyframes type0 { 0% { transform: scaleX(0); animation-timing-function: steps(47, end); }
+  9.20% { transform: scaleX(1); animation-timing-function: linear; }
+  16.52% { transform: scaleX(1); animation-timing-function: steps(47, end); }
+  18.70%, 100% { transform: scaleX(0); } }
+@keyframes caret0 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
+  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(47, end); }
+  9.20% { opacity: 1; transform: translateX(535.8px); animation-timing-function: linear; }
+  16.52% { opacity: 1; transform: translateX(535.8px); animation-timing-function: steps(47, end); }
+  18.70% { opacity: 1; transform: translateX(0); }
+  18.71%, 100% { opacity: 0; transform: translateX(0); } }
+.r0 { transform-origin: 337.8px 0; 
+  animation: type0 23.0s 3.66s infinite both; }
+.k0 { animation: caret0 23.0s 3.66s infinite both; }
+
+@keyframes type1 { 0% { transform: scaleX(0); animation-timing-function: steps(44, end); }
+  8.61% { transform: scaleX(1); animation-timing-function: linear; }
+  16.52% { transform: scaleX(1); animation-timing-function: steps(44, end); }
+  18.70%, 100% { transform: scaleX(0); } }
+@keyframes caret1 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
+  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(44, end); }
+  8.61% { opacity: 1; transform: translateX(501.6px); animation-timing-function: linear; }
+  16.52% { opacity: 1; transform: translateX(501.6px); animation-timing-function: steps(44, end); }
+  18.70% { opacity: 1; transform: translateX(0); }
+  18.71%, 100% { opacity: 0; transform: translateX(0); } }
+.r1 { transform-origin: 337.8px 0; transform: scaleX(0);
+  animation: type1 23.0s 8.26s infinite both; }
+.k1 { animation: caret1 23.0s 8.26s infinite both; }
+
+@keyframes type2 { 0% { transform: scaleX(0); animation-timing-function: steps(48, end); }
+  9.39% { transform: scaleX(1); animation-timing-function: linear; }
+  16.52% { transform: scaleX(1); animation-timing-function: steps(48, end); }
+  18.70%, 100% { transform: scaleX(0); } }
+@keyframes caret2 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
+  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(48, end); }
+  9.39% { opacity: 1; transform: translateX(547.2px); animation-timing-function: linear; }
+  16.52% { opacity: 1; transform: translateX(547.2px); animation-timing-function: steps(48, end); }
+  18.70% { opacity: 1; transform: translateX(0); }
+  18.71%, 100% { opacity: 0; transform: translateX(0); } }
+.r2 { transform-origin: 337.8px 0; transform: scaleX(0);
+  animation: type2 23.0s 12.86s infinite both; }
+.k2 { animation: caret2 23.0s 12.86s infinite both; }
+
+@keyframes type3 { 0% { transform: scaleX(0); animation-timing-function: steps(31, end); }
+  6.07% { transform: scaleX(1); animation-timing-function: linear; }
+  16.52% { transform: scaleX(1); animation-timing-function: steps(31, end); }
+  18.70%, 100% { transform: scaleX(0); } }
+@keyframes caret3 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
+  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(31, end); }
+  6.07% { opacity: 1; transform: translateX(353.4px); animation-timing-function: linear; }
+  16.52% { opacity: 1; transform: translateX(353.4px); animation-timing-function: steps(31, end); }
+  18.70% { opacity: 1; transform: translateX(0); }
+  18.71%, 100% { opacity: 0; transform: translateX(0); } }
+.r3 { transform-origin: 337.8px 0; transform: scaleX(0);
+  animation: type3 23.0s 17.46s infinite both; }
+.k3 { animation: caret3 23.0s 17.46s infinite both; }
+
+@keyframes type4 { 0% { transform: scaleX(0); animation-timing-function: steps(46, end); }
+  9.00% { transform: scaleX(1); animation-timing-function: linear; }
+  16.52% { transform: scaleX(1); animation-timing-function: steps(46, end); }
+  18.70%, 100% { transform: scaleX(0); } }
+@keyframes caret4 { 0% { opacity: 0; transform: translateX(0); animation-timing-function: step-end; }
+  0.05% { opacity: 1; transform: translateX(0); animation-timing-function: steps(46, end); }
+  9.00% { opacity: 1; transform: translateX(524.4px); animation-timing-function: linear; }
+  16.52% { opacity: 1; transform: translateX(524.4px); animation-timing-function: steps(46, end); }
+  18.70% { opacity: 1; transform: translateX(0); }
+  18.71%, 100% { opacity: 0; transform: translateX(0); } }
+.r4 { transform-origin: 337.8px 0; transform: scaleX(0);
+  animation: type4 23.0s 22.06s infinite both; }
+.k4 { animation: caret4 23.0s 22.06s infinite both; }
+
+.trace { fill: none; stroke: #3a3630; stroke-width: 2; stroke-linejoin: round;
+  stroke-dasharray: 1613; animation: draw 2.4s ease-out 0.3s both; }
+.pulse { fill: none; stroke: #cfb991; stroke-width: 2.5; stroke-linejoin: round; opacity: 0;
+  stroke-dasharray: 140 1613; filter: url(#glow);
+  animation: travel 4.5s linear 3.06s infinite; }
+@keyframes draw { from { stroke-dashoffset: 1613; } to { stroke-dashoffset: 0; } }
+@keyframes travel { 0% { stroke-dashoffset: 140; opacity: 1; }
+  100% { stroke-dashoffset: -1613; opacity: 1; } }
+</style>
+<defs>
+<pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+  <circle cx="2" cy="2" r="1" fill="#26262b"/></pattern>
+<radialGradient id="wash" cx="50%" cy="0%" r="75%">
+  <stop offset="0%" stop-color="#cfb991" stop-opacity="0.16"/>
+  <stop offset="100%" stop-color="#cfb991" stop-opacity="0"/></radialGradient>
+<clipPath id="frame"><rect width="1200" height="450" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#frame)">
+<rect width="1200" height="450" fill="#0b0b0d"/>
+<rect width="1200" height="450" fill="url(#dots)" opacity="0.7"/>
+<rect width="1200" height="450" fill="url(#wash)"/>
+</g>
+<rect x="0.5" y="0.5" width="1199" height="449" rx="18" fill="none" stroke="#26262b"/>
+<defs><clipPath id="c0"><rect class="r0" x="337.8" y="302" width="536.8" height="28"/></clipPath><clipPath id="c1"><rect class="r1" x="337.8" y="302" width="502.6" height="28"/></clipPath><clipPath id="c2"><rect class="r2" x="337.8" y="302" width="548.2" height="28"/></clipPath><clipPath id="c3"><rect class="r3" x="337.8" y="302" width="354.4" height="28"/></clipPath><clipPath id="c4"><rect class="r4" x="337.8" y="302" width="525.4" height="28"/></clipPath></defs>
+<text class="mono prompt" x="48" y="56">$ python sample.py --prompt "[MASK] × 14" --steps 16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.66s linear 0.00s">step 00/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 0.66s">step 01/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 0.82s">step 02/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 0.98s">step 03/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 1.14s">step 04/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 1.30s">step 05/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 1.46s">step 06/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 1.62s">step 07/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 1.78s">step 08/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 1.94s">step 09/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 2.10s">step 10/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 2.26s">step 11/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 2.42s">step 12/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 2.58s">step 13/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 2.74s">step 14/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" opacity="0" style="animation: show 0.16s linear 2.90s">step 15/16</text>
+<text class="mono step" x="1152" y="56" text-anchor="end" style="animation: hide 3.06s linear 0s">step 16/16 ✓</text>
+<rect class="mask" x="260.0" y="146" width="36" height="66" rx="7" style="animation: show 1.78s linear 0s"/>
+<text class="mono ch" x="278.0" y="200" style="animation: commit 0.7s ease-out 1.78s both">S</text>
+<rect class="mask" x="306.0" y="146" width="36" height="66" rx="7" style="animation: show 1.14s linear 0s"/>
+<text class="mono ch" x="324.0" y="200" style="animation: commit 0.7s ease-out 1.14s both">o</text>
+<rect class="mask" x="352.0" y="146" width="36" height="66" rx="7" style="animation: show 1.46s linear 0s"/>
+<text class="mono ch" x="370.0" y="200" style="animation: commit 0.7s ease-out 1.46s both">u</text>
+<rect class="mask" x="398.0" y="146" width="36" height="66" rx="7" style="animation: show 2.10s linear 0s"/>
+<text class="mono ch" x="416.0" y="200" style="animation: commit 0.7s ease-out 2.10s both">m</text>
+<rect class="mask" x="444.0" y="146" width="36" height="66" rx="7" style="animation: show 2.58s linear 0s"/>
+<text class="mono ch" x="462.0" y="200" style="animation: commit 0.7s ease-out 2.58s both">i</text>
+<rect class="mask" x="490.0" y="146" width="36" height="66" rx="7" style="animation: show 3.06s linear 0s"/>
+<text class="mono ch" x="508.0" y="200" style="animation: commit 0.7s ease-out 3.06s both">l</text>
+<rect class="mask" x="582.0" y="146" width="36" height="66" rx="7" style="animation: show 2.26s linear 0s"/>
+<text class="mono ch" x="600.0" y="200" style="animation: commit 0.7s ease-out 2.26s both">B</text>
+<rect class="mask" x="628.0" y="146" width="36" height="66" rx="7" style="animation: show 2.90s linear 0s"/>
+<text class="mono ch" x="646.0" y="200" style="animation: commit 0.7s ease-out 2.90s both">h</text>
+<rect class="mask" x="674.0" y="146" width="36" height="66" rx="7" style="animation: show 1.62s linear 0s"/>
+<text class="mono ch" x="692.0" y="200" style="animation: commit 0.7s ease-out 1.62s both">a</text>
+<rect class="mask" x="720.0" y="146" width="36" height="66" rx="7" style="animation: show 0.82s linear 0s"/>
+<text class="mono ch" x="738.0" y="200" style="animation: commit 0.7s ease-out 0.82s both">n</text>
+<rect class="mask" x="766.0" y="146" width="36" height="66" rx="7" style="animation: show 0.98s linear 0s"/>
+<text class="mono ch" x="784.0" y="200" style="animation: commit 0.7s ease-out 0.98s both">d</text>
+<rect class="mask" x="812.0" y="146" width="36" height="66" rx="7" style="animation: show 1.94s linear 0s"/>
+<text class="mono ch" x="830.0" y="200" style="animation: commit 0.7s ease-out 1.94s both">a</text>
+<rect class="mask" x="858.0" y="146" width="36" height="66" rx="7" style="animation: show 2.74s linear 0s"/>
+<text class="mono ch" x="876.0" y="200" style="animation: commit 0.7s ease-out 2.74s both">r</text>
+<rect class="mask" x="904.0" y="146" width="36" height="66" rx="7" style="animation: show 0.66s linear 0s"/>
+<text class="mono ch" x="922.0" y="200" style="animation: commit 0.7s ease-out 0.66s both">i</text>
+<text class="sans sub" x="600.0" y="264">Computer Engineering @ Purdue<tspan fill="#cfb991" dx="14">·</tspan><tspan dx="14">AI Researcher @ Perforated AI</tspan></text>
+<text class="mono chev" x="315.0" y="322">›</text>
+<text class="mono typed" x="337.8" y="322" textLength="535.8" lengthAdjust="spacing" clip-path="url(#c0)">training diffusion language models from scratch</text>
+<rect class="caret k0" x="338.8" y="305" width="10" height="21" rx="1.5"/>
+<text class="mono typed" x="337.8" y="322" textLength="501.6" lengthAdjust="spacing" clip-path="url(#c1)">catching backdoors hidden in neural networks</text>
+<rect class="caret k1" x="338.8" y="305" width="10" height="21" rx="1.5"/>
+<text class="mono typed" x="337.8" y="322" textLength="547.2" lengthAdjust="spacing" clip-path="url(#c2)">building wearables for neurodegenerative disease</text>
+<rect class="caret k2" x="338.8" y="305" width="10" height="21" rx="1.5"/>
+<text class="mono typed" x="337.8" y="322" textLength="353.4" lengthAdjust="spacing" clip-path="url(#c3)">putting guardrails on AI agents</text>
+<rect class="caret k3" x="338.8" y="305" width="10" height="21" rx="1.5"/>
+<text class="mono typed" x="337.8" y="322" textLength="524.4" lengthAdjust="spacing" clip-path="url(#c4)">measuring, honestly, whether it actually works</text>
+<rect class="caret k4" x="338.8" y="305" width="10" height="21" rx="1.5"/>
+<defs><filter id="glow" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path class="trace" d="M40 398 L130 398 L140 392 L150 398 L158 398 L162 404 L168 352 L174 412 L180 398 L194 398 L206 388 L220 398 L410 398 L420 392 L430 398 L438 398 L442 404 L448 352 L454 412 L460 398 L474 398 L486 388 L500 398 L690 398 L700 392 L710 398 L718 398 L722 404 L728 352 L734 412 L740 398 L754 398 L766 388 L780 398 L970 398 L980 392 L990 398 L998 398 L1002 404 L1008 352 L1014 412 L1020 398 L1034 398 L1046 388 L1060 398 L1160 398"/><path class="pulse" d="M40 398 L130 398 L140 392 L150 398 L158 398 L162 404 L168 352 L174 412 L180 398 L194 398 L206 388 L220 398 L410 398 L420 392 L430 398 L438 398 L442 404 L448 352 L454 412 L460 398 L474 398 L486 388 L500 398 L690 398 L700 392 L710 398 L718 398 L722 404 L728 352 L734 412 L740 398 L754 398 L766 388 L780 398 L970 398 L980 392 L990 398 L998 398 L1002 404 L1008 352 L1014 412 L1020 398 L1034 398 L1046 388 L1060 398 L1160 398"/>
+<text class="mono foot" x="48" y="432">masked diffusion · 16 denoising steps</text>
+<text class="mono foot" x="1152" y="432" text-anchor="end">soumilbhandari.com</text>
+</svg>

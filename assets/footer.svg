@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" role="img" aria-label="Thanks for scrolling">
+<title>Thanks for scrolling</title>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+.bye { font-size: 15px; fill: #9d9993; text-anchor: middle; }
+.trace { fill: none; stroke: #3a3630; stroke-width: 2; stroke-linejoin: round;
+  stroke-dasharray: 1490; animation: draw 2.4s ease-out 0.3s both; }
+.pulse { fill: none; stroke: #cfb991; stroke-width: 2.5; stroke-linejoin: round; opacity: 0;
+  stroke-dasharray: 140 1490; filter: url(#glow);
+  animation: travel 4.5s linear 1.5s infinite; }
+@keyframes draw { from { stroke-dashoffset: 1490; } to { stroke-dashoffset: 0; } }
+@keyframes travel { 0% { stroke-dashoffset: 140; opacity: 1; }
+  100% { stroke-dashoffset: -1490; opacity: 1; } }
+</style>
+<defs><filter id="glow" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path class="trace" d="M40 92 L250 92 L260 86 L270 92 L278 92 L282 98 L288 46 L294 106 L300 92 L314 92 L326 82 L340 92 L560 92 L570 86 L580 92 L588 92 L592 98 L598 46 L604 106 L610 92 L624 92 L636 82 L650 92 L870 92 L880 86 L890 92 L898 92 L902 98 L908 46 L914 106 L920 92 L934 92 L946 82 L960 92 L1160 92"/><path class="pulse" d="M40 92 L250 92 L260 86 L270 92 L278 92 L282 98 L288 46 L294 106 L300 92 L314 92 L326 82 L340 92 L560 92 L570 86 L580 92 L588 92 L592 98 L598 46 L604 106 L610 92 L624 92 L636 82 L650 92 L870 92 L880 86 L890 92 L898 92 L902 98 L908 46 L914 106 L920 92 L934 92 L946 82 L960 92 L1160 92"/>
+<text class="mono bye" x="600.0" y="34">thanks for scrolling · still building</text>
+</svg>
