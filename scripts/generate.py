@@ -1,4 +1,4 @@
-"""Builds the static SVGs in assets/: hero, numbers, project cards, timeline, footer.
+"""Builds the static SVGs in assets/: hero, numbers, terminal, findings, timeline, footer.
 
     python scripts/generate.py
 
@@ -8,7 +8,7 @@ Edit the data below and re-run; stats.py handles the live GitHub cards.
 import random
 from pathlib import Path
 
-from theme import (BG, BORDER, GOLD, GOLD_DIM, MUTED, SURFACE_HI, TEXT, card_bg,
+from theme import (BG, BORDER, GOLD, GOLD_DIM, MUTED, TEXT, card_bg,
                    esc, svg, wrap)
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
@@ -31,42 +31,31 @@ NUMBERS = [
     ("1,000+", "students on Notes360.ai", "across five schools"),
 ]
 
-PROJECTS = [
-    ("nanoDLM", "ML RESEARCH",
-     "The nanoGPT of masked-diffusion language models: ~1,100 lines of plain PyTorch, "
-     "with an honest head-to-head against a matched autoregressive baseline.",
-     "char-level · RoPE · self-conditioning", "Python"),
-    ("deadbolt", "AI SECURITY",
-     "A benchmark for catching backdoors in neural networks, and for finding out "
-     "which published detectors actually work.",
-     "6 attacks · 6 detectors · 540 blind scans", "Python"),
-    ("Bastion", "AGENT INFRASTRUCTURE",
-     "A local-first control plane for AI agent tools. Caps spend, rate-limits, "
-     "and audits every MCP tool call in a tamper-evident log.",
-     "pip install bastion-mcp", "Python"),
-    ("HalluScope", "LLM EVALUATION",
-     "Three ways to catch an LLM lying, and an honest AUROC evaluation of which one "
-     "actually works. Highlights fabricated spans live.",
-     "HaluEval · TruthfulQA · Gradio", "Python"),
-    ("SecuriVax", "HEALTH HARDWARE",
-     "Is this vial still good? A last-mile cold-chain monitor that makes vaccine "
-     "integrity visible, measurable, and actionable.",
-     "Best Overall · HopHacks 2026", "Python"),
-    ("NeuraBand", "NEUROTECH",
-     "A pill-sized wearable that passively tracks ten neurological biomarkers and "
-     "streams them over BLE to a clinical dashboard.",
-     "10 biomarkers · Web Bluetooth · Expo", "JavaScript"),
-    ("ATLAS", "NEUROTECH · HARVARD",
-     "Closed-loop TMS motor-threshold estimation: calibrated MEP detection plus "
-     "Bayesian, entropy-minimizing adaptive search.",
-     "built at Harvard Medical School", "Python"),
-    ("You2", "PHYSICAL AI",
-     "A local-only desk assistant that remembers. It consolidates every conversation "
-     "into a second brain, and none of it leaves the box.",
-     "on-device · “Hey Friday” · no cloud", "Python"),
+BUILDS = [
+    ("nanoDLM", "masked-diffusion LM from scratch in ~1.1k lines of PyTorch", "ml"),
+    ("deadbolt", "6 backdoor detectors vs a 102-model zoo, run blind", "security"),
+    ("Bastion", "spend caps, rate limits + audit log for MCP tool calls", "agents"),
+    ("HalluScope", "three hallucination detectors, one honest scoreboard", "evals"),
+    ("SecuriVax", "is this vial still good? Best Overall @ HopHacks", "health"),
+    ("NeuraBand", "10 neuro biomarkers over BLE from a pill-sized wearable", "neuro"),
+    ("ATLAS", "closed-loop TMS thresholding @ Harvard Medical School", "neuro"),
+    ("You2", "a desk assistant that remembers and never phones home", "hardware"),
 ]
 
-LANG_COLORS = {"Python": "#3572A5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6"}
+FINDINGS = [
+    ("0.254", "An LLM is surest of its fluent fakes, so its own confidence catches "
+     "hallucinations worse than a coin flip. A hidden-state probe: 0.988.",
+     "halluscope \u00b7 AUROC on HaluEval, n = 4,000"),
+    ("6 / 6", "Every published backdoor detector I tested scores below chance against WaNet. "
+     "Following any of them is worse than guessing.",
+     "deadbolt \u00b7 102-model zoo, 540 blind scans"),
+    ("~2\u00d7", "The diffusion LM I forked had a loss that still went down, just toward twice "
+     "the true entropy. One wrong denominator.",
+     "nanoDLM \u00b7 mask.sum() \u2192 B\u00b7T"),
+    ("0.4 ms", "The cost of putting spend caps, rate limits, argument guards, and a hash-chained "
+     "audit log in front of every agent tool call.",
+     "Bastion \u00b7 vs. a ~2.5 ms stdio round trip"),
+]
 
 TIMELINE = [
     ("2026 – now", "Perforated AI", "AI Researcher",
@@ -265,30 +254,76 @@ def numbers():
     return svg(W, H, "\n".join(body), css, alt)
 
 
-def project_card(idx, name, cat, desc, stat, lang):
-    W, H = 600, 270
+def terminal():
+    """`ls ~/builds` in a terminal window: the command types out, then the listing prints."""
+    W, adv, pitch = 1200, 11.4, 36
+    top = 104
+    H = top + pitch * (len(BUILDS) + 1) + 34
+    cmd = "ls ~/builds --sort=impact"
+    cx = 40 + 2 * adv
+    type_t, t0 = len(cmd) * 0.05, 0.5
+    listed = t0 + type_t + 0.25
     css = f"""
-.cat {{ font-size: 13px; letter-spacing: 2px; fill: {GOLD}; }}
-.idx {{ font-size: 46px; font-weight: 700; fill: {SURFACE_HI}; text-anchor: end; }}
-.name {{ font-size: 30px; font-weight: 700; fill: {TEXT}; }}
-.desc {{ font-size: 17px; fill: {MUTED}; }}
-.stat {{ font-size: 14px; fill: {GOLD}; }}
-.lang {{ font-size: 14px; fill: {MUTED}; text-anchor: end; }}
+.bar {{ font-size: 14px; fill: {MUTED}; text-anchor: middle; }}
+.t {{ font-size: 19px; fill: {TEXT}; }}
+.p {{ font-size: 19px; fill: {GOLD}; }}
+.nm {{ font-size: 19px; font-weight: 700; fill: {GOLD}; }}
+.ds {{ font-size: 19px; fill: {MUTED}; }}
+.tg {{ font-size: 15px; fill: {GOLD_DIM}; text-anchor: end; }}
+.cmd {{ transform-origin: {cx:.1f}px 0; animation: type {type_t:.2f}s steps({len(cmd)}, end) {t0}s both; }}
+.ln {{ animation: on 0.2s ease-out both; }}
+.cur {{ fill: {GOLD}; animation: on 0.2s {listed + len(BUILDS) * 0.09:.2f}s both, blink 1.1s steps(1) {listed + len(BUILDS) * 0.09:.2f}s infinite; }}
+@keyframes type {{ from {{ transform: scaleX(0); }} }}
+@keyframes on {{ from {{ opacity: 0; }} }}
+@keyframes blink {{ 50% {{ opacity: 0; }} }}
 """
-    lines = wrap(desc, 56)[:3]
+    w = len(cmd) * adv
     body = [card_bg(W, H),
-            f'<rect x="36" y="0" width="56" height="3" rx="1.5" fill="{GOLD}"/>',
-            f'<text class="mono idx" x="{W - 32}" y="68">{idx:02d}</text>',
-            f'<text class="mono cat" x="36" y="52">{esc(cat)}</text>',
-            f'<text class="sans name" x="36" y="98">{esc(name)}</text>']
-    for k, line in enumerate(lines):
-        body.append(f'<text class="sans desc" x="36" y="{138 + k * 25}">{esc(line)}</text>')
-    lang_w = len(lang) * 8
-    body += [f'<line x1="36" y1="{H - 54}" x2="{W - 36}" y2="{H - 54}" stroke="{BORDER}"/>',
-             f'<text class="mono stat" x="36" y="{H - 24}">{esc(stat)}</text>',
-             f'<circle cx="{W - 36 - lang_w - 12}" cy="{H - 29}" r="6" fill="{LANG_COLORS.get(lang, MUTED)}"/>',
-             f'<text class="sans lang" x="{W - 36}" y="{H - 24}">{esc(lang)}</text>']
-    return svg(W, H, "\n".join(body), css, f"{name}: {desc}")
+            f'<line x1="0" y1="48" x2="{W}" y2="48" stroke="{BORDER}"/>',
+            f'<circle cx="30" cy="24" r="6" fill="{GOLD_DIM}"/>',
+            f'<circle cx="52" cy="24" r="6" fill="#3a3630"/><circle cx="74" cy="24" r="6" fill="#3a3630"/>',
+            f'<text class="mono bar" x="{W / 2}" y="29">soumil@purdue: ~/builds</text>',
+            f'<defs><clipPath id="cc"><rect class="cmd" x="{cx:.1f}" y="{top - 22}" width="{w + 1:.1f}" height="30"/></clipPath></defs>',
+            f'<text class="mono p" x="40" y="{top}">$</text>',
+            f'<text class="mono t" x="{cx:.1f}" y="{top}" textLength="{w:.1f}" lengthAdjust="spacing" clip-path="url(#cc)">{esc(cmd)}</text>']
+    for k, (name, desc, tag) in enumerate(BUILDS):
+        y = top + pitch * (k + 1) + 8
+        body.append(f'<g class="ln" style="animation-delay: {listed + k * 0.09:.2f}s">'
+                    f'<text class="mono nm" x="40" y="{y}">{esc(name)}</text>'
+                    f'<text class="mono ds" x="210" y="{y}">{esc(desc)}</text>'
+                    f'<text class="mono tg" x="{W - 40}" y="{y}">{esc(tag)}</text></g>')
+    y = top + pitch * (len(BUILDS) + 1) + 16
+    body.append(f'<g class="ln" style="animation-delay: {listed + len(BUILDS) * 0.09:.2f}s">'
+                f'<text class="mono p" x="40" y="{y}">$</text></g>'
+                f'<rect class="cur" x="{cx:.1f}" y="{y - 17}" width="10" height="21" rx="1.5"/>')
+    alt = "; ".join(f"{n}: {d}" for n, d, _ in BUILDS)
+    return svg(W, H, "\n".join(body), css, f"Builds: {alt}")
+
+
+def findings():
+    W, top, pitch = 1200, 76, 124
+    H = top + pitch * len(FINDINGS) + 4
+    css = f"""
+.hd {{ font-size: 13px; letter-spacing: 2px; fill: {GOLD}; }}
+.big {{ font-size: 46px; font-weight: 700; fill: {GOLD}; }}
+.cl {{ font-size: 21px; fill: {TEXT}; }}
+.src {{ font-size: 14px; fill: {GOLD_DIM}; }}
+.row {{ animation: up 0.6s ease-out both; }}
+@keyframes up {{ from {{ opacity: 0; transform: translateY(8px); }} }}
+"""
+    body = [card_bg(W, H, 18),
+            f'<text class="mono hd" x="40" y="50">LAB NOTEBOOK \u00b7 RESULTS I DIDN\u2019T EXPECT</text>']
+    for i, (num, claim, src) in enumerate(FINDINGS):
+        r = top + i * pitch
+        if i:
+            body.append(f'<line x1="40" y1="{r}" x2="{W - 40}" y2="{r}" stroke="{BORDER}"/>')
+        lines = wrap(claim, 76)[:2]
+        parts = [f'<text class="mono big" x="40" y="{r + 72}">{esc(num)}</text>']
+        parts += [f'<text class="sans cl" x="270" y="{r + 42 + k * 29}">{esc(l)}</text>' for k, l in enumerate(lines)]
+        parts.append(f'<text class="mono src" x="270" y="{r + 102}">{esc(src)}</text>')
+        body.append(f'<g class="row" style="animation-delay: {0.15 + i * 0.12:.2f}s">{"".join(parts)}</g>')
+    alt = " ".join(f"{n}: {c} ({s})." for n, c, s in FINDINGS)
+    return svg(W, H, "\n".join(body), css, alt)
 
 
 def timeline():
@@ -331,10 +366,9 @@ def footer():
 
 
 def main():
-    (ASSETS / "projects").mkdir(parents=True, exist_ok=True)
-    out = {"hero.svg": hero(), "numbers.svg": numbers(), "timeline.svg": timeline(), "footer.svg": footer()}
-    for i, p in enumerate(PROJECTS, 1):
-        out[f"projects/{p[0].lower()}.svg"] = project_card(i, *p)
+    ASSETS.mkdir(exist_ok=True)
+    out = {"hero.svg": hero(), "numbers.svg": numbers(), "terminal.svg": terminal(),
+           "findings.svg": findings(), "timeline.svg": timeline(), "footer.svg": footer()}
     for name, text in out.items():
         (ASSETS / name).write_text(text, encoding="utf-8")
         print(f"wrote assets/{name}")

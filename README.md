@@ -10,22 +10,57 @@
   <img src="https://komarev.com/ghpvc/?username=SoumilBhandari&style=for-the-badge&color=cfb991&labelColor=0b0b0d&label=profile%20views" alt="Profile views">
 </p>
 
-<p align="center">
-  Purdue CompE. AI research at <b>Perforated AI</b>. Previously <b>Harvard Medical School</b>, <b>McKesson</b>, <b>IIT Roorkee</b>.<br>
-  I build models and hardware for medicine, then find out honestly whether they work.
-</p>
+## `01` whoami
+
+I build ML models and hardware for medicine, then find out honestly whether they work. Purdue CompE, AI research at **Perforated AI**, previously **Harvard Medical School**, **McKesson**, and **IIT Roorkee**.
+
+```python
+class Soumil:
+    def __init__(self):
+        self.studying   = "B.S. Computer Engineering @ Purdue"
+        self.working_on = "dendritic model compression @ Perforated AI"
+        self.previously = ["Harvard Medical School", "McKesson", "IIT Roorkee", "Tekizma"]
+        self.obsessions = ["diffusion LMs", "AI security", "neurotech", "medical hardware"]
+        self.patents    = 3            # provisional, multimodal neurodegenerative modeling
+        self.off_screen = ["basketball", "working out", "ice cream sundaes"]
+        self.website    = "soumilbhandari.com"   # nine things in the room do something. start with the lamp.
+
+    def ask_me_about(self):
+        return ["why masked diffusion LMs are underrated",
+                "why most backdoor detectors score below chance",
+                "building hardware that fits on a head"]
+```
 
 <img src="assets/numbers.svg" width="100%" alt="3 provisional US patents. 1M+ clinical records through my pipelines at McKesson. Top 4% at YC Startup School. Best Overall Hack at HopHacks 2026. 1,000+ students on Notes360.ai.">
 
+## `02` builds
+
+<a href="https://github.com/SoumilBhandari?tab=repositories"><img src="assets/terminal.svg" width="100%" alt="ls ~/builds: nanoDLM, a masked-diffusion LM from scratch. deadbolt, 6 backdoor detectors vs a 102-model zoo. Bastion, spend caps and audit logs for MCP tool calls. HalluScope, three hallucination detectors. SecuriVax, Best Overall at HopHacks. NeuraBand, a neuro biomarker wearable. ATLAS, closed-loop TMS at Harvard. You2, a desk assistant that remembers."></a>
+
+## `03` things i found out
+
+<img src="assets/findings.svg" width="100%" alt="0.254: An LLM is surest of its fluent fakes, so its own confidence catches hallucinations worse than a coin flip; a hidden-state probe gets 0.988 (HalluScope). 6 of 6: every published backdoor detector I tested scores below chance against WaNet (deadbolt). About 2x: the diffusion LM I forked had a loss that descended toward twice the true entropy because of one wrong denominator (nanoDLM). 0.4 ms: the cost of a full policy gateway in front of every agent tool call (Bastion).">
+
+## `04` stack
+
 <p align="center">
-  <a href="https://github.com/SoumilBhandari/nanoDLM"><img src="assets/projects/nanodlm.svg" width="49%" alt="nanoDLM: the nanoGPT of masked-diffusion language models"></a>
-  <a href="https://github.com/SoumilBhandari/deadbolt"><img src="assets/projects/deadbolt.svg" width="49%" alt="deadbolt: a benchmark for catching backdoors in neural networks"></a>
-  <a href="https://github.com/SoumilBhandari/Bastion"><img src="assets/projects/bastion.svg" width="49%" alt="Bastion: a local-first control plane for AI agent tools"></a>
-  <a href="https://github.com/SoumilBhandari/SecuriVax"><img src="assets/projects/securivax.svg" width="49%" alt="SecuriVax: a last-mile vaccine cold-chain monitor, Best Overall at HopHacks 2026"></a>
+  <b>ML & research</b><br><br>
+  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,matlab,latex&theme=dark" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, MATLAB, LaTeX"><br>
+  <img src="https://img.shields.io/badge/Hugging_Face-0b0b0d?style=flat-square&logo=huggingface&logoColor=cfb991" alt="Hugging Face">
+  <img src="https://img.shields.io/badge/LoRA-0b0b0d?style=flat-square&logo=pytorch&logoColor=cfb991" alt="LoRA">
+  <img src="https://img.shields.io/badge/spaCy-0b0b0d?style=flat-square&logo=spacy&logoColor=cfb991" alt="spaCy">
+  <img src="https://img.shields.io/badge/LangChain-0b0b0d?style=flat-square&logo=langchain&logoColor=cfb991" alt="LangChain">
+  <img src="https://img.shields.io/badge/MCP-0b0b0d?style=flat-square&logo=anthropic&logoColor=cfb991" alt="Model Context Protocol">
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,cpp,ts,react,nextjs,fastapi,postgres,docker,aws,arduino,raspberrypi,linux&theme=dark" alt="Python, PyTorch, TensorFlow, C++, TypeScript, React, Next.js, FastAPI, PostgreSQL, Docker, AWS, Arduino, Raspberry Pi, Linux">
+  <b>Systems & hardware</b><br><br>
+  <img src="https://skillicons.dev/icons?i=cpp,java,arduino,raspberrypi,linux,bash,docker,git&theme=dark" alt="C++, Java, Arduino, Raspberry Pi, Linux, Bash, Docker, Git">
+</p>
+
+<p align="center">
+  <b>Web & product</b><br><br>
+  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,nodejs,express,fastapi,flask,postgres,mongodb,tailwind,threejs,aws,gcp,vercel&theme=dark" alt="TypeScript, JavaScript, React, Next.js, Node.js, Express, FastAPI, Flask, PostgreSQL, MongoDB, Tailwind, three.js, AWS, Google Cloud, Vercel">
 </p>
 
 <img src="assets/heatmap.svg" width="100%" alt="Contribution heatmap for the last year">
@@ -35,17 +70,6 @@
 <br>
 
 <img src="assets/timeline.svg" width="100%" alt="2026 to now: Perforated AI, AI Researcher, dendritic model compression. 2026 to now: Purdue University, B.S. Computer Engineering, Neural Space Cap. 2026: Harvard Medical School, Research Intern in the TMS lab. 2025: Neurafy, Founder, three provisional patents. 2025: McKesson, Software Engineering Intern. 2025: IIT Roorkee, Research Intern. 2023: Tekizma, Software Engineering Intern.">
-
-**More builds**
-
-| | |
-|:--|:--|
-| [**HalluScope**](https://github.com/SoumilBhandari/halluscope) | Three ways to catch an LLM lying, and an honest AUROC evaluation of which one works. |
-| [**NeuraBand**](https://github.com/SoumilBhandari/NeuraBand) | A pill-sized wearable streaming ten neurological biomarkers over BLE. |
-| [**ATLAS**](https://github.com/SoumilBhandari/ATLAS) | Closed-loop TMS motor-threshold estimation, built at Harvard Medical School. |
-| [**You2**](https://github.com/SoumilBhandari/you2) | A local-only desk assistant that remembers. None of it leaves the box. |
-| [**Neural Space Cap**](https://github.com/SoumilBhandari/Neural-Space-Cap-Hardware) | An EEG cap generated from a LiDAR scan of one specific head, for EVA helmets. |
-| [**ChatDLM**](https://github.com/SoumilBhandari/ChatDLM) | A ~400M-parameter masked diffusion LM on a single RTX 3090. |
 
 **Recognition**
 

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="576" viewBox="0 0 1200 576" role="img" aria-label="0.254: An LLM is surest of its fluent fakes, so its own confidence catches hallucinations worse than a coin flip. A hidden-state probe: 0.988. (halluscope · AUROC on HaluEval, n = 4,000). 6 / 6: Every published backdoor detector I tested scores below chance against WaNet. Following any of them is worse than guessing. (deadbolt · 102-model zoo, 540 blind scans). ~2×: The diffusion LM I forked had a loss that still went down, just toward twice the true entropy. One wrong denominator. (nanoDLM · mask.sum() → B·T). 0.4 ms: The cost of putting spend caps, rate limits, argument guards, and a hash-chained audit log in front of every agent tool call. (Bastion · vs. a ~2.5 ms stdio round trip).">
+<title>0.254: An LLM is surest of its fluent fakes, so its own confidence catches hallucinations worse than a coin flip. A hidden-state probe: 0.988. (halluscope · AUROC on HaluEval, n = 4,000). 6 / 6: Every published backdoor detector I tested scores below chance against WaNet. Following any of them is worse than guessing. (deadbolt · 102-model zoo, 540 blind scans). ~2×: The diffusion LM I forked had a loss that still went down, just toward twice the true entropy. One wrong denominator. (nanoDLM · mask.sum() → B·T). 0.4 ms: The cost of putting spend caps, rate limits, argument guards, and a hash-chained audit log in front of every agent tool call. (Bastion · vs. a ~2.5 ms stdio round trip).</title>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+
+.hd { font-size: 13px; letter-spacing: 2px; fill: #cfb991; }
+.big { font-size: 46px; font-weight: 700; fill: #cfb991; }
+.cl { font-size: 21px; fill: #f3f1ed; }
+.src { font-size: 14px; fill: #8d7f5f; }
+.row { animation: up 0.6s ease-out both; }
+@keyframes up { from { opacity: 0; transform: translateY(8px); } }
+</style>
+<rect x="0.5" y="0.5" width="1199" height="575" rx="18" fill="#141417" stroke="#26262b"/>
+<text class="mono hd" x="40" y="50">LAB NOTEBOOK · RESULTS I DIDN’T EXPECT</text>
+<g class="row" style="animation-delay: 0.15s"><text class="mono big" x="40" y="148">0.254</text><text class="sans cl" x="270" y="118">An LLM is surest of its fluent fakes, so its own confidence catches</text><text class="sans cl" x="270" y="147">hallucinations worse than a coin flip. A hidden-state probe: 0.988.</text><text class="mono src" x="270" y="178">halluscope · AUROC on HaluEval, n = 4,000</text></g>
+<line x1="40" y1="200" x2="1160" y2="200" stroke="#26262b"/>
+<g class="row" style="animation-delay: 0.27s"><text class="mono big" x="40" y="272">6 / 6</text><text class="sans cl" x="270" y="242">Every published backdoor detector I tested scores below chance against</text><text class="sans cl" x="270" y="271">WaNet. Following any of them is worse than guessing.</text><text class="mono src" x="270" y="302">deadbolt · 102-model zoo, 540 blind scans</text></g>
+<line x1="40" y1="324" x2="1160" y2="324" stroke="#26262b"/>
+<g class="row" style="animation-delay: 0.39s"><text class="mono big" x="40" y="396">~2×</text><text class="sans cl" x="270" y="366">The diffusion LM I forked had a loss that still went down, just toward twice</text><text class="sans cl" x="270" y="395">the true entropy. One wrong denominator.</text><text class="mono src" x="270" y="426">nanoDLM · mask.sum() → B·T</text></g>
+<line x1="40" y1="448" x2="1160" y2="448" stroke="#26262b"/>
+<g class="row" style="animation-delay: 0.51s"><text class="mono big" x="40" y="520">0.4 ms</text><text class="sans cl" x="270" y="490">The cost of putting spend caps, rate limits, argument guards, and a</text><text class="sans cl" x="270" y="519">hash-chained audit log in front of every agent tool call.</text><text class="mono src" x="270" y="550">Bastion · vs. a ~2.5 ms stdio round trip</text></g>
+</svg>
