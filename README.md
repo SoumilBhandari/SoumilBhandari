@@ -1,5 +1,5 @@
 <a href="https://soumilbhandari.com">
-  <img src="assets/hero.svg" width="100%" alt="Soumil Bhandari: Computer Engineering at Purdue, AI Researcher at Perforated AI. The name decodes from masked tokens like a diffusion language model.">
+  <img src="assets/hero.svg" width="100%" alt="Soumil Bhandari: computer engineering at Purdue, AI research at Perforated AI. The name decodes from masked tokens like a diffusion language model.">
 </a>
 
 <p align="center">
@@ -10,33 +10,31 @@
   <img src="https://komarev.com/ghpvc/?username=SoumilBhandari&style=for-the-badge&color=cfb991&labelColor=0b0b0d&label=profile%20views" alt="Profile views">
 </p>
 
-## `01` whoami
+## whoami
 
-i build ml models and hardware, mostly for medicine, then check if they actually work.
+i build ml models and hardware, then check if they actually work.
 
 ```python
 class Soumil:
     school = "purdue, compE '28"
     now    = ["ai research @ perforated ai", "electronics @ purdue fsae"]
-    into   = ["diffusion LMs", "breaking models", "hardware that goes on your head"]
+    into   = ["ai", "defense tech", "national security", "neurotech"]
     off    = ["hoops", "lifting", "ice cream sundaes"]
     site   = "soumilbhandari.com"  # start with the lamp
 ```
 
-<img src="assets/numbers.svg" width="100%" alt="3 provisional US patents, filed Dec 2025. 1st of 280+ teams at HopHacks 2026. Top 4% at YC AI Startup School. 98% MEP classification accuracy at Harvard Medical School. $50K+ personally realized from my deal engine.">
+## builds
 
-## `02` builds
+<a href="https://github.com/SoumilBhandari?tab=repositories"><img src="assets/terminal.svg" width="100%" alt="ls ~/builds: nanoDLM, a diffusion LM from scratch. deadbolt, 6 backdoor detectors vs 102 models. Bastion, spend caps and audit logs for MCP tool calls. SecuriVax, keeps vaccines cold, won HopHacks. Neurafy, an Alzheimer's progression model. SpaceCap, an EEG and PPG cap for space. ATLAS, closed-loop TMS at Harvard. You2, an on-device voice assistant that remembers. Flipper, a real-estate deal finder."></a>
 
-<a href="https://github.com/SoumilBhandari?tab=repositories"><img src="assets/terminal.svg" width="100%" alt="ls ~/builds: nanoDLM, a masked-diffusion LM from scratch. deadbolt, 6 backdoor detectors vs a 102-model zoo. Bastion, spend caps and audit logs for MCP tool calls. SecuriVax, a vaccine cold-chain engine, 1st of 280+ at HopHacks. Neurafy, an Alzheimer's progression model. Neural Space Cap, an EEG and PPG cap for spaceflight. ATLAS, closed-loop TMS at Harvard. You2, an on-device voice assistant that remembers. Flipper, a real-estate deal engine."></a>
+## stuff i found out
 
-## `03` things i found out
+<img src="assets/findings.svg" width="100%" alt="Stuff that surprised me. Chatbots are most confident when they're making things up, so their confidence is worse than guessing at spotting lies (HalluScope). None of the 6 published backdoor detectors I tested caught the WaNet attack (deadbolt). The model I forked was quietly training toward a target 2x too high because of one wrong line (nanoDLM). Memory that consolidates gets sharper with age: over a simulated year, You2's retrieval precision went from 0.50 to 1.00.">
 
-<img src="assets/findings.svg" width="100%" alt="Results I didn't expect. Chatbots are most confident when they're making things up, so their confidence is worse than guessing at spotting lies (HalluScope). None of the 6 published backdoor detectors I tested caught the WaNet attack (deadbolt). The model I forked was quietly training toward a target 2x too high because of one wrong line (nanoDLM). Memory that consolidates gets sharper with age: over a simulated year, You2's retrieval precision went from 0.50 to 1.00.">
-
-## `04` stack
+## stack
 
 <p align="center">
-  <b>ML & research</b><br><br>
+  <b>ml</b><br><br>
   <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,matlab,latex&theme=dark" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, MATLAB, LaTeX"><br>
   <img src="https://img.shields.io/badge/Hugging_Face-0b0b0d?style=flat-square&logo=huggingface&logoColor=cfb991" alt="Hugging Face">
   <img src="https://img.shields.io/badge/LoRA-0b0b0d?style=flat-square&logo=pytorch&logoColor=cfb991" alt="LoRA">
@@ -49,7 +47,7 @@ class Soumil:
 </p>
 
 <p align="center">
-  <b>Systems & hardware</b><br><br>
+  <b>hardware</b><br><br>
   <img src="https://skillicons.dev/icons?i=cpp,java,arduino,raspberrypi,linux,bash,docker,git&theme=dark" alt="C++, Java, Arduino, Raspberry Pi, Linux, Bash, Docker, Git"><br>
   <img src="https://img.shields.io/badge/PCB_layout-0b0b0d?style=flat-square" alt="PCB design">
   <img src="https://img.shields.io/badge/ESP32-0b0b0d?style=flat-square&logo=espressif&logoColor=cfb991" alt="ESP32">
@@ -57,26 +55,26 @@ class Soumil:
 </p>
 
 <p align="center">
-  <b>Web & product</b><br><br>
+  <b>web</b><br><br>
   <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,nodejs,express,fastapi,flask,postgres,mongodb,tailwind,threejs,aws,gcp,vercel&theme=dark" alt="TypeScript, JavaScript, React, Next.js, Node.js, Express, FastAPI, Flask, PostgreSQL, MongoDB, Tailwind, three.js, AWS, Google Cloud, Vercel">
 </p>
 
 <img src="assets/heatmap.svg" width="100%" alt="Contribution heatmap for the last year">
 
 <details>
-<summary><b>The long version</b></summary>
+<summary><b>the resume version</b></summary>
 <br>
 
 <img src="assets/timeline.svg" width="100%" alt="2026 to now: Perforated AI, AI Researcher, dendritic model compression. 2026 to now: Purdue University, B.S. Computer Engineering, Neural Space Cap. 2026: Harvard Medical School, Research Intern in the TMS lab. 2025: Neurafy, Founder, three provisional patents. 2025: McKesson, Software Engineering Intern. 2025: IIT Roorkee, Research Intern. 2023: Tekizma, Software Engineering Intern.">
 
-**Recognition**
+**some wins**
 
-- **1st Overall of 280+**, HopHacks 2026, for [SecuriVax](https://github.com/SoumilBhandari/SecuriVax)
-- **Y Combinator AI Startup School**, 2,500 selected of 35,000+ applicants (top 4%)
-- **Virginia State Science & Engineering Fair**: Office of Naval Research, Yale Science & Engineering Association, and Leidos awards, from a ~200-exhibit state field
-- **Columbia Invitational debate champion**, 11–1, gold bid to the TOC
+- 1st of 280+ at HopHacks 2026, for [SecuriVax](https://github.com/SoumilBhandari/SecuriVax)
+- YC AI Startup School (2,500 picked from 35,000+)
+- Virginia State Science Fair: Office of Naval Research, Yale, and Leidos awards
+- Columbia Invitational debate champ
 
-**Patents** · named inventor, filed Dec 2025
+**patents** · 3 provisionals, filed dec 2025
 
 - *Modality-Balanced Multi-Omic Modeling with Drift-Resilient Harmonization* (63/949,237)
 - *Tri-Modal Network-Based Identification of Neurobiological Resilience Signatures* (63/949,231)

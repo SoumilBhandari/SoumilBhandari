@@ -1,4 +1,4 @@
-"""Builds the static SVGs in assets/: hero, numbers, terminal, findings, timeline.
+"""Builds the static SVGs in assets/: hero, terminal, findings, timeline.
 
     python scripts/generate.py
 
@@ -14,48 +14,40 @@ from theme import (BG, BORDER, GOLD, GOLD_DIM, MUTED, TEXT, card_bg,
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
 NAME = "Soumil Bhandari"
-SUBTITLE = ("Computer Engineering @ Purdue", "AI Researcher @ Perforated AI")
+SUBTITLE = ("computer engineering @ purdue", "ai research @ perforated ai")
 PHRASES = [
-    "training diffusion language models from scratch",
-    "catching backdoors hidden in neural networks",
-    "routing telemetry boards for Purdue Formula SAE",
-    "building EEG caps for spaceflight",
-    "measuring, honestly, whether it actually works",
-]
-
-NUMBERS = [
-    ("3", "provisional US patents", "filed Dec 2025"),
-    ("1st", "of 280+ teams", "HopHacks 2026"),
-    ("Top 4%", "YC AI Startup School", "2,500 of 35,000+"),
-    ("98%", "MEP classification", "Harvard Medical School"),
-    ("$50K+", "personally realized", "from my deal engine"),
+    "training diffusion LMs from scratch",
+    "finding backdoors in neural nets",
+    "routing boards for a race car",
+    "building EEG caps for space",
+    "checking if any of it actually works",
 ]
 
 BUILDS = [
-    ("nanoDLM", "masked-diffusion LM from scratch in ~1.1k lines of PyTorch", "ml"),
-    ("deadbolt", "6 backdoor detectors vs a 102-model zoo, run blind", "security"),
-    ("Bastion", "spend caps, rate limits + audit log for MCP tool calls", "agents"),
-    ("SecuriVax", "vaccine cold-chain engine \u00b7 1st of 280+ @ HopHacks", "health"),
-    ("Neurafy", "Alzheimer\u2019s progression model, AUC 0.95\u20130.97", "startup"),
-    ("SpaceCap", "EEG + PPG cap that flags hypoxia in spaceflight", "space"),
-    ("ATLAS", "closed-loop TMS thresholding @ Harvard Medical School", "neuro"),
-    ("You2", "a voice assistant that remembers, fully on-device", "hardware"),
-    ("Flipper", "real-estate deal engine \u00b7 $50K+ personally realized", "money"),
+    ("nanoDLM", "a diffusion LM from scratch, ~1.1k lines of pytorch", "ml"),
+    ("deadbolt", "6 backdoor detectors vs 102 models, run blind", "security"),
+    ("Bastion", "spend caps + audit logs for MCP tool calls", "agents"),
+    ("SecuriVax", "keeps vaccines cold. won hophacks", "health"),
+    ("Neurafy", "alzheimer\u2019s progression model. the startup that didn\u2019t make it", "startup"),
+    ("SpaceCap", "EEG + PPG cap that flags hypoxia in space", "space"),
+    ("ATLAS", "closed-loop TMS thresholding at harvard", "neuro"),
+    ("You2", "a voice assistant that remembers stuff, on-device", "hardware"),
+    ("Flipper", "real-estate deal finder. paid for itself", "money"),
 ]
 
 FINDINGS = [
     # (big number, what it measures, headline, plain explanation, source)
-    ("0.254", "0.5 = guessing", "Chatbots are most confident when they\u2019re making things up.",
-     "So confidence is worse than guessing at spotting lies. Reading its internals: 0.988.",
+    ("0.254", "0.5 = guessing", "chatbots are most confident when they\u2019re making stuff up.",
+     "so confidence is worse than guessing at catching lies. reading the internals: 0.988.",
      "halluscope \u00b7 AUROC on HaluEval, 4,000 answers"),
-    ("0 / 6", "detectors that worked", "None of the 6 published backdoor detectors I tested caught WaNet.",
-     "A hidden-trigger attack that made every one of them do worse than a coin flip.",
+    ("0 / 6", "detectors that worked", "none of the 6 backdoor detectors i tested caught WaNet.",
+     "a hidden-trigger attack that made every one of them worse than a coin flip.",
      "deadbolt \u00b7 102 models, 540 blind scans"),
-    ("2\u00d7", "too high, silently", "The model I forked was quietly training toward the wrong target.",
-     "Its loss still went down, so nobody noticed. One wrong line made it aim 2\u00d7 too high.",
+    ("2\u00d7", "too high, silently", "the model i forked was quietly training toward the wrong target.",
+     "loss still went down, so nobody noticed. one wrong line, aiming 2\u00d7 too high.",
      "nanoDLM \u00b7 divided by mask.sum() instead of B\u00b7T"),
-    ("1.00", "retrieval precision", "Memory that consolidates gets sharper with age, not noisier.",
-     "Over a simulated year, You2 went from 0.50 to 1.00 and stale facts never resurfaced.",
+    ("1.00", "retrieval precision", "memory that consolidates gets sharper with age.",
+     "over a simulated year, you2 went from 0.50 to 1.00. stale facts never came back.",
      "you2 \u00b7 nightly summarize, version, and decay"),
 ]
 
@@ -191,35 +183,12 @@ def hero():
     return svg(W, H, "\n".join(body), css, f"{NAME}: {SUBTITLE[0]}, {SUBTITLE[1]}")
 
 
-def numbers():
-    W, H = 1200, 170
-    col = W / len(NUMBERS)
-    css = f"""
-.big {{ font-size: 44px; font-weight: 700; fill: {GOLD}; text-anchor: middle; }}
-.lbl {{ font-size: 17px; fill: {MUTED}; text-anchor: middle; }}
-.lbl.hi {{ fill: {TEXT}; }}
-.n {{ animation: up 0.7s ease-out both; }}
-@keyframes up {{ from {{ opacity: 0; transform: translateY(10px); }} }}
-"""
-    body = [card_bg(W, H, 18)]
-    for i, (big, l1, l2) in enumerate(NUMBERS):
-        cx = col * i + col / 2
-        if i:
-            body.append(f'<line x1="{col * i:.0f}" y1="32" x2="{col * i:.0f}" y2="{H - 32}" stroke="{BORDER}"/>')
-        body.append(f'<g class="n" style="animation-delay: {0.15 + i * 0.12:.2f}s">'
-                    f'<text class="sans big" x="{cx:.0f}" y="80">{esc(big)}</text>'
-                    f'<text class="sans lbl hi" x="{cx:.0f}" y="114">{esc(l1)}</text>'
-                    f'<text class="sans lbl" x="{cx:.0f}" y="137">{esc(l2)}</text></g>')
-    alt = "; ".join(f"{b} {l1} {l2}" for b, l1, l2 in NUMBERS)
-    return svg(W, H, "\n".join(body), css, alt)
-
-
 def terminal():
     """`ls ~/builds` in a terminal window: the command types out, then the listing prints."""
     W, adv, pitch = 1200, 11.4, 36
     top = 104
     H = top + pitch * (len(BUILDS) + 1) + 34
-    cmd = "ls ~/builds --sort=impact"
+    cmd = "ls ~/builds"
     cx = 40 + 2 * adv
     type_t, t0 = len(cmd) * 0.05, 0.5
     listed = t0 + type_t + 0.25
@@ -261,7 +230,7 @@ def findings():
     W, top, pitch = 1200, 76, 132
     H = top + pitch * len(FINDINGS) + 4
     css = f"""
-.hd {{ font-size: 13px; letter-spacing: 2px; fill: {GOLD}; }}
+.hd {{ font-size: 15px; fill: {GOLD}; }}
 .big {{ font-size: 46px; font-weight: 700; fill: {GOLD}; }}
 .cap {{ font-size: 13px; fill: {MUTED}; }}
 .hl {{ font-size: 22px; font-weight: 700; fill: {TEXT}; }}
@@ -271,7 +240,7 @@ def findings():
 @keyframes up {{ from {{ opacity: 0; transform: translateY(8px); }} }}
 """
     body = [card_bg(W, H, 18),
-            f'<text class="mono hd" x="40" y="50">LAB NOTEBOOK \u00b7 RESULTS I DIDN\u2019T EXPECT</text>']
+            f'<text class="mono hd" x="40" y="50">stuff that surprised me</text>']
     for i, (num, cap, headline, explain, src) in enumerate(FINDINGS):
         r = top + i * pitch
         if i:
@@ -320,7 +289,7 @@ def timeline():
 
 def main():
     ASSETS.mkdir(exist_ok=True)
-    out = {"hero.svg": hero(), "numbers.svg": numbers(), "terminal.svg": terminal(),
+    out = {"hero.svg": hero(), "terminal.svg": terminal(),
            "findings.svg": findings(), "timeline.svg": timeline()}
     for name, text in out.items():
         (ASSETS / name).write_text(text, encoding="utf-8")
