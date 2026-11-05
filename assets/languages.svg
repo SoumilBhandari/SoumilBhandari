@@ -15,11 +15,11 @@
 <text class="mono hd" x="36" y="52">TOP LANGUAGES · BY BYTES</text>
 <defs><clipPath id="pill"><rect x="36" y="80" width="528" height="12" rx="6"/></clipPath></defs>
 <g clip-path="url(#pill)"><g class="bar">
-<rect x="36.0" y="80" width="396.1" height="12" fill="#3572A5"/>
-<rect x="431.6" y="80" width="58.5" height="12" fill="#3178c6"/>
+<rect x="36.0" y="80" width="396.0" height="12" fill="#3572A5"/>
+<rect x="431.5" y="80" width="58.5" height="12" fill="#3178c6"/>
 <rect x="489.5" y="80" width="24.5" height="12" fill="#e34c26"/>
-<rect x="513.5" y="80" width="23.9" height="12" fill="#f1e05a"/>
-<rect x="537.0" y="80" width="15.3" height="12" fill="#e5cd45"/>
+<rect x="513.5" y="80" width="24.0" height="12" fill="#f1e05a"/>
+<rect x="536.9" y="80" width="15.3" height="12" fill="#e5cd45"/>
 <rect x="551.7" y="80" width="12.8" height="12" fill="#f34b7d"/>
 </g></g>
 <circle cx="42" cy="137" r="6" fill="#3572A5"/><text class="sans ln" x="58" y="142">Python</text><text class="mono pc" x="272" y="142" text-anchor="end">74.9%</text>
