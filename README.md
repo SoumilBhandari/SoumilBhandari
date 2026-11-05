@@ -12,25 +12,15 @@
 
 ## `01` whoami
 
-I build ML models and hardware for medicine, then find out honestly whether they work. Purdue CompE ’28, AI research at **Perforated AI**, electronics on **Purdue Formula SAE**. Previously **Harvard Medical School**, **McKesson**, and **IIT Roorkee**.
+i build ml models and hardware, mostly for medicine, then check if they actually work.
 
 ```python
 class Soumil:
-    def __init__(self):
-        self.studying   = "B.S. Computer Engineering @ Purdue, class of 2028"
-        self.working_on = ["dendritic model compression @ Perforated AI",
-                           "telemetry electronics @ Purdue Formula SAE"]
-        self.previously = ["Harvard Medical School", "McKesson", "IIT Roorkee"]
-        self.obsessions = ["diffusion LMs", "AI security", "neurotech", "medical hardware"]
-        self.patents    = 3            # provisional, multimodal neurodegenerative modeling
-        self.startups   = {"Neurafy": "failed. learned the most from this one"}
-        self.off_screen = ["basketball", "working out", "ice cream sundaes"]
-        self.website    = "soumilbhandari.com"   # start with the lamp
-
-    def ask_me_about(self):
-        return ["why masked diffusion LMs are underrated",
-                "why most backdoor detectors score below chance",
-                "building hardware that fits on a head"]
+    school = "purdue, compE '28"
+    now    = ["ai research @ perforated ai", "electronics @ purdue fsae"]
+    into   = ["diffusion LMs", "breaking models", "hardware that goes on your head"]
+    off    = ["hoops", "lifting", "ice cream sundaes"]
+    site   = "soumilbhandari.com"  # start with the lamp
 ```
 
 <img src="assets/numbers.svg" width="100%" alt="3 provisional US patents, filed Dec 2025. 1st of 280+ teams at HopHacks 2026. Top 4% at YC AI Startup School. 98% MEP classification accuracy at Harvard Medical School. $50K+ personally realized from my deal engine.">
