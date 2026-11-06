@@ -1,5 +1,5 @@
 <a href="https://soumilbhandari.com">
-  <img src="assets/hero.svg" width="100%" alt="Soumil Bhandari">
+  <img src="assets/hero.svg" width="100%" alt="Soumil Bhandari, as a heat signature on a thermal drone feed">
 </a>
 
 <p align="center">
