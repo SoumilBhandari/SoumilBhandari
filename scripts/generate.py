@@ -18,6 +18,10 @@ ASSETS = Path(__file__).resolve().parent.parent / "assets"
 NAME = "Soumil Bhandari"
 COORDS = "40.4237N  86.9212W"
 HEADING = 274
+# Heat signatures the system checks and rejects before it finds the name:
+# (x, y, match score, which side the verdict prints on)
+DECOYS = [(104, 118, 12, "r"), (1090, 204, 31, "l"), (326, 250, 8, "r"), (1074, 96, 47, "l")]
+SCAN_START, SCAN_STEP, SCAN_HOLD = 0.8, 0.62, 0.7
 
 HOT = "#fff3dc"
 WARM = "#d98b32"
@@ -42,7 +46,7 @@ def hero():
     W, H = 1200, 300
     cx, base = W / 2, 182
     box = (180, 94, 1020, 210)
-    lock = 2.0
+    lock = SCAN_START + SCAN_STEP * len(DECOYS) + 0.6
     rng = random.Random(4)
     adv = 8.4
 
@@ -61,10 +65,10 @@ def hero():
 .static {{ opacity: 0.09; animation: settle 1.4s ease-out both; }}
 .noise {{ animation: jitter 0.4s steps(1) infinite; }}
 .world {{ animation: drift 11s ease-in-out {lock:.1f}s infinite; }}
-.brk {{ animation: close {lock - 0.6:.1f}s cubic-bezier(.5, 0, .2, 1) 0.6s both, track 2.6s ease-in-out {lock:.1f}s infinite;
+.brk {{ animation: close 0.8s cubic-bezier(.5, 0, .2, 1) {lock - 0.8:.2f}s both, track 2.6s ease-in-out {lock:.1f}s infinite;
   transform-origin: {cx}px {(box[1] + box[3]) / 2}px; }}
-.acq {{ opacity: 0; animation: acq {lock:.1f}s steps(1) both; }}
-.trk {{ animation: arm {lock:.1f}s linear both; }}
+.acq {{ opacity: 0; animation: acq {lock:.2f}s steps(1) both; }}
+.trk {{ animation: arm {lock:.2f}s linear both; }}
 .rec {{ fill: #e5483b; animation: blink 1.2s steps(1) infinite; }}
 .tape {{ animation: pan 9s ease-in-out infinite alternate; }}
 .ones {{ animation: roll10 10s steps(10) infinite; }}
@@ -81,7 +85,6 @@ def hero():
   75% {{ transform: translate(3px, 4px); }} }}
 @keyframes close {{ from {{ opacity: 0; transform: scale(1.35); }} 15% {{ opacity: 1; }} 70% {{ transform: scale(0.97); }} }}
 @keyframes track {{ 30% {{ transform: translate(2px, -1px); }} 60% {{ transform: translate(-2px, 1px); }} }}
-@keyframes acq {{ 0% {{ opacity: 0; }} 25%, 55%, 85% {{ opacity: 1; }} 40%, 70%, 100% {{ opacity: 0; }} }}
 @keyframes blink {{ 50% {{ opacity: 0.15; }} }}
 @keyframes pan {{ from {{ transform: translateX(-40px); }} to {{ transform: translateX(40px); }} }}
 @keyframes roll10 {{ to {{ transform: translateY(-180px); }} }}
@@ -89,6 +92,40 @@ def hero():
 @keyframes tear {{ 0%, 93% {{ opacity: 0; transform: translateX(0); }} 94% {{ opacity: 1; transform: translateX(16px); }}
   96% {{ opacity: 1; transform: translateX(-11px); }} 98% {{ opacity: 1; transform: translateX(5px); }} 99%, 100% {{ opacity: 0; }} }}
 """
+
+    # SCANNING blinks from the end of the boot until the lock.
+    on = [100 * (0.6 + 0.5 * k) / lock for k in range(int((lock - 0.6) / 0.5))]
+    css += ("@keyframes acq { 0% { opacity: 0; } "
+            + " ".join(f"{a:.1f}% {{ opacity: {1 if k % 2 == 0 else 0}; }}" for k, a in enumerate(on))
+            + " 100% { opacity: 0; } }\n")
+
+    # Each decoy gets boxed, scored, and dropped, one after another.
+    decoys = []
+    for k, (dx_, dy_, score, side) in enumerate(DECOYS):
+        t = SCAN_START + k * SCAN_STEP
+        a, b, v = (100 * x / lock for x in (t, t + SCAN_HOLD, t + 0.22))
+        css += (f"@keyframes dec{k} {{ 0%, {a:.2f}% {{ opacity: 0; }} {a + 0.1:.2f}%, {b:.2f}% {{ opacity: 1; }} "
+                f"{b + 0.1:.2f}%, 100% {{ opacity: 0; }} }}\n"
+                f"@keyframes ver{k} {{ 0%, {v:.2f}% {{ opacity: 0; }} {v + 0.1:.2f}%, 100% {{ opacity: 1; }} }}\n"
+                f".dec{k} {{ opacity: 0; animation: dec{k} {lock:.2f}s linear both; }}\n"
+                f".ver{k} {{ animation: ver{k} {lock:.2f}s linear both; }}\n"
+                f".snap{k} {{ animation: snap 0.25s ease-out {t:.2f}s both; transform-origin: {dx_}px {dy_}px; }}\n")
+        w, h, arm_ = 22, 26, 8
+        corners_ = "".join(f'<path class="line" d="M{x} {y + sy * arm_} V{y} H{x + sx * arm_}"/>'
+                           for x, y, sx, sy in ((dx_ - w, dy_ - h, 1, 1), (dx_ + w, dy_ - h, -1, 1),
+                                                (dx_ - w, dy_ + h, 1, -1), (dx_ + w, dy_ + h, -1, -1)))
+        verdict = f"NO MATCH {score}%"
+        vx = dx_ + w + 10 if side == "r" else dx_ - w - 10 - len(verdict) * 7.2
+        decoys.append(f'<g class="dec{k}"><g class="snap{k}">{corners_}</g>'
+                      f'<g class="ver{k}">{grid_text(verdict, vx, dy_ + 4, "mono tag", 7.2)}</g></g>')
+    css += f"""
+.tag {{ font-size: 12px; fill: {GOLD}; }}
+@keyframes snap {{ from {{ transform: scale(1.8); }} }}
+"""
+    bodies = "".join(
+        f'<ellipse cx="{x}" cy="{y}" rx="11" ry="16" fill="{WARM}" opacity="0.55" filter="url(#b6)"/>'
+        f'<ellipse cx="{x}" cy="{y - 2}" rx="4" ry="8" fill="{HOT}" opacity="0.8" filter="url(#b2)"/>'
+        for x, y, _, _ in DECOYS)
 
     defs = f"""<defs>
 <clipPath id="frame"><rect width="{W}" height="{H}" rx="16"/></clipPath>
@@ -99,6 +136,7 @@ def hero():
 <filter id="b18" x="-20%" y="-80%" width="140%" height="260%"><feGaussianBlur stdDeviation="18"/></filter>
 <filter id="b6" x="-10%" y="-40%" width="120%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
 <filter id="b05"><feGaussianBlur stdDeviation="0.6"/></filter>
+<filter id="b2" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2"/></filter>
 <filter id="b40" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="40"/></filter>
 <pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity="0.45"/></pattern>
 {grain(rng)}
@@ -118,6 +156,7 @@ def hero():
         for x, y, dx, dy in ((x0, y0, 1, 1), (x1, y0, -1, 1), (x0, y1, 1, -1), (x1, y1, -1, -1)))
     world = f"""<g class="world">
 {blobs}
+{bodies}
 <g class="heat">
 <text class="sans nm ember" x="{cx}" y="{base}">{name}</text>
 <text class="sans nm warm" x="{cx}" y="{base}">{name}</text>
@@ -125,9 +164,10 @@ def hero():
 </g>
 <g clip-path="url(#band)"><text class="sans nm core tear" x="{cx}" y="{base}">{name}</text></g>
 <g class="brk">{brackets}
-<g class="trk">{grid_text("TRACKING · TGT 01", x0, y0 - 12, "mono hud")}</g>
+<g class="trk">{grid_text("MATCH 99.7% · TGT 01", x0, y0 - 12, "mono hud")}</g>
 </g>
-<g class="acq">{grid_text("ACQUIRING", x0, y0 - 12, "mono hud")}</g>
+<g class="acq">{grid_text("SCANNING", x0, y0 - 12, "mono hud")}</g>
+{"".join(decoys)}
 </g>"""
 
     # HUD: fixed to the screen.
