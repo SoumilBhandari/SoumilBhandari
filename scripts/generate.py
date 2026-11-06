@@ -1,8 +1,8 @@
-"""Builds the static SVGs in assets/: hero, terminal, findings, timeline.
+"""Builds the static SVGs in assets/: hero and timeline.
 
     python scripts/generate.py
 
-Edit the data below and re-run; stats.py handles the live GitHub cards.
+Edit the data below and re-run.
 """
 
 import random
@@ -21,34 +21,6 @@ PHRASES = [
     "routing boards for a race car",
     "building EEG caps for space",
     "checking if any of it actually works",
-]
-
-BUILDS = [
-    ("nanoDLM", "a diffusion LM from scratch, ~1.1k lines of pytorch", "ml"),
-    ("deadbolt", "6 backdoor detectors vs 102 models, run blind", "security"),
-    ("Bastion", "spend caps + audit logs for MCP tool calls", "agents"),
-    ("SecuriVax", "keeps vaccines cold. won hophacks", "health"),
-    ("Neurafy", "alzheimer\u2019s progression model. the startup that didn\u2019t make it", "startup"),
-    ("SpaceCap", "EEG + PPG cap that flags hypoxia in space", "space"),
-    ("ATLAS", "closed-loop TMS thresholding at harvard", "neuro"),
-    ("You2", "a voice assistant that remembers stuff, on-device", "hardware"),
-    ("Flipper", "real-estate deal finder. paid for itself", "money"),
-]
-
-FINDINGS = [
-    # (big number, what it measures, headline, plain explanation, source)
-    ("0.254", "0.5 = guessing", "chatbots are most confident when they\u2019re making stuff up.",
-     "so confidence is worse than guessing at catching lies. reading the internals: 0.988.",
-     "halluscope \u00b7 AUROC on HaluEval, 4,000 answers"),
-    ("0 / 6", "detectors that worked", "none of the 6 backdoor detectors i tested caught WaNet.",
-     "a hidden-trigger attack that made every one of them worse than a coin flip.",
-     "deadbolt \u00b7 102 models, 540 blind scans"),
-    ("2\u00d7", "too high, silently", "the model i forked was quietly training toward the wrong target.",
-     "loss still went down, so nobody noticed. one wrong line, aiming 2\u00d7 too high.",
-     "nanoDLM \u00b7 divided by mask.sum() instead of B\u00b7T"),
-    ("1.00", "retrieval precision", "memory that consolidates gets sharper with age.",
-     "over a simulated year, you2 went from 0.50 to 1.00. stale facts never came back.",
-     "you2 \u00b7 nightly summarize, version, and decay"),
 ]
 
 TIMELINE = [
@@ -183,79 +155,6 @@ def hero():
     return svg(W, H, "\n".join(body), css, f"{NAME}: {SUBTITLE[0]}, {SUBTITLE[1]}")
 
 
-def terminal():
-    """`ls ~/builds` in a terminal window: the command types out, then the listing prints."""
-    W, adv, pitch = 1200, 11.4, 36
-    top = 104
-    H = top + pitch * (len(BUILDS) + 1) + 34
-    cmd = "ls ~/builds"
-    cx = 40 + 2 * adv
-    type_t, t0 = len(cmd) * 0.05, 0.5
-    listed = t0 + type_t + 0.25
-    css = f"""
-.bar {{ font-size: 14px; fill: {MUTED}; text-anchor: middle; }}
-.t {{ font-size: 19px; fill: {TEXT}; }}
-.p {{ font-size: 19px; fill: {GOLD}; }}
-.nm {{ font-size: 19px; font-weight: 700; fill: {GOLD}; }}
-.ds {{ font-size: 19px; fill: {MUTED}; }}
-.tg {{ font-size: 15px; fill: {GOLD_DIM}; text-anchor: end; }}
-.ln {{ animation: on 0.2s ease-out both; }}
-.cur {{ fill: {GOLD}; animation: on 0.2s {listed + len(BUILDS) * 0.09:.2f}s both, blink 1.1s steps(1) {listed + len(BUILDS) * 0.09:.2f}s infinite; }}
-@keyframes on {{ from {{ opacity: 0; }} }}
-@keyframes blink {{ 50% {{ opacity: 0; }} }}
-"""
-    body = [card_bg(W, H),
-            f'<line x1="0" y1="48" x2="{W}" y2="48" stroke="{BORDER}"/>',
-            f'<circle cx="30" cy="24" r="6" fill="{GOLD_DIM}"/>',
-            f'<circle cx="52" cy="24" r="6" fill="#3a3630"/><circle cx="74" cy="24" r="6" fill="#3a3630"/>',
-            f'<text class="mono bar" x="{W / 2}" y="29">soumil@purdue: ~/builds</text>',
-            f'<text class="mono p" x="40" y="{top}">$</text>']
-    body += [f'<text class="mono t" x="{cx + k * adv:.1f}" y="{top}" style="animation: on 0.01s step-end '
-             f'{t0 + (k + 1) * 0.05:.2f}s both">{esc(ch)}</text>' for k, ch in enumerate(cmd) if ch != " "]
-    for k, (name, desc, tag) in enumerate(BUILDS):
-        y = top + pitch * (k + 1) + 8
-        body.append(f'<g class="ln" style="animation-delay: {listed + k * 0.09:.2f}s">'
-                    f'<text class="mono nm" x="40" y="{y}">{esc(name)}</text>'
-                    f'<text class="mono ds" x="190" y="{y}">{esc(desc)}</text>'
-                    f'<text class="mono tg" x="{W - 40}" y="{y}">{esc(tag)}</text></g>')
-    y = top + pitch * (len(BUILDS) + 1) + 16
-    body.append(f'<g class="ln" style="animation-delay: {listed + len(BUILDS) * 0.09:.2f}s">'
-                f'<text class="mono p" x="40" y="{y}">$</text></g>'
-                f'<rect class="cur" x="{cx:.1f}" y="{y - 17}" width="10" height="21" rx="1.5"/>')
-    alt = "; ".join(f"{n}: {d}" for n, d, _ in BUILDS)
-    return svg(W, H, "\n".join(body), css, f"Builds: {alt}")
-
-
-def findings():
-    W, top, pitch = 1200, 76, 132
-    H = top + pitch * len(FINDINGS) + 4
-    css = f"""
-.hd {{ font-size: 15px; fill: {GOLD}; }}
-.big {{ font-size: 46px; font-weight: 700; fill: {GOLD}; }}
-.cap {{ font-size: 13px; fill: {MUTED}; }}
-.hl {{ font-size: 22px; font-weight: 700; fill: {TEXT}; }}
-.ex {{ font-size: 18px; fill: {MUTED}; }}
-.src {{ font-size: 13px; fill: {GOLD_DIM}; }}
-.row {{ animation: up 0.6s ease-out both; }}
-@keyframes up {{ from {{ opacity: 0; transform: translateY(8px); }} }}
-"""
-    body = [card_bg(W, H, 18),
-            f'<text class="mono hd" x="40" y="50">stuff that surprised me</text>']
-    for i, (num, cap, headline, explain, src) in enumerate(FINDINGS):
-        r = top + i * pitch
-        if i:
-            body.append(f'<line x1="40" y1="{r}" x2="{W - 40}" y2="{r}" stroke="{BORDER}"/>')
-        body.append(
-            f'<g class="row" style="animation-delay: {0.15 + i * 0.12:.2f}s">'
-            f'<text class="mono big" x="40" y="{r + 70}">{esc(num)}</text>'
-            f'<text class="mono cap" x="42" y="{r + 98}">{esc(cap)}</text>'
-            f'<text class="sans hl" x="270" y="{r + 46}">{esc(headline)}</text>'
-            f'<text class="sans ex" x="270" y="{r + 76}">{esc(explain)}</text>'
-            f'<text class="mono src" x="270" y="{r + 106}">{esc(src)}</text></g>')
-    alt = " ".join(f"{h} {e} ({n}, {c}; {s})." for n, c, h, e, s in FINDINGS)
-    return svg(W, H, "\n".join(body), css, alt)
-
-
 def timeline():
     W, row, top = 1200, 96, 56
     H = top + row * len(TIMELINE) - 10
@@ -289,8 +188,7 @@ def timeline():
 
 def main():
     ASSETS.mkdir(exist_ok=True)
-    out = {"hero.svg": hero(), "terminal.svg": terminal(),
-           "findings.svg": findings(), "timeline.svg": timeline()}
+    out = {"hero.svg": hero(), "timeline.svg": timeline()}
     for name, text in out.items():
         (ASSETS / name).write_text(text, encoding="utf-8")
         print(f"wrote assets/{name}")

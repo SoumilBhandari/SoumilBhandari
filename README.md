@@ -12,7 +12,7 @@
 
 ## whoami
 
-i build ml models and hardware, then check if they actually work.
+i do ai research and build state of the art ml models.
 
 ```python
 class Soumil:
@@ -22,44 +22,6 @@ class Soumil:
     off    = ["hoops", "lifting", "ice cream sundaes"]
     site   = "soumilbhandari.com"  # start with the lamp
 ```
-
-## builds
-
-<a href="https://github.com/SoumilBhandari?tab=repositories"><img src="assets/terminal.svg" width="100%" alt="ls ~/builds: nanoDLM, a diffusion LM from scratch. deadbolt, 6 backdoor detectors vs 102 models. Bastion, spend caps and audit logs for MCP tool calls. SecuriVax, keeps vaccines cold, won HopHacks. Neurafy, an Alzheimer's progression model. SpaceCap, an EEG and PPG cap for space. ATLAS, closed-loop TMS at Harvard. You2, an on-device voice assistant that remembers. Flipper, a real-estate deal finder."></a>
-
-## stuff i found out
-
-<img src="assets/findings.svg" width="100%" alt="Stuff that surprised me. Chatbots are most confident when they're making things up, so their confidence is worse than guessing at spotting lies (HalluScope). None of the 6 published backdoor detectors I tested caught the WaNet attack (deadbolt). The model I forked was quietly training toward a target 2x too high because of one wrong line (nanoDLM). Memory that consolidates gets sharper with age: over a simulated year, You2's retrieval precision went from 0.50 to 1.00.">
-
-## stack
-
-<p align="center">
-  <b>ml</b><br><br>
-  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,matlab,latex&theme=dark" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, MATLAB, LaTeX"><br>
-  <img src="https://img.shields.io/badge/Hugging_Face-0b0b0d?style=flat-square&logo=huggingface&logoColor=cfb991" alt="Hugging Face">
-  <img src="https://img.shields.io/badge/LoRA-0b0b0d?style=flat-square&logo=pytorch&logoColor=cfb991" alt="LoRA">
-  <img src="https://img.shields.io/badge/spaCy-0b0b0d?style=flat-square&logo=spacy&logoColor=cfb991" alt="spaCy">
-  <img src="https://img.shields.io/badge/LangChain-0b0b0d?style=flat-square&logo=langchain&logoColor=cfb991" alt="LangChain">
-  <img src="https://img.shields.io/badge/MCP-0b0b0d?style=flat-square&logo=anthropic&logoColor=cfb991" alt="Model Context Protocol">
-  <img src="https://img.shields.io/badge/XGBoost-0b0b0d?style=flat-square" alt="XGBoost">
-  <img src="https://img.shields.io/badge/NumPy-0b0b0d?style=flat-square&logo=numpy&logoColor=cfb991" alt="NumPy">
-  <img src="https://img.shields.io/badge/pandas-0b0b0d?style=flat-square&logo=pandas&logoColor=cfb991" alt="pandas">
-</p>
-
-<p align="center">
-  <b>hardware</b><br><br>
-  <img src="https://skillicons.dev/icons?i=cpp,java,arduino,raspberrypi,linux,bash,docker,git&theme=dark" alt="C++, Java, Arduino, Raspberry Pi, Linux, Bash, Docker, Git"><br>
-  <img src="https://img.shields.io/badge/PCB_layout-0b0b0d?style=flat-square" alt="PCB design">
-  <img src="https://img.shields.io/badge/ESP32-0b0b0d?style=flat-square&logo=espressif&logoColor=cfb991" alt="ESP32">
-  <img src="https://img.shields.io/badge/OpenSCAD-0b0b0d?style=flat-square&logo=openscad&logoColor=cfb991" alt="OpenSCAD">
-</p>
-
-<p align="center">
-  <b>web</b><br><br>
-  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,nodejs,express,fastapi,flask,postgres,mongodb,tailwind,threejs,aws,gcp,vercel&theme=dark" alt="TypeScript, JavaScript, React, Next.js, Node.js, Express, FastAPI, Flask, PostgreSQL, MongoDB, Tailwind, three.js, AWS, Google Cloud, Vercel">
-</p>
-
-<img src="assets/heatmap.svg" width="100%" alt="Contribution heatmap for the last year">
 
 <details>
 <summary><b>the resume version</b></summary>
